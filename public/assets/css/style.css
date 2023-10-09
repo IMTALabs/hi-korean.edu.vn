@@ -3053,10 +3053,6 @@ blockquote p {
   border-radius: 8px;
   background-color: #F6F6F6;
 }
-.brands_logo_list a img {
-  max-width: 180px;
-  max-height: 70px;
-}
 .brands_logo_list a:hover {
   border-color: #1F1D0D;
   -webkit-transform: translate(-2px, -2px);
@@ -4383,10 +4379,6 @@ Responsive For Mobile & Tablet Devices
   .brands_logo_list > li {
     width: 33.333%;
   }
-  .brands_logo_list a img {
-    max-width: 140px;
-    max-height: 60px;
-  }
   .form_item:has(.btn) {
     margin-bottom: 30px;
   }
@@ -4759,10 +4751,6 @@ Responsive For Mobile & Tablet Devices
   }
   .pricing_card.bg_dark {
     padding: 62px 30px 60px;
-  }
-  .brands_logo_list a img {
-    max-width: 120px;
-    max-height: 50px;
   }
   .brands_logo_list a {
     height: 130px;

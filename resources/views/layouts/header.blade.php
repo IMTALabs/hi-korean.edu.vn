@@ -13,13 +13,14 @@
                     <div class="remove-all main_menu_inner collapse navbar-collapse justify-content-center lg:!justify-end"
                          id="main_menu_dropdown">
                         <ul class="main_menu_list unordered_list_center">
-                            <li><a class="nav-link" href="{{ route('home') }}">Trang chủ</a></li>
+                            <li class="active"><a class="nav-link" href="{{ route('home') }}">Trang chủ</a></li>
                             <li><a class="nav-link" href="{{ route('home') }}">Về chúng tôi</a></li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a class="nav-link" href="#" id="home_submenu" role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false">Khóa học</a>
                                 <ul class="dropdown-menu" aria-labelledby="home_submenu">
-                                    <li class="active"><a href="#">Học trực tiếp</a></li>
+                                    {{-- <li class="active"><a href="#">Học trực tiếp</a></li> --}}
+                                    <li><a href="#">Học trực tiếp</a></li>
                                     <li><a href="#">E-learning</a></li>
                                     <li><a href="#">Online</a></li>
                                     <li><a href="#">Theo đối tượng</a></li>

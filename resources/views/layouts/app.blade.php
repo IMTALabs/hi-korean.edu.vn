@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Home V.1 – Hi Korean Template</title>
+    {!! SEOMeta::generate() !!}
+    {!! OpenGraph::generate() !!}
+    {!! JsonLd::generate() !!}
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/favourite_icon_1.svg') }}">
 
     <!-- Framework - CSS Include -->
@@ -31,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vanilla-calendar.min.css') }}">
 
     <!-- Custom - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/yt-lite.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     @vite('resources/css/app.css')
 </head>
@@ -91,11 +94,16 @@
 
 <!-- Countdown Timer - jquery include -->
 <script src="{{ asset('assets/js/countdown.js') }}"></script>
+<script src="{{ asset('assets/js/yt-lite.js') }}"></script>
 
 <!-- Vanilla Calendar - Jquery Include -->
 <script src="{{ asset('assets/js/vanilla-calendar.min.js') }}"></script>
 
 <!-- Custom - Jquery Include -->
 <script src="{{ asset('assets/js/main.js') }}"></script>
+<script
+    async
+    src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"
+></script>
 </body>
 </html>

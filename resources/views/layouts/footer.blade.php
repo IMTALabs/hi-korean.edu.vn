@@ -6,8 +6,8 @@
                     <div class="footer_widget">
                         <div class="site_logo">
                             <a class="site_link" href="index.html">
-                                <img src="assets/images/logo/site_logo_2.svg"
-                                     alt="Hi Korean">
+                                <img src="assets/images/logo/logo.png"
+                                     alt="Hi Korean" class="w-24">
                             </a>
                         </div>
                         <p>
@@ -177,14 +177,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="copyright_widget">
-        <div class="container">
-            <p class="copyright_text text-center mb-0">
-                <a href="https://themeforest.net/user/merkulove">Merkulove</a> © <b>Collab</b> Template All rights
-                reserved Copyrights 2023
-            </p>
         </div>
     </div>
 </footer>
