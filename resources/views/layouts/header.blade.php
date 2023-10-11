@@ -10,27 +10,41 @@
             </div>
             <div class="col col-lg-9 col-2">
                 <nav class="main_menu navbar navbar-expand-lg">
-                    <div class="remove-all main_menu_inner collapse navbar-collapse justify-content-center lg:!justify-end"
-                         id="main_menu_dropdown">
+                    <div
+                        class="remove-all main_menu_inner collapse navbar-collapse justify-content-center lg:!justify-end"
+                        id="main_menu_dropdown">
                         <ul class="main_menu_list unordered_list_center">
-                            <li class="active"><a class="nav-link" href="{{ route('home') }}">Trang chủ</a></li>
-                            <li><a class="nav-link" href="{{ route('home') }}">Về chúng tôi</a></li>
+                            <li @if(Route::currentRouteName() == 'home') class="active" @endif>
+                                <a class="nav-link" href="{{ route('home') }}">Trang chủ</a>
+                            </li>
+                            <li @if(Route::currentRouteName() == 'about_us') class="active" @endif>
+                                <a class="nav-link" href="{{ route('about_us') }}">Về chúng tôi</a>
+                            </li>
                             <li class="dropdown">
-                                <a class="nav-link" href="#" id="home_submenu" role="button"
-                                   data-bs-toggle="dropdown" aria-expanded="false">Khóa học</a>
+                                <a class="nav-link" href="{{ route('courses') }}" id="home_submenu" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false"
+                                   onclick="window.location.href = '{{ route('courses') }}'">Khóa học</a>
                                 <ul class="dropdown-menu" aria-labelledby="home_submenu">
                                     {{-- <li class="active"><a href="#">Học trực tiếp</a></li> --}}
-                                    <li><a href="#">Học trực tiếp</a></li>
-                                    <li><a href="#">E-learning</a></li>
-                                    <li><a href="#">Online</a></li>
-                                    <li><a href="#">Theo đối tượng</a></li>
-                                    <li><a href="#">Luyện thi</a></li>
+                                    <li><a href="{{ route('courses.show', ['id' => 'offline']) }}">Học trực tiếp</a>
+                                    </li>
+                                    <li><a href="{{ route('courses.show', ['id' => 'e-learning']) }}">E-learning</a>
+                                    </li>
+                                    <li><a href="{{ route('courses.show', ['id' => 'online']) }}">Online</a></li>
+                                    <li><a href="{{ route('courses.show', ['id' => 'individual']) }}">Theo đối tượng</a>
+                                    </li>
+                                    <li><a href="{{ route('courses.show', ['id' => 'test-preparation']) }}">Luyện
+                                            thi</a></li>
                                 </ul>
                             </li>
-                            <li><a class="nav-link" href="{{ route('home') }}">Kho ảnh</a></li>
-                            <li><a class="nav-link" href="{{ route('home') }}">Ưu đãi</a></li>
-                            <li><a class="nav-link" href="{{ route('home') }}">Tin tức</a></li>
-                            <li><a class="nav-link" href="{{ route('home') }}">Liên hệ</a></li>
+                            <li><a class="nav-link @if(Route::currentRouteName() == 'media') active @endif"
+                                   href="{{ route('media') }}">Kho ảnh</a></li>
+                            <li><a class="nav-link @if(Route::currentRouteName() == 'sales') active @endif"
+                                   href="{{ route('sales') }}">Ưu đãi</a></li>
+                            <li><a class="nav-link @if(Route::currentRouteName() == 'news') active @endif"
+                                   href="{{ route('news') }}">Tin tức</a></li>
+                            <li><a class="nav-link @if(Route::currentRouteName() == 'contact') active @endif"
+                                   href="{{ route('contact') }}">Liên hệ</a></li>
                         </ul>
                     </div>
                 </nav>

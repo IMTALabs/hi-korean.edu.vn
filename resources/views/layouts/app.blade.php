@@ -34,12 +34,13 @@
 
     <!-- Custom - CSS Include -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/yt-lite.css') }}">
+    @stack('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     @vite('resources/css/app.css')
 </head>
 <body>
 <!-- Body Wrap - Start -->
-<div class="page_wrapper">
+<div class="page_wrapper flex flex-col min-h-screen">
 
     <!-- Back To Top - Start -->
     <div class="backtotop">
@@ -76,7 +77,7 @@
 <script src="{{ asset('assets/js/bootstrap-dropdown-ml-hack.js') }}"></script>
 
 <!-- animation - jquery include -->
-<script src="{{ asset('assets/js/cursor.js') }}"></script>
+{{--<script src="{{ asset('assets/js/cursor.js') }}"></script>--}}
 <script src="{{ asset('assets/js/wow.min.js') }}"></script>
 <script src="{{ asset('assets/js/tilt.min.js') }}"></script>
 <script src="{{ asset('assets/js/parallax.min.js') }}"></script>
@@ -100,10 +101,11 @@
 <script src="{{ asset('assets/js/vanilla-calendar.min.js') }}"></script>
 
 <!-- Custom - Jquery Include -->
-<script src="{{ asset('assets/js/main.js') }}"></script>
 <script
     async
     src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"
 ></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
+@stack('scripts')
 </body>
 </html>

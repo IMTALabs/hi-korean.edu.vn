@@ -26,8 +26,19 @@
         ================================================== -->
         <section class="hero_banner style_1">
             <div class="container">
-                <div class="row">
-                    <img src="{{ asset('assets/images/banner/banner.png') }}" class="object-cover" alt="">
+                <div class="common_carousel_1col" data-cursor-text="Drag" data-slick='{"dots":false, "autoplay":true, "arrows": true}'>
+                    <div class="carousel_item">
+                        <img src="{{ asset('assets/images/banner/banner.png') }}" class="object-cover" alt="">
+                    </div>
+                    <div class="carousel_item">
+                        <img src="{{ asset('assets/images/banner/banner.png') }}" class="object-cover" alt="">
+                    </div>
+                    <div class="carousel_item">
+                        <img src="{{ asset('assets/images/banner/banner.png') }}" class="object-cover" alt="">
+                    </div>
+                    <div class="carousel_item">
+                        <img src="{{ asset('assets/images/banner/banner.png') }}" class="object-cover" alt="">
+                    </div>
                 </div>
             </div>
         </section>
@@ -244,6 +255,67 @@
             </div>
         </section>
         <!-- Về CEO - End
+        ================================================== -->
+
+        <!-- Advertisement Section - Start
+        ================================================== -->
+        <section class="advertisement_section bg_dark">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col col-lg-6">
+                        <div class="section_heading mb-lg-0">
+                            <h2 class="heading_text text-white">
+                                Đội ngũ giảng viên
+                            </h2>
+                            <p class="heading_description mb-0 text-white">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium autem beatae
+                                dolorum eaque eius et fuga, id, labore laboriosam libero magni maiores modi non
+                                obcaecati, sint vel voluptate. Aliquam.
+                            </p>
+                            <div class="btn_wrap pb-0">
+                                <a class="btn btn_primary" href="course.html">
+                                    <span>
+                                        <small>Xem thêm</small>
+                                        <small>Xem thêm</small>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6">
+                        <div class="row images_group decoration_wrap">
+                            <div class="col col-md-6 col-sm-6">
+                                <div class="image_wrap">
+                                    <img src="assets/images/advertisement/advertisement_img_1.jpg"
+                                         alt="Collab – Online Learning Platform">
+                                </div>
+                                <div class="image_wrap">
+                                    <img src="assets/images/advertisement/advertisement_img_2.jpg"
+                                         alt="Collab – Online Learning Platform">
+                                </div>
+                            </div>
+                            <div class="col col-md-6 col-sm-6">
+                                <div class="image_wrap">
+                                    <img src="assets/images/advertisement/advertisement_img_3.jpg"
+                                         alt="Collab – Online Learning Platform">
+                                </div>
+                                <div class="image_wrap">
+                                    <img src="assets/images/advertisement/advertisement_img_4.jpg"
+                                         alt="Collab – Online Learning Platform">
+                                </div>
+                            </div>
+                            <div class="deco_item shape_img_1" data-parallax='{"y" : -130, "smoothness": 6}'>
+                                <img src="assets/images/shape/shape_img_3.png" alt="Collab – Online Learning Platform">
+                            </div>
+                            <div class="deco_item shape_img_2" data-parallax='{"y" : 130, "smoothness": 6}'>
+                                <img src="assets/images/shape/shape_img_3.png" alt="Collab – Online Learning Platform">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Advertisement Section - End
         ================================================== -->
 
         <!-- Courses Section - Start
@@ -779,67 +851,6 @@
             </div>
         </section>
         <!-- Testimonial Section - End
-        ================================================== -->
-
-        <!-- Advertisement Section - Start
-        ================================================== -->
-        <section class="advertisement_section bg_dark">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col col-lg-6">
-                        <div class="section_heading mb-lg-0">
-                            <h2 class="heading_text text-white">
-                                Đội ngũ giảng viên
-                            </h2>
-                            <p class="heading_description mb-0 text-white">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium autem beatae
-                                dolorum eaque eius et fuga, id, labore laboriosam libero magni maiores modi non
-                                obcaecati, sint vel voluptate. Aliquam.
-                            </p>
-                            <div class="btn_wrap pb-0">
-                                <a class="btn btn_primary" href="course.html">
-                                    <span>
-                                        <small>Xem thêm</small>
-                                        <small>Xem thêm</small>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-lg-6">
-                        <div class="row images_group decoration_wrap">
-                            <div class="col col-md-6 col-sm-6">
-                                <div class="image_wrap">
-                                    <img src="assets/images/advertisement/advertisement_img_1.jpg"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                                <div class="image_wrap">
-                                    <img src="assets/images/advertisement/advertisement_img_2.jpg"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                            </div>
-                            <div class="col col-md-6 col-sm-6">
-                                <div class="image_wrap">
-                                    <img src="assets/images/advertisement/advertisement_img_3.jpg"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                                <div class="image_wrap">
-                                    <img src="assets/images/advertisement/advertisement_img_4.jpg"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                            </div>
-                            <div class="deco_item shape_img_1" data-parallax='{"y" : -130, "smoothness": 6}'>
-                                <img src="assets/images/shape/shape_img_3.png" alt="Collab – Online Learning Platform">
-                            </div>
-                            <div class="deco_item shape_img_2" data-parallax='{"y" : 130, "smoothness": 6}'>
-                                <img src="assets/images/shape/shape_img_3.png" alt="Collab – Online Learning Platform">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Advertisement Section - End
         ================================================== -->
 
         <!-- Brands Section - Start
