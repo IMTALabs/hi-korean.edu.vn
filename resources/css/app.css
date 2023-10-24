@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind utilities;
 
 @layer utilities {
@@ -6,13 +8,17 @@
     }
 }
 
+body {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+}
+
 .image > img {
     transition: all 0.2s ease-in-out;
     border-radius: 5px;
 }
 
 .image > img:hover {
-    /*transform: scale(1.1);*/
     -webkit-transform: translate(-2px, -2px);
     transform: translate(-2px, -2px);
     -webkit-box-shadow: 3px 3px 0 0 #1F1D0D;

@@ -18,618 +18,531 @@
 
 ?>
 
-@extends('layouts.app')
+<x-layouts.app>
+    @volt
+    <main class="page_content">
+        <!-- Page Section - Start
+        ================================================== -->
+        <section class="page_banner mt-40">
+            <div class="container">
+                <div class="content_wrapper"
+                     style="background-image: url('assets/images/banner/page_banner_image.png');">
+                    <div class="row align-items-center">
+                        <div class="col col-lg-6">
+                            <ul class="breadcrumb_nav unordered_list">
+                                <li><a href="{{ route('home') }}">Trang chủ</a></li>
+                                <li>Về chúng tôi</li>
+                            </ul>
+                            <h1 class="page_title">Hi Korean</h1>
+                            <p class="page_description">
+                                Với kinh nghiệm 6 năm trong lĩnh vực giảng dạy tiếng Hàn, HI KOREAN đã và đang là một
+                                trong
+                                những trung tâm đào tạo tiếng Hàn uy tín và chất lượng.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Section - End
+        ================================================== -->
 
-@section('content')
-    <!-- Page Section - Start
-    ================================================== -->
-    <section class="page_banner mt-40">
-        <div class="container">
-            <div class="content_wrapper" style="background-image: url('assets/images/banner/page_banner_image.png');">
+        <!-- Courses Info Section - Start
+        ================================================== -->
+        <section class="courses_info_section section_space_lg pb-0">
+            <div class="container">
                 <div class="row align-items-center">
+                    <div class="col col-lg-6 -mt-8">
+                        <div class="image_widget">
+                            <img src="http://127.0.0.1:8000/assets/images/about/about-usus.jpeg"
+                                 alt="Collab – Online Learning Platform">
+                        </div>
+                    </div>
                     <div class="col col-lg-6">
-                        <ul class="breadcrumb_nav unordered_list">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#!">Pages</a></li>
-                            <li>About Us</li>
-                        </ul>
-                        <h1 class="page_title">About Hi Korean</h1>
-                        <p class="page_description">
-                            Egestas sed tempus urna et pharetra. Leo integer malesuada nunc vel. Libero id faucibus nisl
-                            tincidunt eget nullam non nisi. Faucibus turpis in eu mi bibendum neque egestas
-                        </p>
-                        <form action="#">
-                            <div class="form_item mb-0">
-                                <input type="search" name="search" placeholder="What do you want to learn ?">
-                                <button type="submit" class="btn btn_dark">
-                                    <span>
-                                        <small>Search</small>
-                                        <small>Search</small>
-                                    </span>
-                                </button>
+                        <div class="content_wrap ps-lg-3">
+                            <div class="section_heading">
+                                <h2 class="heading_text">
+                                    Toàn diện cho người mới bắt đầu
+                                </h2>
+                                <p class="heading_description mb-0">
+                                    Hoạt động trong lĩnh vực giáo dục nhiều năm, Hi Korean hiểu rõ tầm quan trọng của
+                                    đạo
+                                    đức nghề nghiệp trong
+                                    quá trình xây dựng và phát triển thương hiệu.<br><br>
+                                    Không đặt mục đích lợi nhuận lên hàng đầu, Hi Korean hướng tới cái đích vừa đảm bảo
+                                    quyền lợi cho học viên,
+                                    vừa khẳng định được uy tín của một đơn vị đào tạo top đầu.<br><br>
+                                    Kim chỉ nam đó cũng chính là bí quyết giúp Hi Korean tồn tại và phát triển trong
+                                    lĩnh
+                                    vực giáo dục cạnh tranh và
+                                    đào thải khốc liệt, ngày càng nhận được nhiều sự yêu quý và tín nhiệm của các bạn
+                                    học
+                                    viên.
+                                </p>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Page Section - End
-    ================================================== -->
+        </section>
+        <!-- Courses Info Section - End
+        ================================================== -->
 
-    <!-- Courses Info Section - Start
-    ================================================== -->
-    <section class="courses_info_section section_space_lg pb-0">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col col-lg-6">
-                    <div class="image_widget">
-                        <img src="assets/images/about/about_image_2.jpg" alt="Collab – Online Learning Platform">
+        <!-- Policy Section - Start
+        ================================================== -->
+        <section class="policy_section section_space_lg">
+            <div class="container position-relative">
+                <div class="section_heading">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col">
+                            <h2 class="heading_text mb-lg-0">
+                                Quy trình dạy và học cụ thể
+                            </h2>
+                        </div>
                     </div>
                 </div>
-                <div class="col col-lg-6">
-                    <div class="content_wrap ps-lg-3">
-                        <div class="section_heading">
-                            <h2 class="heading_text">
-                                Supporting Student Learning in Your Course
-                            </h2>
-                            <p class="heading_description mb-0">
-                                Rutrum tellus pellentesque eu tincidunt. Venenatis cras sed felis eget velit aliquet
-                                sagittis id consectetur. Sit amet porttitor eget dolor morbi
+                <div class="row">
+                    <div class="col col-lg-3 col-md-6">
+                        <div class="iconbox_item">
+                            <div class="title_wrap">
+                                <div class="item_icon bg_dark">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <h3 class="item_title mb-0">
+                                    <span class="d-block">Trước buổi học</span>
+                                </h3>
+                            </div>
+                            <p class="mb-0">
+                                Giáo viên gửi video bài giảng tổng quan trước 15p để các bạn xem và ghi nhớ
+                                lần 1
                             </p>
                         </div>
-                        <ul class="info_list unordered_list_block">
-                            <li>
-                                <i class="fas fa-square"></i>
-                                <span>
-                                    Learn in-demand skills with over 183,000 video courses
-                                </span>
-                            </li>
-                            <li>
-                                <i class="fas fa-square"></i>
-                                <span>
-                                    Choose courses taught by real-world experts
-                                </span>
-                            </li>
-                            <li>
-                                <i class="fas fa-square"></i>
-                                <span>
-                                    Learn at your own pace, with lifetime access on mobile and desktop
-                                </span>
-                            </li>
-                        </ul>
-                        <div class="btn_wrap pb-0">
-                            <a class="btn btn_dark" href="mentor.html">
-                                <span>
-                                    <small>Our Mentors</small>
-                                    <small>Our Mentors</small>
-                                </span>
-                            </a>
-                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Courses Info Section - End
-    ================================================== -->
-
-    <!-- Policy Section - Start
-    ================================================== -->
-    <section class="policy_section section_space_lg">
-        <div class="container position-relative">
-            <div class="section_heading">
-                <div class="row align-items-center justify-content-lg-between">
-                    <div class="col col-lg-6">
-                        <h2 class="heading_text mb-lg-0">
-                            What to Expect from
-                            a Сollab Course
-                        </h2>
-                    </div>
-                    <div class="col col-lg-4">
-                        <p class="heading_description mb-0 text-lg-end">
-                            Lobortis mattis aliquam faucibus purus in. Ultricies integer quis auctor elit sed
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col col-lg-3 col-md-6">
-                    <div class="iconbox_item">
-                        <div class="title_wrap">
-                            <div class="item_icon bg_dark">
-                                <i class="fas fa-book-open"></i>
-                            </div>
-                            <h3 class="item_title mb-0">
-                                <span class="d-block">Allocate the time </span>
-                                for study
-                            </h3>
-                        </div>
-                        <p class="mb-0">
-                            Etiam sit amet nisl purus in mollis nunc sed. Viverra nibh cras pulvinar mattis nunc sed
-                            blandit libero volutpat
-                        </p>
-                    </div>
-                </div>
-                <div class="col col-lg-3 col-md-6">
-                    <div class="iconbox_item">
-                        <div class="title_wrap">
-                            <div class="item_icon bg_dark">
-                                <i class="fas fa-code-branch"></i>
-                            </div>
-                            <h3 class="item_title mb-0">
-                                <span class="d-block">Alternative learning </span>
-                                formats
-                            </h3>
-                        </div>
-                        <p class="mb-0">
-                            Posuere ac ut consequat semper viverra nam libero justo. Semper feugiat nibh sed pulvinar
-                            proin gravida hendrerit
-                        </p>
-                    </div>
-                </div>
-                <div class="col col-lg-3 col-md-6">
-                    <div class="iconbox_item">
-                        <div class="title_wrap">
-                            <div class="item_icon bg_dark">
-                                <i class="fas fa-comment-smile"></i>
-                            </div>
-                            <h3 class="item_title mb-0">
-                                <span class="d-block">Mentors with over 5 </span>
-                                years of experience
-                            </h3>
-                        </div>
-                        <p class="mb-0">
-                            Nunc sed velit dignissim sodales ut eu sem. Id faucibus nisl tincidunt eget. Nunc non
-                            blandit massa enim
-                        </p>
-                    </div>
-                </div>
-                <div class="col col-lg-3 col-md-6">
-                    <div class="iconbox_item">
-                        <div class="title_wrap">
-                            <div class="item_icon bg_dark">
-                                <i class="fas fa-user-graduate"></i>
-                            </div>
-                            <h3 class="item_title mb-0">
-                                <span class="d-block">Follow the Training </span>
-                                Program
-                            </h3>
-                        </div>
-                        <p class="mb-0">
-                            Tincidunt vitae semper quis lectus nulla at. Eget lorem dolor sed viverra ipsum nunc. Tellus
-                            at urna condimentum
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Policy Section - End
-    ================================================== -->
-
-    <!-- Counter Section - Start
-    ================================================== -->
-    <section class="counter_section bg_primary section_space_md">
-        <div class="container">
-            <div class="row">
-                <div class="col col-lg-3 col-md-6">
-                    <div class="counter_item">
-                        <h3 class="counter_value">
-                            <span class="counter_value_text">500</span>
-                            <span>+</span>
-                        </h3>
-                        <p class="mb-0">
-                            Hours of hands-on learning in our courses
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col col-lg-3 col-md-6">
-                    <div class="counter_item">
-                        <h3 class="counter_value">
-                            <span class="counter_value_text">1500</span>
-                            <span>+</span>
-                        </h3>
-                        <p class="mb-0">
-                            Students Passed Our Competitions and Got a Job
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col col-lg-3 col-md-6">
-                    <div class="counter_item">
-                        <h3 class="counter_value">
-                            <span class="counter_value_text">25</span>
-                            <span>/75</span>
-                        </h3>
-                        <p class="mb-0">
-                            The Ratio of Theory and Practice in Each Course
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col col-lg-3 col-md-6">
-                    <div class="counter_item">
-                        <h3 class="counter_value">
-                            <span class="counter_value_text">40</span>
-                            <span>+</span>
-                        </h3>
-                        <p class="mb-0">
-                            We teach people from 4 continents and over 40 countries
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Counter Section - End
-    ================================================== -->
-
-    <!-- Testimonial Section - Start
-    ================================================== -->
-    <section class="testimonial_section section_space_lg pb-0">
-        <div class="container">
-            <div class="testimonial_carousel">
-                <div class="common_carousel_1col" data-cursor-text="Drag" data-slick='{"dots":false}'>
-                    <div class="carousel_item">
-                        <div class="testimonial_item_2">
-                            <div class="testimonial_image image_widget order-last me-0"
-                                 style="background-image: url('assets/images/shape/shape_img_6.svg');">
-                                <img src="assets/images/about/about_image_3.jpg"
-                                     alt="Collab – Online Learning Platform">
-                            </div>
-                            <div class="testimonial_content">
-                                <div class="quote_icon">
-                                    <img src="assets/images/icon/icon_quote.svg"
-                                         alt="Collab – Online Learning Platform">
+                    <div class="col col-lg-3 col-md-6">
+                        <div class="iconbox_item">
+                            <div class="title_wrap">
+                                <div class="item_icon bg_dark">
+                                    <i class="fas fa-code-branch"></i>
                                 </div>
-                                <h3 class="testimonial_title">
-                                    Et netus et malesuada fames ac turpis egestas sed. Nec feugiat nisl pretium fusce id
-                                    velit ut. Lobortis mattis aliquam faucibus purus in. Ultricies integer quis auctor
-                                    elit sed. Lobortis scelerisque fermentum dui faucibus in ornare quam. In mollis nunc
-                                    sed semper
+                                <h3 class="item_title mb-0">
+                                    <span class="d-block">Trong buổi học</span>
                                 </h3>
-                                <p>
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                    fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
-                                </p>
-                                <div class="testimonial_admin">
-                                    <div class="admin_image">
-                                        <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
-                                             alt="Collab – Online Learning Platform">
-                                    </div>
-                                    <div class="admin_content">
-                                        <h5 class="testimonial_name">Ray Cooper</h5>
-                                        <span class="testimonial_designation">Founder of colab courses, lecturer</span>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="carousel_item">
-                        <div class="testimonial_item_2">
-                            <div class="testimonial_image image_widget order-last me-0"
-                                 style="background-image: url('assets/images/shape/shape_img_6.svg');">
-                                <img src="assets/images/about/about_image_3.jpg"
-                                     alt="Collab – Online Learning Platform">
-                            </div>
-                            <div class="testimonial_content">
-                                <div class="quote_icon">
-                                    <img src="assets/images/icon/icon_quote.svg"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                                <h3 class="testimonial_title">
-                                    Et netus et malesuada fames ac turpis egestas sed. Nec feugiat nisl pretium fusce id
-                                    velit ut. Lobortis mattis aliquam faucibus purus in. Ultricies integer quis auctor
-                                    elit sed. Lobortis scelerisque fermentum dui faucibus in ornare quam. In mollis nunc
-                                    sed semper
-                                </h3>
-                                <p>
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                    fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
-                                </p>
-                                <div class="testimonial_admin">
-                                    <div class="admin_image">
-                                        <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
-                                             alt="Collab – Online Learning Platform">
-                                    </div>
-                                    <div class="admin_content">
-                                        <h5 class="testimonial_name">Ray Cooper</h5>
-                                        <span class="testimonial_designation">Founder of colab courses, lecturer</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel_item">
-                        <div class="testimonial_item_2">
-                            <div class="testimonial_image image_widget order-last me-0"
-                                 style="background-image: url('assets/images/shape/shape_img_6.svg');">
-                                <img src="assets/images/about/about_image_3.jpg"
-                                     alt="Collab – Online Learning Platform">
-                            </div>
-                            <div class="testimonial_content">
-                                <div class="quote_icon">
-                                    <img src="assets/images/icon/icon_quote.svg"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                                <h3 class="testimonial_title">
-                                    Et netus et malesuada fames ac turpis egestas sed. Nec feugiat nisl pretium fusce id
-                                    velit ut. Lobortis mattis aliquam faucibus purus in. Ultricies integer quis auctor
-                                    elit sed. Lobortis scelerisque fermentum dui faucibus in ornare quam. In mollis nunc
-                                    sed semper
-                                </h3>
-                                <p>
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                    fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
-                                </p>
-                                <div class="testimonial_admin">
-                                    <div class="admin_image">
-                                        <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
-                                             alt="Collab – Online Learning Platform">
-                                    </div>
-                                    <div class="admin_content">
-                                        <h5 class="testimonial_name">Ray Cooper</h5>
-                                        <span class="testimonial_designation">Founder of colab courses, lecturer</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Testimonial Section - End
-    ================================================== -->
-
-    <!-- Get Start Section - Start
-    ================================================== -->
-    <section class="getstart_section section_space_lg">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col col-lg-6">
-                    <div class="image_widget">
-                        <img src="assets/images/about/about_image_4.jpg" alt="Collab – Online Learning Platform">
-                    </div>
-                </div>
-                <div class="col col-lg-6">
-                    <div class="content_wrap ps-lg-5">
-                        <div class="section_heading">
-                            <h2 class="heading_text">
-                                Come Teach with Us and Become an Instructor Today
-                            </h2>
-                            <p class="heading_description mb-0">
-                                Augue ut lectus arcu bibendum at varius vel. Ullamcorper eget nulla facilisi etiam
-                                dignissim. Habitasse platea dictumst quisque sagittis. Quis lectus nulla at volutpat
-                                diam ut venenatis
+                            <p class="mb-0">
+                                Giáo viên hệ thống lại toàn bộ kiến thức, giảng kĩ những phần kiến thức
+                                khó
+                                và dành thời gian luyện phản xạ nghe nói cùng học viên
                             </p>
                         </div>
-                        <div class="btn_wrap p-0">
-                            <a class="btn btn_dark" href="contact.html">
-                                <span>
-                                    <small>Get Started</small>
-                                    <small>Get Started</small>
-                                </span>
-                            </a>
+                    </div>
+                    <div class="col col-lg-3 col-md-6">
+                        <div class="iconbox_item">
+                            <div class="title_wrap">
+                                <div class="item_icon bg_dark">
+                                    <i class="fas fa-comment-smile"></i>
+                                </div>
+                                <h3 class="item_title mb-0">
+                                    <span class="d-block">Sau buổi học</span>
+                                </h3>
+                            </div>
+                            <p class="mb-0">
+                                Giáo viên hỗ trợ sửa kỹ năng nghe nói cho từng bạn bằng cách ghi âm và
+                                viết
+                                bài gửi cho GV.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3 col-md-6">
+                        <div class="iconbox_item">
+                            <div class="title_wrap">
+                                <div class="item_icon bg_dark">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <h3 class="item_title mb-0">
+                                    <span class="d-block">Cuối cùng</span>
+                                </h3>
+                            </div>
+                            <p class="mb-0">
+                                Hệ thống kiến thức bằng các phần mềm dạng game để ôn luyện từ vựng, ngữ pháp để
+                                củng cố kiến thức mà học không nhàm chán
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Get Start Section - End
-    ================================================== -->
+        </section>
+        <!-- Policy Section - End
+        ================================================== -->
 
-    <!-- Popular Event Section - Start
-    ================================================== -->
-    <section class="popular_event_section section_space_lg bg_dark decoration_wrap">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col col-lg-7">
-                    <div class="section_heading mb-lg-0">
-                        <h2 class="heading_text text-white">
-                            Online Events are Amazing Opportunities to Have Fun and Learn
-                        </h2>
-                        <p class="heading_description mb-0 text-white">
-                            Rhoncus dolor purus non enim praesent elementum facilisis. Nec tincidunt praesent semper
-                            feugiat nibh sed pulvinar. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur
-                            adipiscing. Iaculis eu non diam phasellus vestibulum lorem sed risus.
-                        </p>
-                        <div class="btn_wrap pb-0">
-                            <a class="btn btn_primary" href="event.html">
-                                <span>
-                                    <small>All Events</small>
-                                    <small>All Events</small>
-                                </span>
-                            </a>
+        <!-- Counter Section - Start
+        ================================================== -->
+        <section class="counter_section bg-alternative section_space_md">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-3 col-md-6">
+                        <div class="counter_item">
+                            <h3 class="counter_value">
+                                <span class="counter_value_text">500</span>
+                                <span>+</span>
+                            </h3>
+                            <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
+                                Giờ học đã diễn ra
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col col-lg-3 col-md-6">
+                        <div class="counter_item">
+                            <h3 class="counter_value">
+                                <span class="counter_value_text">1500</span>
+                                <span>+</span>
+                            </h3>
+                            <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
+                                Học viên hoàn thành chương trình học và có việc làm
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col col-lg-3 col-md-6">
+                        <div class="counter_item">
+                            <h3 class="counter_value">
+                                <span class="counter_value_text">10</span>
+                            </h3>
+                            <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
+                                Khóa học đang được vận hành
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col col-lg-3 col-md-6">
+                        <div class="counter_item">
+                            <h3 class="counter_value">
+                                <span class="counter_value_text">40</span>
+                                <span>+</span>
+                            </h3>
+                            <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
+                                Giảng viên với kinh nghiệm tiếng Hàn tối thiểu 2 năm giảng dạy tiếng Hàn
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col col-lg-5">
-                    <div class="popular_event_list">
-                        <h3 class="wrap_title">Most Popular Events</h3>
-                        <ul class="unordered_list_block">
-                            <li>
-                                <div class="column">
-                                    <b class="day">12</b>
-                                    <span class="month">february</span>
-                                    <strong class="time">03:50 PM</strong>
+            </div>
+        </section>
+        <!-- Counter Section - End
+        ================================================== -->
+
+        <!-- Testimonial Section - Start
+        ================================================== -->
+        <section class="testimonial_section section_space_lg py-8">
+            <div class="container">
+                <div class="section_heading">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col col-lg-6">
+                            <h3 class="text-2xl !text-secondary">Cảm Nhận</h3>
+                            <h2 class="heading_text mb-0 uppercase">
+                                Học viên
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial_carousel">
+                    <div class="common_carousel_1col" data-cursor-text="Drag" data-slick="{'dots': false}">
+                        <div class="carousel_item">
+                            <div class="testimonial_item_2">
+                                <div class="testimonial_image ms-0 aspect-video"
+                                     style="background-image: url('assets/images/shape/shape_img_6.svg');">
+                                    <lite-youtube class="w-full h-full" videoid="ogfYd705cRs"
+                                                  playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
                                 </div>
-                                <div class="column">
-                                    <h4 class="event_title">Digital Transformation Conference</h4>
-                                    <span class="event_name">
-                                        <strong>Prepare for:</strong> <small>Lora Hill</small>
-                                    </span>
+                                <div class="testimonial_content">
+                                    <div class="quote_icon">
+                                        <img src="assets/images/icon/icon_quote.svg"
+                                             alt="Collab – Online Learning Platform">
+                                    </div>
+                                    <h3 class="testimonial_title">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore esse.
+                                    </h3>
+                                    <p>
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                        fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
+                                    </p>
+                                    <div class="testimonial_admin">
+                                        <div class="admin_image">
+                                            <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
+                                                 alt="Collab – Online Learning Platform">
+                                        </div>
+                                        <div class="admin_content">
+                                            <h5 class="testimonial_name">Nguyễn Văn A</h5>
+                                            <span class="testimonial_designation">Học viên khóa ...</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="column">
-                                    <b class="day">12</b>
-                                    <span class="month">february</span>
-                                    <strong class="time">03:50 PM</strong>
+                            </div>
+                        </div>
+                        <div class="carousel_item">
+                            <div class="testimonial_item_2">
+                                <div class="testimonial_image ms-0 aspect-video"
+                                     style="background-image: url('assets/images/shape/shape_img_6.svg');">
+                                    {{-- <img src="assets/images/testimonial/testimonial_img_3.png" alt="Collab – Online Learning Platform"> --}}
+                                    <lite-youtube class="w-full h-full" videoid="ogfYd705cRs"
+                                                  playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
                                 </div>
-                                <div class="column">
-                                    <h4 class="event_title">Digital Transformation Conference</h4>
-                                    <span class="event_name">
-                                        <strong>Prepare for:</strong> <small>Lora Hill</small>
-                                    </span>
+                                <div class="testimonial_content">
+                                    <div class="quote_icon">
+                                        <img src="assets/images/icon/icon_quote.svg"
+                                             alt="Collab – Online Learning Platform">
+                                    </div>
+                                    <h3 class="testimonial_title">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore esse.
+                                    </h3>
+                                    <p>
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                        fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
+                                    </p>
+                                    <div class="testimonial_admin">
+                                        <div class="admin_image">
+                                            <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
+                                                 alt="Collab – Online Learning Platform">
+                                        </div>
+                                        <div class="admin_content">
+                                            <h5 class="testimonial_name">Nguyễn Văn A</h5>
+                                            <span class="testimonial_designation">Học viên khóa ...</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="column">
-                                    <b class="day">12</b>
-                                    <span class="month">february</span>
-                                    <strong class="time">03:50 PM</strong>
+                            </div>
+                        </div>
+                        <div class="carousel_item">
+                            <div class="testimonial_item_2">
+                                <div class="testimonial_image ms-0 aspect-video"
+                                     style="background-image: url('assets/images/shape/shape_img_6.svg');">
+                                    {{-- <img src="assets/images/testimonial/testimonial_img_3.png" alt="Collab – Online Learning Platform"> --}}
+                                    <lite-youtube class="w-full h-full" videoid="ogfYd705cRs"
+                                                  playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
                                 </div>
-                                <div class="column">
-                                    <h4 class="event_title">Digital Transformation Conference</h4>
-                                    <span class="event_name">
-                                        <strong>Prepare for:</strong> <small>Lora Hill</small>
-                                    </span>
+                                <div class="testimonial_content">
+                                    <div class="quote_icon">
+                                        <img src="assets/images/icon/icon_quote.svg"
+                                             alt="Collab – Online Learning Platform">
+                                    </div>
+                                    <h3 class="testimonial_title">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore esse.
+                                    </h3>
+                                    <p>
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                        fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
+                                    </p>
+                                    <div class="testimonial_admin">
+                                        <div class="admin_image">
+                                            <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
+                                                 alt="Collab – Online Learning Platform">
+                                        </div>
+                                        <div class="admin_content">
+                                            <h5 class="testimonial_name">Nguyễn Văn A</h5>
+                                            <span class="testimonial_designation">Học viên khóa ...</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="column">
-                                    <b class="day">12</b>
-                                    <span class="month">february</span>
-                                    <strong class="time">03:50 PM</strong>
+                            </div>
+                        </div>
+                        <div class="carousel_item">
+                            <div class="testimonial_item_2">
+                                <div class="testimonial_image ms-0 aspect-video"
+                                     style="background-image: url('assets/images/shape/shape_img_6.svg');">
+                                    {{-- <img src="assets/images/testimonial/testimonial_img_3.png" alt="Collab – Online Learning Platform"> --}}
+                                    <lite-youtube class="w-full h-full" videoid="ogfYd705cRs"
+                                                  playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
                                 </div>
-                                <div class="column">
-                                    <h4 class="event_title">Digital Transformation Conference</h4>
-                                    <span class="event_name">
-                                        <strong>Prepare for:</strong> <small>Lora Hill</small>
-                                    </span>
+                                <div class="testimonial_content">
+                                    <div class="quote_icon">
+                                        <img src="assets/images/icon/icon_quote.svg"
+                                             alt="Collab – Online Learning Platform">
+                                    </div>
+                                    <h3 class="testimonial_title">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore esse.
+                                    </h3>
+                                    <p>
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                        fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
+                                    </p>
+                                    <div class="testimonial_admin">
+                                        <div class="admin_image">
+                                            <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
+                                                 alt="Collab – Online Learning Platform">
+                                        </div>
+                                        <div class="admin_content">
+                                            <h5 class="testimonial_name">Nguyễn Văn A</h5>
+                                            <span class="testimonial_designation">Học viên khóa ...</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+                        <div class="carousel_item">
+                            <div class="testimonial_item_2">
+                                <div class="testimonial_image ms-0 aspect-video"
+                                     style="background-image: url('assets/images/shape/shape_img_6.svg');">
+                                    {{-- <img src="assets/images/testimonial/testimonial_img_3.png" alt="Collab – Online Learning Platform"> --}}
+                                    <lite-youtube class="w-full h-full" videoid="ogfYd705cRs"
+                                                  playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
+                                </div>
+                                <div class="testimonial_content">
+                                    <div class="quote_icon">
+                                        <img src="assets/images/icon/icon_quote.svg"
+                                             alt="Collab – Online Learning Platform">
+                                    </div>
+                                    <h3 class="testimonial_title">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore esse.
+                                    </h3>
+                                    <p>
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                        fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
+                                    </p>
+                                    <div class="testimonial_admin">
+                                        <div class="admin_image">
+                                            <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
+                                                 alt="Collab – Online Learning Platform">
+                                        </div>
+                                        <div class="admin_content">
+                                            <h5 class="testimonial_name">Nguyễn Văn A</h5>
+                                            <span class="testimonial_designation">Học viên khóa ...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="deco_item shape_img_1" data-parallax='{"y" : 130, "smoothness": 6}'>
-            <img src="assets/images/shape/shape_img_3.png" alt="Collab – Online Learning Platform">
-        </div>
-        <div class="deco_item shape_img_2" data-parallax='{"x" : -130, "smoothness": 6}'>
-            <img src="assets/images/shape/shape_img_3.png" alt="Collab – Online Learning Platform">
-        </div>
-        <div class="deco_item shape_img_3" data-parallax='{"y" : -130, "smoothness": 6}'>
-            <img src="assets/images/shape/shape_img_3.png" alt="Collab – Online Learning Platform">
-        </div>
-    </section>
-    <!-- Popular Event Section - End
-    ================================================== -->
+        </section>
+        <!-- Testimonial Section - End
+        ================================================== -->
 
-    <!-- FAQ Section - Start
-    ================================================== -->
-    <section class="faq_section section_space_lg">
-        <div class="container">
-            <div class="section_heading text-center mb-3">
+        <!-- FAQ Section - Start
+        ================================================== -->
+        <section class="faq_section section_space_lg">
+            <div class="container">
+                <div class="section_heading text-center mb-3">
+                    <div class="row justify-content-center">
+                        <div class="col col-lg-7">
+                            <h2 class="heading_text mb-0">
+                                Câu hỏi thường gặp
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row justify-content-center">
-                    <div class="col col-lg-7">
-                        <h2 class="heading_text mb-0">
-                            Popular Questions to Ask Before Choosing a Course
-                        </h2>
+                    <div class="col col-lg-10">
+                        <div class="accordion" id="faq_accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-button" role="button" data-bs-toggle="collapse"
+                                     data-bs-target="#collapse_one" aria-expanded="true">
+                                    What do Collab courses include?
+                                </div>
+                                <div id="collapse_one" class="accordion-collapse collapse show"
+                                     data-bs-parent="#faq_accordion">
+                                    <div class="accordion-body">
+                                        <p class="mb-0">
+                                            Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit
+                                            libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim
+                                            ut
+                                            sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum
+                                            varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit
+                                            amet
+                                            risus nullam eget felis eget nunc.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-button collapsed" role="button" data-bs-toggle="collapse"
+                                     data-bs-target="#collapse_two" aria-expanded="false">
+                                    Do I have to start my course at a certain time?
+                                </div>
+                                <div id="collapse_two" class="accordion-collapse collapse"
+                                     data-bs-parent="#faq_accordion">
+                                    <div class="accordion-body">
+                                        <p class="mb-0">
+                                            Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit
+                                            libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim
+                                            ut
+                                            sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum
+                                            varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit
+                                            amet
+                                            risus nullam eget felis eget nunc.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-button collapsed" role="button" data-bs-toggle="collapse"
+                                     data-bs-target="#collapse_three" aria-expanded="false">
+                                    How do I take a Collab course?
+                                </div>
+                                <div id="collapse_three" class="accordion-collapse collapse"
+                                     data-bs-parent="#faq_accordion">
+                                    <div class="accordion-body">
+                                        <p class="mb-0">
+                                            Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit
+                                            libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim
+                                            ut
+                                            sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum
+                                            varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit
+                                            amet
+                                            risus nullam eget felis eget nunc.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-button collapsed" role="button" data-bs-toggle="collapse"
+                                     data-bs-target="#collapse_four" aria-expanded="false">
+                                    Do I receive anything after I complete a course?
+                                </div>
+                                <div id="collapse_four" class="accordion-collapse collapse"
+                                     data-bs-parent="#faq_accordion">
+                                    <div class="accordion-body">
+                                        <p class="mb-0">
+                                            Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit
+                                            libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim
+                                            ut
+                                            sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum
+                                            varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit
+                                            amet
+                                            risus nullam eget felis eget nunc.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-button collapsed" role="button" data-bs-toggle="collapse"
+                                     data-bs-target="#collapse_five" aria-expanded="false">
+                                    Where can I go for help?
+                                </div>
+                                <div id="collapse_five" class="accordion-collapse collapse"
+                                     data-bs-parent="#faq_accordion">
+                                    <div class="accordion-body">
+                                        <p class="mb-0">
+                                            Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit
+                                            libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim
+                                            ut
+                                            sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum
+                                            varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit
+                                            amet
+                                            risus nullam eget felis eget nunc.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="row justify-content-center">
-                <div class="col col-lg-10">
-                    <div class="accordion" id="faq_accordion">
-                        <div class="accordion-item">
-                            <div class="accordion-button" role="button" data-bs-toggle="collapse"
-                                 data-bs-target="#collapse_one" aria-expanded="true">
-                                What do Collab courses include?
-                            </div>
-                            <div id="collapse_one" class="accordion-collapse collapse show"
-                                 data-bs-parent="#faq_accordion">
-                                <div class="accordion-body">
-                                    <p class="mb-0">
-                                        Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit
-                                        libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim ut
-                                        sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum
-                                        varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit amet
-                                        risus nullam eget felis eget nunc.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-button collapsed" role="button" data-bs-toggle="collapse"
-                                 data-bs-target="#collapse_two" aria-expanded="false">
-                                Do I have to start my course at a certain time?
-                            </div>
-                            <div id="collapse_two" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
-                                <div class="accordion-body">
-                                    <p class="mb-0">
-                                        Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit
-                                        libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim ut
-                                        sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum
-                                        varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit amet
-                                        risus nullam eget felis eget nunc.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-button collapsed" role="button" data-bs-toggle="collapse"
-                                 data-bs-target="#collapse_three" aria-expanded="false">
-                                How do I take a Collab course?
-                            </div>
-                            <div id="collapse_three" class="accordion-collapse collapse"
-                                 data-bs-parent="#faq_accordion">
-                                <div class="accordion-body">
-                                    <p class="mb-0">
-                                        Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit
-                                        libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim ut
-                                        sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum
-                                        varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit amet
-                                        risus nullam eget felis eget nunc.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-button collapsed" role="button" data-bs-toggle="collapse"
-                                 data-bs-target="#collapse_four" aria-expanded="false">
-                                Do I receive anything after I complete a course?
-                            </div>
-                            <div id="collapse_four" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
-                                <div class="accordion-body">
-                                    <p class="mb-0">
-                                        Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit
-                                        libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim ut
-                                        sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum
-                                        varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit amet
-                                        risus nullam eget felis eget nunc.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-button collapsed" role="button" data-bs-toggle="collapse"
-                                 data-bs-target="#collapse_five" aria-expanded="false">
-                                Where can I go for help?
-                            </div>
-                            <div id="collapse_five" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
-                                <div class="accordion-body">
-                                    <p class="mb-0">
-                                        Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit
-                                        libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim ut
-                                        sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum
-                                        varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit amet
-                                        risus nullam eget felis eget nunc.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- FAQ Section - End
-    ================================================== -->
-@endsection
+        </section>
+        <!-- FAQ Section - End
+        ================================================== -->
+    </main>
+    @endvolt
+</x-layouts.app>

@@ -69,7 +69,6 @@
         import lgThumbnail from 'https://unpkg.com/lightgallery@2.7.2/plugins/zoom/lg-zoom.es5.js';
         import lgZoom from 'https://unpkg.com/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.es5.js';
 
-
         lightGallery(document.getElementById('lightgallery'), {
             plugins: [lgZoom, lgThumbnail],
             speed: 500,

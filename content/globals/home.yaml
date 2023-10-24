@@ -1,0 +1,29 @@
+title: 'Trang chủ'
+data:
+  banners:
+    -
+      id: lnnilbo0
+      banner:
+        - banner.png
+      type: new_set
+      enabled: true
+    -
+      id: lnnimhsy
+      banner:
+        - banner.png
+      type: new_set
+      enabled: true
+    -
+      id: lnniml6i
+      banner:
+        - banner.png
+      type: new_set
+      enabled: true
+    -
+      id: lnnimn6y
+      banner:
+        - banner.png
+      type: new_set
+      enabled: true
+  ho_va_ten: 'Nguyễn Phương Thúy'
+  gioi_thieu: '<ul><li><p>Tốt nghiệp loại giỏi Đại học Ngoại ngữ - ĐHQG Hà Nội</p></li><li><p>Tốt nghiệp loại giỏi Đại học Quốc gia Pusan, Hàn Quốc</p></li><li><p>Giám sát viên ngân hàng Shinhan Việt Nam</p></li><li><p>Giảng viên khoa tiếng Hàn, Đại học Hà Nội</p></li></ul><p></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto at, commodi cum distinctio dolor dolores eligendi eveniet impedit in ipsam maiores maxime nemo officia tempora tempore ullam vero, voluptas, voluptatibus?</p>'

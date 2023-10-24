@@ -16,69 +16,203 @@
 \Artesaos\SEOTools\Facades\JsonLd::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
 \Artesaos\SEOTools\Facades\JsonLd::addImage(asset('assets/images/banner/banner.png'));
 
+$data    = \Livewire\Volt\computed(fn() => \Statamic\Facades\GlobalSet::findByHandle('home')?->inCurrentSite()?->data());
+$aboutUs = \Livewire\Volt\computed(fn() => \Statamic\Facades\GlobalSet::findByHandle('ve_chung_toi')?->inCurrentSite()?->data());
+$courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollection('khoa_hoc'));
+
 ?>
 
-@extends('layouts.app')
+@push('styles')
+    <link rel="stylesheet" href="https://unpkg.com/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
+@endpush
 
-@section('content')
+@push('scripts')
+    <script type="module">
+        import lightGallery from "https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/+esm";
+        import lgThumbnail from "https://unpkg.com/lightgallery@2.7.2/plugins/zoom/lg-zoom.es5.js";
+        import lgZoom from "https://unpkg.com/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.es5.js";
+
+        lightGallery(document.getElementById("lightgallery"), {
+            plugins: [lgZoom, lgThumbnail],
+            speed: 500,
+        });
+    </script>
+@endpush
+
+<x-layouts.app>
+    @volt
     <main class="page_content">
         <!-- Banner Section - Start
         ================================================== -->
-        <section class="hero_banner style_1">
-            <div class="container">
-                <div class="common_carousel_1col" data-cursor-text="Drag" data-slick='{"dots":false, "autoplay":true, "arrows": true}'>
-                    <div class="carousel_item">
-                        <img src="{{ asset('assets/images/banner/banner.png') }}" class="object-cover" alt="">
+        <section style="background-image: url('{{ asset('assets/images/banner/banner.png') }}')"
+                 class="hero_banner style_1">
+            <div class="container flex items-stretch">
+                <div class="flex w-1/2 flex-col text-left">
+                    <div class="flex grow flex-col items-start justify-center">
+                        <span class="bg-alternative-darker text-[#3C1E1F] font-bold text-2xl px-6 py-1 rounded">
+                            Trung Tâm Tiếng Hàn
+                        </span>
+                        <h1 class="mt-8 uppercase !text-5xl text-orange-950 !leading-[4.5rem]">
+                            Toàn diện cho<br> ngưới mới bắt đầu
+                        </h1>
                     </div>
-                    <div class="carousel_item">
-                        <img src="{{ asset('assets/images/banner/banner.png') }}" class="object-cover" alt="">
-                    </div>
-                    <div class="carousel_item">
-                        <img src="{{ asset('assets/images/banner/banner.png') }}" class="object-cover" alt="">
-                    </div>
-                    <div class="carousel_item">
-                        <img src="{{ asset('assets/images/banner/banner.png') }}" class="object-cover" alt="">
+
+                    <div class="mb-16 w-3/4">
+                        <h2 class="text-xl">Sự kiện mới</h2>
+
+                        <div class="pt-2 tabs_wrapper">
+                            <div class="tab-content">
+                                <div class="relative tab-pane fade show active" id="teb_hr" role="tabpanel">
+                                    <div
+                                        class="absolute top-0 right-0 h-full w-16 bg-[linear-gradient(270deg,_#F7F5EF_6%,_rgba(247,_245,_239,_0)_100%)] z-[99999]"></div>
+                                    <div class="flex flex-nowrap justify-center common_carousel_3col [&>button]:-top-8">
+                                        <div class="pr-4">
+                                            <img class="rounded border border-primary"
+                                                 src="https://placehold.co/160x110" alt="">
+                                        </div>
+                                        <div class="pr-4">
+                                            <img class="rounded border border-primary"
+                                                 src="https://placehold.co/160x110" alt="">
+                                        </div>
+                                        <div class="pr-4">
+                                            <img class="rounded border border-primary"
+                                                 src="https://placehold.co/160x110" alt="">
+                                        </div>
+                                        <div class="pr-4">
+                                            <img class="rounded border border-primary"
+                                                 src="https://placehold.co/160x110" alt="">
+                                        </div>
+                                        <div class="pr-4">
+                                            <img class="rounded border border-primary"
+                                                 src="https://placehold.co/160x110" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <img class="w-1/2" src="{{ asset('assets/images/banner/hero_banner_img_2.png') }}" alt="">
             </div>
         </section>
         <!-- Banner Section - End
         ================================================== -->
 
-        <!-- Expect From Course - Start
+        <!-- Courses Section - Start
         ================================================== -->
-        <section class="expect_from_course section_space_lg">
+        <section class="pt-8 courses_section section_space_lg">
+            <div class="container">
+                <div class="section_heading">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col col-lg-6">
+                            <h3 class="text-2xl !text-secondary">Tuyển Sinh</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                các khóa học
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs_wrapper">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="teb_hr" role="tabpanel">
+                            <div class="flex-nowrap justify-center row common_carousel_3col">
+                                @foreach($this->courses as $course)
+                                    <div class="overflow-visible col col-lg-4 carousel_item">
+                                        <div class="overflow-visible course_card @if($loop->odd) mt-8 @endif">
+                                            <div class="item_image">
+                                                <a class="border !border-gray-300"
+                                                   href="{{ route('courses.show', ['id' => 'offline']) }}"
+                                                   data-cursor-text="View">
+                                                    <img
+                                                        src="{{ $course->hinh_anh[0]->url }}"
+                                                        alt="Hi Korean">
+                                                </a>
+                                            </div>
+                                            <div class="item_content">
+                                                <h3 class="py-0 item_title">
+                                                    <a href="{{ route('courses.show', ['id' => 'offline']) }}"
+                                                       class="flex items-baseline gap-2">
+                                                        <div class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                        <div class="truncate">{{ $course->title }}</div>
+                                                    </a>
+                                                </h3>
+                                                <p class="h-28 pt-2 line-clamp-4">
+                                                    {{ $course->mo_ta }}
+                                                </p>
+                                                <div class="flex items-center justify-between">
+                                                    <div class="flex items-start gap-1 font-bold text-gray-500">
+                                                        <svg class="h-5 w-5" viewBox="0 0 24 24">
+                                                            <path fill="currentColor"
+                                                                  d="m8.85 17.825l3.15-1.9l3.15 1.925l-.825-3.6l2.775-2.4l-3.65-.325l-1.45-3.4l-1.45 3.375l-3.65.325l2.775 2.425l-.825 3.575Zm3.15.45l-4.15 2.5q-.275.175-.575.15t-.525-.2q-.225-.175-.35-.438t-.05-.587l1.1-4.725L3.775 11.8q-.25-.225-.312-.513t.037-.562q.1-.275.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15q.275 0 .537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45q.1.275.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437q-.225.175-.525.2t-.575-.15l-4.15-2.5Zm0-5.025Z"/>
+                                                        </svg>
+                                                        {{ round($course->danh_gia / 10, 1) }}
+                                                        -
+                                                        {{ $course->so_buoi }} buổi
+                                                    </div>
+
+                                                    <a class="px-2 py-2 btn btn_primary"
+                                                       href="{{ route('courses.show', ['id' => 'offline']) }}">
+                                                        <span>
+                                                            <small class="py-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                                     height="32" viewBox="0 0 24 24">
+                                                                    <path fill="currentColor"
+                                                                          d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
+                                                                </svg>
+                                                            </small>
+                                                            <small class="py-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                                     height="32" viewBox="0 0 24 24">
+                                                                    <path fill="currentColor"
+                                                                          d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
+                                                                </svg>
+                                                            </small>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Courses Section - End
+        ================================================== -->
+
+        <!-- Về chúng tôi - Start
+        ================================================== -->
+        <section class="expect_from_course section_space_lg bg-[#F8F2E6]">
             <div class="container">
                 <div class="row">
-                    <div class="col col-lg-6">
+                    <div class="col col-lg-5">
+
                         <div class="section_heading">
-                            <h2 class="heading_text">
-                                Về chúng tôi
+                            <h3 class="text-2xl !text-secondary">Hi Korean</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                về chúng tôi
                             </h2>
-                            <p class="heading_description mb-0">
-                                Tại Hi Korean, chúng tôi sẽ giúp bạn học tiếng Hàn với ý chí phấn đấu, tự tin để vững
-                                tiến vào tương lai và tự tin bước vào các công ty Hàn Quốc để làm việc.
+                            <p class="mt-10 mb-0 heading_description">
+                                {{ $this->aboutUs['gioi_thieu'] }}
                             </p>
                         </div>
 
-                        <div class="image_widget">
-                            <img src="{{ asset('assets/images/about/about-usus.jpeg') }}" alt="Hi Korean">
-                        </div>
-                    </div>
-                    <div class="col col-lg-6">
                         <!-- Button will hide on Mobile Device -->
-                        <div class="btn_wrap pt-0 d-none d-lg-flex justify-content-end">
-                            <a class="btn border_dark" href="course.html">
-                                <span>
-                                    <small>Tìm hiểu thêm</small>
-                                    <small>Tìm hiểu thêm</small>
-                                </span>
-                            </a>
-                        </div>
-
+                        <a wire:navigate class="border btn btn_primary border-primary" href="{{ route('about_us') }}">
+                            <span>
+                                <small>Tìm hiểu thêm</small>
+                                <small>Tìm hiểu thêm</small>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col col-lg-7">
                         <div class="row">
                             <div class="col col-md-6">
-                                <div class="service_item" data-magnetic>
+                                <div class="border border-black service_item" data-magnetic>
                                     <div class="item_icon">
                                         <img src="assets/images/service/icon_academic_cap.svg"
                                              alt="Hi Korean">
@@ -91,9 +225,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col col-md-6">
-                                <div class="service_item" data-magnetic>
+                                <div class="mt-8 border border-black service_item" data-magnetic>
                                     <div class="item_icon">
                                         <img src="assets/images/service/icon_communication.svg"
                                              alt="Hi Korean">
@@ -108,7 +240,7 @@
                                 </div>
                             </div>
                             <div class="col col-md-6">
-                                <div class="service_item" data-magnetic>
+                                <div class="border border-black service_item" data-magnetic>
                                     <div class="item_icon">
                                         <img src="assets/images/service/icon_physics.svg"
                                              alt="Hi Korean">
@@ -122,9 +254,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col col-md-6">
-                                <div class="service_item" data-magnetic>
+                                <div class="mt-8 border border-black service_item" data-magnetic>
                                     <div class="item_icon">
                                         <img src="assets/images/service/icon_diploma.svg"
                                              alt="Hi Korean">
@@ -139,117 +269,41 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Button will show on Mobile Device -->
-                        <div class="btn_wrap pb-0 d-block d-lg-none text-center">
-                            <a class="btn border_dark" href="course.html">
-                                <span>
-                                    <small>Explore Courses</small>
-                                    <small>Explore Courses</small>
-                                </span>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Expect From Course - End
-        ================================================== -->
-
-        <!-- Counter Section - Start
-        ================================================== -->
-        <section class="counter_section bg_light section_space_md">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-lg-3 col-md-6">
-                        <div class="counter_item">
-                            <h3 class="counter_value">
-                                <span class="counter_value_text">500</span>
-                                <span>+</span>
-                            </h3>
-                            <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
-                                Giờ học đã diễn ra
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col col-lg-3 col-md-6">
-                        <div class="counter_item">
-                            <h3 class="counter_value">
-                                <span class="counter_value_text">1500</span>
-                                <span>+</span>
-                            </h3>
-                            <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
-                                Học viên hoàn thành chương trình học và có việc làm
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col col-lg-3 col-md-6">
-                        <div class="counter_item">
-                            <h3 class="counter_value">
-                                <span class="counter_value_text">10</span>
-                            </h3>
-                            <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
-                                Khóa học đang được vận hành
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col col-lg-3 col-md-6">
-                        <div class="counter_item">
-                            <h3 class="counter_value">
-                                <span class="counter_value_text">40</span>
-                                <span>+</span>
-                            </h3>
-                            <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
-                                Giảng viên với kinh nghiệm tiếng Hàn tối thiểu 2 năm giảng dạy tiếng Hàn
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Counter Section - End
+        <!-- Về chúng tôi - End
         ================================================== -->
 
         <!-- Về CEO - Start
         ================================================== -->
-        <section class="hero_banner style_1 mt-24">
+        <section class="expect_from_course section_space_lg">
             <div class="container">
-                <div class="content_wrap">
-                    <div class="row gap-2 flex-nowrap">
-                        <div class="col col-lg-7 text-left">
-                            <h1 class="banner_small_title">CEO - Giảng viên</h1>
-                            <h2 class="banner_big_title">Nguyễn Phương Thúy</h2>
-                            <div class="banner_description text-lg">
-                                <ul class="flex flex-col items-start gap-4 mt-12">
-                                    <li>Tốt nghiệp loại giỏi Đại học Ngoại ngữ - ĐHQG Hà Nội</li>
-                                    <li>Tốt nghiệp loại giỏi Đại học Quốc gia Pusan, Hàn Quốc</li>
-                                    <li>Giám sát viên ngân hàng Shinhan Việt Nam</li>
-                                    <li>Giảng viên khoa tiếng Hàn, Đại học Hà Nội</li>
-                                </ul>
-                                <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto at,
-                                    commodi cum distinctio dolor dolores eligendi eveniet impedit in ipsam maiores
-                                    maxime nemo officia tempora tempore ullam vero, voluptas, voluptatibus?</p>
-                            </div>
+                <div class="items-center row">
+                    <div class="pr-8 col col-lg-5">
+                        <div class="section_heading">
+                            <h3 class="text-2xl !text-secondary">Hi Korean</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                CEO
+                            </h2>
+                            <h3 class="mt-8 text-4xl">Nguyễn Phương Thúy</h3>
+                            <p class="mt-10 mb-0 heading_description">
+                            <ul class="">
+                                <li>Tốt nghiệp loại giỏi Đại học Ngoại ngữ - ĐHQG Hà Nội</li>
+                                <li>Tốt nghiệp loại giỏi Đại học Quốc gia Pusan, Hàn Quốc</li>
+                                <li>Giám sát viên ngân hàng Shinhan Việt Nam</li>
+                                <li>Giảng viên khoa tiếng Hàn, Đại học Hà Nội</li>
+                            </ul>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto at, commodi cum
+                            distinctio dolor dolores eligendi eveniet impedit in ipsam maiores maxime nemo officia
+                            tempora tempore ullam vero, voluptas, voluptatibus?
+                            </p>
                         </div>
-                        <div class="col col-lg-5">
-                            <div class="banner_image_1 decoration_wrap m-0">
-                                <div class="image_wrap">
-                                    <img class="w-full" src="assets/images/banner/hero_banner_img_1.jpg"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                                <div class="deco_item shape_img_1" data-parallax='{"y" : -130, "smoothness": 6}'>
-                                    <img src="assets/images/shape/shape_img_1.png"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                                <div class="deco_item shape_img_2" data-parallax='{"y" : 160, "smoothness": 6}'>
-                                    <img src="assets/images/shape/shape_img_2.png"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="pl-8 col col-lg-7">
+                        <img class="aspect-square w-full rounded border object-cover border-primary"
+                             src="http://hikorean.edu.vn/wp-content/uploads/2023/08/649543a7cc3b9.png" alt="">
                     </div>
                 </div>
             </div>
@@ -257,213 +311,118 @@
         <!-- Về CEO - End
         ================================================== -->
 
-        <!-- Advertisement Section - Start
+        <!-- Giảng viên - Start
         ================================================== -->
-        <section class="advertisement_section bg_dark">
+        <section class="expect_from_course section_space_lg bg-alternative-lighter">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col col-lg-6">
-                        <div class="section_heading mb-lg-0">
-                            <h2 class="heading_text text-white">
-                                Đội ngũ giảng viên
+                <div class="row">
+                    <div class="pr-8 col col-lg-4">
+                        <div class="section_heading">
+                            <h3 class="text-2xl !text-secondary">Đội ngũ</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                giáo viên
                             </h2>
-                            <p class="heading_description mb-0 text-white">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium autem beatae
-                                dolorum eaque eius et fuga, id, labore laboriosam libero magni maiores modi non
-                                obcaecati, sint vel voluptate. Aliquam.
+                            <p class="mt-10 mb-0 heading_description">
+                                Chúng tôi tự hào là đơn vị đem lại một môi trường đào tạo tiếng Hàn chất lượng tốt nhất,
+                                quan tâm đến người học, đến những đam mê và ước mơ của học viên.
                             </p>
-                            <div class="btn_wrap pb-0">
-                                <a class="btn btn_primary" href="course.html">
-                                    <span>
-                                        <small>Xem thêm</small>
-                                        <small>Xem thêm</small>
-                                    </span>
-                                </a>
-                            </div>
                         </div>
                     </div>
-                    <div class="col col-lg-6">
-                        <div class="row images_group decoration_wrap">
-                            <div class="col col-md-6 col-sm-6">
-                                <div class="image_wrap">
-                                    <img src="assets/images/advertisement/advertisement_img_1.jpg"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                                <div class="image_wrap">
-                                    <img src="assets/images/advertisement/advertisement_img_2.jpg"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                            </div>
-                            <div class="col col-md-6 col-sm-6">
-                                <div class="image_wrap">
-                                    <img src="assets/images/advertisement/advertisement_img_3.jpg"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                                <div class="image_wrap">
-                                    <img src="assets/images/advertisement/advertisement_img_4.jpg"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                            </div>
-                            <div class="deco_item shape_img_1" data-parallax='{"y" : -130, "smoothness": 6}'>
-                                <img src="assets/images/shape/shape_img_3.png" alt="Collab – Online Learning Platform">
-                            </div>
-                            <div class="deco_item shape_img_2" data-parallax='{"y" : 130, "smoothness": 6}'>
-                                <img src="assets/images/shape/shape_img_3.png" alt="Collab – Online Learning Platform">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Advertisement Section - End
-        ================================================== -->
-
-        <!-- Courses Section - Start
-        ================================================== -->
-        <section class="courses_section section_space_lg">
-            <div class="container">
-                <div class="section_heading">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col col-lg-6">
-                            <h2 class="heading_text mb-0">
-                                Tuyển sinh các khóa học
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tabs_wrapper">
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="teb_hr" role="tabpanel">
-                            <div class="row justify-center">
-                                <div class="col col-lg-4">
-                                    <div class="course_card">
-                                        <div class="item_image">
-                                            <a href="course_details.html" data-cursor-text="View">
-                                                <img
-                                                    src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b0f368c935-450x300.png"
-                                                    alt="Hi Korean">
+                    <div class="pl-8 col col-lg-8">
+                        <div class="mt-28 flex-nowrap justify-center row common_carousel_2col">
+                            <div class="overflow-visible col col-lg-4 carousel_item">
+                                <div
+                                    class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
+                                    <div class="item_image">
+                                        <a class="border !border-gray-300">
+                                            <img src="https://placehold.co/320x320"
+                                                 alt="Hi Korean">
+                                        </a>
+                                    </div>
+                                    <div class="item_content">
+                                        <h3 class="py-0 item_title">
+                                            <a class="flex items-baseline gap-2">
+                                                <div
+                                                    class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                <div class="truncate">Cô Thùy Dương</div>
                                             </a>
-                                        </div>
-                                        <div class="item_content">
-                                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                                <ul class="item_category_list unordered_list">
-                                                    <li><a href="#!">Sơ cấp/Trung cấp</a></li>
-                                                </ul>
-                                            </div>
-                                            <h3 class="item_title py-0">
-                                                <a href="course_details.html">
-                                                    Học trực tiếp
-                                                </a>
-                                            </h3>
-                                            <p class="pt-2">
-                                                Khoá học dành cho những bạn muốn có được nền tảng tiếng Hàn vững chắc
-                                            </p>
-                                        </div>
+                                        </h3>
+                                        <ul class="mb-0 pt-4">
+                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
+                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="col col-lg-4">
-                                    <div class="course_card">
-                                        <div class="item_image">
-                                            <a href="course_details.html" data-cursor-text="View">
-                                                <img
-                                                    src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b0f368c935-450x300.png"
-                                                    alt="Hi Korean">
+                            </div>
+                            <div class="overflow-visible col col-lg-4 carousel_item">
+                                <div
+                                    class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
+                                    <div class="item_image">
+                                        <a class="border !border-gray-300">
+                                            <img src="https://placehold.co/320x320"
+                                                 alt="Hi Korean">
+                                        </a>
+                                    </div>
+                                    <div class="item_content">
+                                        <h3 class="py-0 item_title">
+                                            <a class="flex items-baseline gap-2">
+                                                <div
+                                                    class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                <div class="truncate">Cô Thùy Dương</div>
                                             </a>
-                                        </div>
-                                        <div class="item_content">
-                                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                                <ul class="item_category_list unordered_list">
-                                                    <li><a href="#!">Sơ cấp / Trung cấp</a></li>
-                                                </ul>
-                                            </div>
-                                            <h3 class="item_title py-0">
-                                                <a href="course_details.html">
-                                                    E-learning
-                                                </a>
-                                            </h3>
-                                            <p class="pt-2">
-                                                Khoá học dành cho những bạn muốn có được nền tảng tiếng Hàn vững chắc
-                                            </p>
-                                        </div>
+                                        </h3>
+                                        <ul class="mb-0 pt-4">
+                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
+                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="col col-lg-4">
-                                    <div class="course_card">
-                                        <div class="item_image">
-                                            <a href="course_details.html" data-cursor-text="View">
-                                                <img
-                                                    src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b0f368c935-450x300.png"
-                                                    alt="Hi Korean">
+                            </div>
+                            <div class="overflow-visible col col-lg-4 carousel_item">
+                                <div
+                                    class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
+                                    <div class="item_image">
+                                        <a class="border !border-gray-300">
+                                            <img src="https://placehold.co/320x320"
+                                                 alt="Hi Korean">
+                                        </a>
+                                    </div>
+                                    <div class="item_content">
+                                        <h3 class="py-0 item_title">
+                                            <a class="flex items-baseline gap-2">
+                                                <div
+                                                    class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                <div class="truncate">Cô Thùy Dương</div>
                                             </a>
-                                        </div>
-                                        <div class="item_content">
-                                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                                <ul class="item_category_list unordered_list">
-                                                    <li><a href="#!">Sơ cấp / Trung cấp</a></li>
-                                                </ul>
-                                            </div>
-                                            <h3 class="item_title py-0">
-                                                <a href="course_details.html">
-                                                    Online
-                                                </a>
-                                            </h3>
-                                            <p class="pt-2">
-                                                Khoá học dành cho những bạn muốn có được nền tảng tiếng Hàn vững chắc
-                                            </p>
-                                        </div>
+                                        </h3>
+                                        <ul class="mb-0 pt-4">
+                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
+                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="col col-lg-4">
-                                    <div class="course_card">
-                                        <div class="item_image">
-                                            <a href="course_details.html" data-cursor-text="View">
-                                                <img
-                                                    src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b0f368c935-450x300.png"
-                                                    alt="Hi Korean">
-                                            </a>
-                                        </div>
-                                        <div class="item_content">
-                                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                                <ul class="item_category_list unordered_list">
-                                                    <li><a href="#!">Trẻ em / Người đi làm / Phiên dịch viên</a></li>
-                                                </ul>
-                                            </div>
-                                            <h3 class="item_title py-0">
-                                                <a href="course_details.html">
-                                                    Theo đối tượng
-                                                </a>
-                                            </h3>
-                                            <p class="pt-2">
-                                                Khoá học dành cho những bạn muốn có được nền tảng tiếng Hàn vững chắc
-                                            </p>
-                                        </div>
+                            </div>
+                            <div class="overflow-visible col col-lg-4 carousel_item">
+                                <div
+                                    class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
+                                    <div class="item_image">
+                                        <a class="border !border-gray-300">
+                                            <img src="https://placehold.co/320x320"
+                                                 alt="Hi Korean">
+                                        </a>
                                     </div>
-                                </div>
-                                <div class="col col-lg-4">
-                                    <div class="course_card">
-                                        <div class="item_image">
-                                            <a href="course_details.html" data-cursor-text="View">
-                                                <img
-                                                    src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b0f368c935-450x300.png"
-                                                    alt="Hi Korean">
+                                    <div class="item_content">
+                                        <h3 class="py-0 item_title">
+                                            <a class="flex items-baseline gap-2">
+                                                <div
+                                                    class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                <div class="truncate">Cô Thùy Dương</div>
                                             </a>
-                                        </div>
-                                        <div class="item_content">
-                                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                                <ul class="item_category_list unordered_list">
-                                                    <li><a href="#!">TOPIK / EPS - XKLD</a></li>
-                                                </ul>
-                                            </div>
-                                            <h3 class="item_title py-0">
-                                                <a href="course_details.html">
-                                                    Luyện thi
-                                                </a>
-                                            </h3>
-                                            <p class="pt-2">
-                                                Khoá học dành cho những bạn muốn có được nền tảng tiếng Hàn vững chắc
-                                            </p>
-                                        </div>
+                                        </h3>
+                                        <ul class="mb-0 pt-4">
+                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
+                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -472,31 +431,32 @@
                 </div>
             </div>
         </section>
-        <!-- Courses Section - End
+        <!-- Giảng viên - End
         ================================================== -->
 
         <!-- Popular Event Section - Start
         ================================================== -->
-        <section class="popular_event_section section_space_lg bg_dark decoration_wrap">
+        <section class="popular_event_section section_space_lg decoration_wrap">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col col-lg-7">
                         <div class="section_heading mb-lg-0">
-                            <h2 class="heading_text text-white">
-                                LỊCH KHAI GIẢNG
+                            <h3 class="text-2xl !text-secondary">Tuyển Sinh</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                Lịch khai giảng
                             </h2>
-                            <p class="heading_description mb-0 text-white">
+                            <p class="mt-8 heading_description">
                                 Với kinh nghiệm 6 năm trong lĩnh vực giảng dạy tiếng Hàn, HI KOREAN đã và đang là một
                                 trong những trung tâm đào tạo tiếng Hàn uy tín và chất lượng.
                                 Đặc biệt, chỉ trong tháng này, HI KOREAN sẽ áp dụng ưu đãi giảm giá lên đến 30% cho khoá
                                 học. Đừng bỏ lỡ cơ hội mà hãy để lại thông tin để trung tâm có thể liên hệ và hỗ trợ bạn
                                 nhanh nhất nhé!
                             </p>
-                            <div class="btn_wrap pb-0">
-                                <a class="btn btn_primary" href="event.html">
+                            <div class="pb-0 btn_wrap">
+                                <a class="btn btn_primary border border-primary" href="event.html">
                                     <span>
-                                        <small>Xem tất cả</small>
-                                        <small>Xem tất cả</small>
+                                        <small>Tìm hiểu thêm</small>
+                                        <small>Tìm hiểu thêm</small>
                                     </span>
                                 </a>
                             </div>
@@ -578,77 +538,87 @@
 
         <!-- Call To Action Section - Start
         ================================================== -->
-        <section class="calltoaction_section mt-24">
-            <div class="boxed_wrapper bg_dark overflow-hidden decoration_wrap">
+        <section class="mt-24 calltoaction_section">
+            <div
+                class="boxed_wrapper pb-4 pt-12 bg-[#FDD561] border border-primary rounded-3xl decoration_wrap bg-center bg-cover bg-blend-multiply"
+                style="background-image: url('{{ asset('assets/images/banner/page_banner_image.png') }}')">
                 <div class="row align-items-center">
-                    <div class="col col-lg-7">
+                    <div class="w-full md:w-5/12">
                         <div class="section_heading">
-                            <h2 class="heading_text text-white">
+                            <h2 class="heading_text mb-0">
                                 Đăng ký tham gia
                             </h2>
-                            <h3 class="text-white">
-                                Đặc biệt, chỉ trong tháng này, HI KOREAN sẽ áp dụng ưu đãi giảm giá lên đến 30% cho khoá
-                                học. Đừng bỏ lỡ cơ hội mà hãy để lại thông tin để trung tâm có thể liên hệ và hỗ trợ bạn
-                                nhanh nhất nhé!
+                            <h3 class="font-medium text-base">
+                                Điền thông tin, chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất
                             </h3>
-                            <p class="heading_description mb-0 text-white mt-4">
-                                Với kinh nghiệm 6 năm trong lĩnh vực giảng dạy tiếng Hàn, HI KOREAN đã và đang là một
-                                trong những trung tâm đào tạo tiếng Hàn uy tín và chất lượng.
-                            </p>
-                        </div>
-                        <ul class="info_list unordered_list_block text-white">
-                            <li>
-                                <i class="fas fa-caret-right"></i>
-                                <span><b>Kinh nghiệm:</b> 6 năm</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-caret-right"></i>
-                                <span><b>Email:</b> name@example.com</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-caret-right"></i>
-                                <span><b>SĐT:</b> (+84) 918 516 666</span>
-                            </li>
-                        </ul>
-                        <ul class="social_links unordered_list">
-                            <li>
-                                <a href="#!"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="#!"><i class="fab fa-youtube"></i></a>
-                            </li>
-                            <li>
-                                <a href="#!"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#!"><i class="fab fa-linkedin-in"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col col-lg-5">
-                        <div class="calltoaction_form mb-0">
-                            <form action="#">
-                                <div class="form_item">
-                                    <label for="input_name" class="input_title text-uppercase">Họ và tên</label>
-                                    <input id="input_name" type="text" name="name" placeholder="VD: Nguyễn Văn A">
-                                </div>
-                                <div class="form_item">
-                                    <label for="input_email" class="input_title text-uppercase">SĐT</label>
-                                    <input id="input_email" type="email" name="email" placeholder="VD: 09xx xxx xxx">
-                                </div>
-                                <div class="form_item">
-                                    <label for="input_question" class="input_title text-uppercase">Ghi chú</label>
-                                    <textarea id="input_question" name="Message"
-                                              placeholder="VD: Tôi muốn được tư vấn khóa học online sơ cấp"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn_dark w-100">
-                                    <span>
-                                        <small>Đăng ký</small>
-                                        <small>Đăng ký</small>
-                                    </span>
+
+                            <form action="#" class="mt-8 grid grid-cols-2 gap-4 relative">
+                                <input type="text" class="col-span-1 border border-primary px-4 py-2 rounded-lg"
+                                       placeholder="Họ tên">
+                                <input type="text" class="col-span-1 border border-primary px-4 py-2 rounded-lg"
+                                       placeholder="Số điện thoại">
+                                <input type="email" class="col-span-full border border-primary px-4 py-2 rounded-lg"
+                                       placeholder="Email">
+                                <textarea class="col-span-full border border-primary px-4 py-2 rounded-lg"
+                                          placeholder="Lời nhắn"></textarea>
+                                <button type="submit"
+                                        class="uppercase px-10 py-2 bg-black text-alternative-darker rounded-lg font-bold absolute -bottom-14">
+                                    Gửi form
                                 </button>
                             </form>
                         </div>
+                    </div>
+                    <div class="hidden md:block md:w-7/12">
+                        <svg width="294" height="261" viewBox="0 0 294 261" fill="none"
+                             xmlns="http://www.w3.org/2000/svg" class="ml-auto block">
+                            <path
+                                d="M49 207C196.569 188.497 207.706 81.1818 158.052 74.7059C94.9741 66.479 111.647 169.855 173.83 157.043C240.282 143.351 260.298 69.3093 262 34"
+                                stroke="#B67222" stroke-dasharray="10 10"/>
+                            <g clip-path="url(#clip0_2512_2794)">
+                                <path d="M0.737305 220.436L96.2633 175.733L33.3859 228.043L0.737305 220.436Z"
+                                      fill="white" stroke="#E6BE8F" stroke-width="1.2" stroke-miterlimit="10"
+                                      stroke-linejoin="round"/>
+                                <path d="M41.8737 229.802L33.251 260.231L52.1425 236.444L41.8737 229.802Z"
+                                      fill="#FFEF9E" stroke="#E6BE8F" stroke-width="1.2" stroke-miterlimit="10"
+                                      stroke-linejoin="round"/>
+                                <path d="M96.2628 175.733L41.873 229.802L77.703 252.99L96.2628 175.733Z" fill="white"
+                                      stroke="#E6BE8F" stroke-width="1.2" stroke-miterlimit="10"
+                                      stroke-linejoin="round"/>
+                                <path d="M33.251 228.324V260.267L42.1563 230.192L95.7845 176.758L33.251 228.324Z"
+                                      fill="#FEFFDD" stroke="#E6BE8F" stroke-width="1.2" stroke-miterlimit="10"
+                                      stroke-linejoin="round"/>
+                                <path d="M23.7314 218.433L33.951 212.731" stroke="#E6BE8F" stroke-width="0.5"
+                                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M29.4668 219.459L33.5325 217.054" stroke="#E6BE8F" stroke-width="0.5"
+                                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <g clip-path="url(#clip1_2512_2794)">
+                                <path d="M226.517 31.6995L293.483 0.511108L249.404 37.0069L226.517 31.6995Z"
+                                      fill="white" stroke="#E6BE8F" stroke-width="1.2" stroke-miterlimit="10"
+                                      stroke-linejoin="round"/>
+                                <path d="M255.354 38.2336L249.31 59.4632L262.553 42.868L255.354 38.2336Z" fill="#FFEF9E"
+                                      stroke="#E6BE8F" stroke-width="1.2" stroke-miterlimit="10"
+                                      stroke-linejoin="round"/>
+                                <path d="M293.483 0.511108L255.354 38.2337L280.472 54.4114L293.483 0.511108Z"
+                                      fill="white" stroke="#E6BE8F" stroke-width="1.2" stroke-miterlimit="10"
+                                      stroke-linejoin="round"/>
+                                <path d="M249.31 37.2029V59.4889L255.552 38.5064L293.147 1.22681L249.31 37.2029Z"
+                                      fill="#FEFFDD" stroke="#E6BE8F" stroke-width="1.2" stroke-miterlimit="10"
+                                      stroke-linejoin="round"/>
+                                <path d="M242.636 30.3024L249.8 26.324" stroke="#E6BE8F" stroke-width="0.5"
+                                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M246.657 31.018L249.507 29.3397" stroke="#E6BE8F" stroke-width="0.5"
+                                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_2512_2794">
+                                    <rect width="97" height="86" fill="white" transform="translate(0 175)"/>
+                                </clipPath>
+                                <clipPath id="clip1_2512_2794">
+                                    <rect width="68" height="60" fill="white" transform="translate(226)"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
                     </div>
                 </div>
                 <div class="deco_item shape_img_3" data-parallax='{"y" : 130, "smoothness": 6}'>
@@ -667,184 +637,110 @@
 
         <!-- Testimonial Section - Start
         ================================================== -->
-        <section class="testimonial_section section_space_lg">
+        <section class="pt-16 pb-48 bg-[#FDD561] mt-24 testimonial_section section_space_lg">
             <div class="container">
                 <div class="section_heading">
                     <div class="row align-items-center justify-content-lg-between">
                         <div class="col col-lg-6">
-                            <h2 class="heading_text mb-0">
-                                Cảm nhận học viên
+                            <h3 class="text-2xl !text-secondary">Cảm Nhận</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                Học viên
                             </h2>
                         </div>
                     </div>
                 </div>
 
-                <div class="testimonial_carousel">
-                    <div class="common_carousel_1col" data-cursor-text="Drag" data-slick='{"dots":false}'>
-                        <div class="carousel_item">
-                            <div class="testimonial_item_2">
-                                <div class="testimonial_image ms-0 aspect-video"
-                                     style="background-image: url('assets/images/shape/shape_img_6.svg');">
-                                    {{-- <img src="assets/images/testimonial/testimonial_img_3.png" alt="Collab – Online Learning Platform"> --}}
-                                    <lite-youtube class="w-full h-full" videoid="ogfYd705cRs"
-                                                  playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
-                                </div>
-                                <div class="testimonial_content">
-                                    <div class="quote_icon">
-                                        <img src="assets/images/icon/icon_quote.svg"
-                                             alt="Collab – Online Learning Platform">
-                                    </div>
-                                    <h3 class="testimonial_title">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore esse.
-                                    </h3>
-                                    <p>
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
-                                    </p>
-                                    <div class="testimonial_admin">
-                                        <div class="admin_image">
-                                            <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
-                                                 alt="Collab – Online Learning Platform">
-                                        </div>
-                                        <div class="admin_content">
-                                            <h5 class="testimonial_name">Nguyễn Văn A</h5>
-                                            <span class="testimonial_designation">Học viên khóa ...</span>
-                                        </div>
-                                    </div>
+                <div class="row testimonial_carousel">
+                    <div class="col common_carousel_3col flex flex-nowrap" data-cursor-text="Drag">
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
                                 </div>
                             </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
                         </div>
-                        <div class="carousel_item">
-                            <div class="testimonial_item_2">
-                                <div class="testimonial_image ms-0 aspect-video"
-                                     style="background-image: url('assets/images/shape/shape_img_6.svg');">
-                                    {{-- <img src="assets/images/testimonial/testimonial_img_3.png" alt="Collab – Online Learning Platform"> --}}
-                                    <lite-youtube class="w-full h-full" videoid="ogfYd705cRs"
-                                                  playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
-                                </div>
-                                <div class="testimonial_content">
-                                    <div class="quote_icon">
-                                        <img src="assets/images/icon/icon_quote.svg"
-                                             alt="Collab – Online Learning Platform">
-                                    </div>
-                                    <h3 class="testimonial_title">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore esse.
-                                    </h3>
-                                    <p>
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
-                                    </p>
-                                    <div class="testimonial_admin">
-                                        <div class="admin_image">
-                                            <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
-                                                 alt="Collab – Online Learning Platform">
-                                        </div>
-                                        <div class="admin_content">
-                                            <h5 class="testimonial_name">Nguyễn Văn A</h5>
-                                            <span class="testimonial_designation">Học viên khóa ...</span>
-                                        </div>
-                                    </div>
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
                                 </div>
                             </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
                         </div>
-                        <div class="carousel_item">
-                            <div class="testimonial_item_2">
-                                <div class="testimonial_image ms-0 aspect-video"
-                                     style="background-image: url('assets/images/shape/shape_img_6.svg');">
-                                    {{-- <img src="assets/images/testimonial/testimonial_img_3.png" alt="Collab – Online Learning Platform"> --}}
-                                    <lite-youtube class="w-full h-full" videoid="ogfYd705cRs"
-                                                  playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
-                                </div>
-                                <div class="testimonial_content">
-                                    <div class="quote_icon">
-                                        <img src="assets/images/icon/icon_quote.svg"
-                                             alt="Collab – Online Learning Platform">
-                                    </div>
-                                    <h3 class="testimonial_title">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore esse.
-                                    </h3>
-                                    <p>
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
-                                    </p>
-                                    <div class="testimonial_admin">
-                                        <div class="admin_image">
-                                            <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
-                                                 alt="Collab – Online Learning Platform">
-                                        </div>
-                                        <div class="admin_content">
-                                            <h5 class="testimonial_name">Nguyễn Văn A</h5>
-                                            <span class="testimonial_designation">Học viên khóa ...</span>
-                                        </div>
-                                    </div>
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
                                 </div>
                             </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
                         </div>
-                        <div class="carousel_item">
-                            <div class="testimonial_item_2">
-                                <div class="testimonial_image ms-0 aspect-video"
-                                     style="background-image: url('assets/images/shape/shape_img_6.svg');">
-                                    {{-- <img src="assets/images/testimonial/testimonial_img_3.png" alt="Collab – Online Learning Platform"> --}}
-                                    <lite-youtube class="w-full h-full" videoid="ogfYd705cRs"
-                                                  playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
-                                </div>
-                                <div class="testimonial_content">
-                                    <div class="quote_icon">
-                                        <img src="assets/images/icon/icon_quote.svg"
-                                             alt="Collab – Online Learning Platform">
-                                    </div>
-                                    <h3 class="testimonial_title">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore esse.
-                                    </h3>
-                                    <p>
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
-                                    </p>
-                                    <div class="testimonial_admin">
-                                        <div class="admin_image">
-                                            <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
-                                                 alt="Collab – Online Learning Platform">
-                                        </div>
-                                        <div class="admin_content">
-                                            <h5 class="testimonial_name">Nguyễn Văn A</h5>
-                                            <span class="testimonial_designation">Học viên khóa ...</span>
-                                        </div>
-                                    </div>
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
                                 </div>
                             </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
                         </div>
-                        <div class="carousel_item">
-                            <div class="testimonial_item_2">
-                                <div class="testimonial_image ms-0 aspect-video"
-                                     style="background-image: url('assets/images/shape/shape_img_6.svg');">
-                                    {{-- <img src="assets/images/testimonial/testimonial_img_3.png" alt="Collab – Online Learning Platform"> --}}
-                                    <lite-youtube class="w-full h-full" videoid="ogfYd705cRs"
-                                                  playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
-                                </div>
-                                <div class="testimonial_content">
-                                    <div class="quote_icon">
-                                        <img src="assets/images/icon/icon_quote.svg"
-                                             alt="Collab – Online Learning Platform">
-                                    </div>
-                                    <h3 class="testimonial_title">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore esse.
-                                    </h3>
-                                    <p>
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Et netus et malesuada fames ac turpis egestas
-                                    </p>
-                                    <div class="testimonial_admin">
-                                        <div class="admin_image">
-                                            <img src="assets/images/meta/testimonial_thumbnail_1.jpg"
-                                                 alt="Collab – Online Learning Platform">
-                                        </div>
-                                        <div class="admin_content">
-                                            <h5 class="testimonial_name">Nguyễn Văn A</h5>
-                                            <span class="testimonial_designation">Học viên khóa ...</span>
-                                        </div>
-                                    </div>
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
                                 </div>
                             </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
+                        </div>
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -853,57 +749,108 @@
         <!-- Testimonial Section - End
         ================================================== -->
 
+        <!-- Counter Section - Start
+        ================================================== -->
+        <section class="container bg-white shadow-2xl rounded-2xl -mt-28">
+            <div class="flex flex-nowrap items-center">
+                <div class="col col-lg-3 col-md-6">
+                    <div class="counter_item border-0 p-4">
+                        <h3 class="counter_value">
+                            <span class="counter_value_text">500</span>
+                            <span>+</span>
+                        </h3>
+                        <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
+                            Giờ học đã diễn ra
+                        </p>
+                    </div>
+                </div>
+                <div class="w-0.5 h-20 bg-primary"></div>
+                <div class="col col-lg-3 col-md-6">
+                    <div class="counter_item border-0 p-4">
+                        <h3 class="counter_value">
+                            <span class="counter_value_text">1500</span>
+                            <span>+</span>
+                        </h3>
+                        <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
+                            Học viên hoàn thành chương trình học và có việc làm
+                        </p>
+                    </div>
+                </div>
+                <div class="w-0.5 h-20 bg-primary"></div>
+                <div class="col col-lg-3 col-md-6">
+                    <div class="counter_item border-0 p-4">
+                        <h3 class="counter_value">
+                            <span class="counter_value_text">10</span>
+                        </h3>
+                        <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
+                            Khóa học đang được vận hành
+                        </p>
+                    </div>
+                </div>
+                <div class="w-0.5 h-20 bg-primary"></div>
+                <div class="col col-lg-3 col-md-6">
+                    <div class="counter_item border-0 p-4">
+                        <h3 class="counter_value">
+                            <span class="counter_value_text">40</span>
+                            <span>+</span>
+                        </h3>
+                        <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
+                            Giảng viên với kinh nghiệm tiếng Hàn tối thiểu 2 năm giảng dạy tiếng Hàn
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Counter Section - End
+        ================================================== -->
+
         <!-- Brands Section - Start
         ================================================== -->
-        <section class="brands_section section_space_lg pb-0">
+        <section class="py-20 brands_section section_space_lg">
             <div class="container">
-                <div class="section_heading text-center">
-                    <h2 class="heading_text mb-0">
-                        Cơ sở vật chất
-                    </h2>
+                <div class="section_heading">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col col-lg-6">
+                            <h3 class="text-2xl !text-secondary">Cơ Sở</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                Vật chất
+                            </h2>
+                        </div>
+                    </div>
                 </div>
-                <ul class="brands_logo_list unordered_list">
-                    <li class="aspect-video relative">
-                        <a href="#!" class="p-0 !block w-full">
-                            <img class="w-full !h-full object-cover rounded-lg" src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg" alt="Microsoft">
-                        </a>
-                    </li>
-                    <li class="aspect-video relative">
-                        <a href="#!" class="p-0 !block w-full">
-                            <img class="w-full !h-full object-cover rounded-lg" src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg" alt="Alphabet">
-                        </a>
-                    </li>
-                    <li class="aspect-video relative">
-                        <a href="#!" class="p-0 !block w-full">
-                            <img class="w-full !h-full object-cover rounded-lg" src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg" alt="Intel">
-                        </a>
-                    </li>
-                    <li class="aspect-video relative">
-                        <a href="#!" class="p-0 !block w-full">
-                            <img class="w-full !h-full object-cover rounded-lg" src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg" alt="Cisco">
-                        </a>
-                    </li>
-                    <li class="aspect-video relative">
-                        <a href="#!" class="p-0 !block w-full">
-                            <img class="w-full !h-full object-cover rounded-lg" src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg" alt="Verizon Communications">
-                        </a>
-                    </li>
-                    <li class="aspect-video relative">
-                        <a href="#!" class="p-0 !block w-full">
-                            <img class="w-full !h-full object-cover rounded-lg" src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg" alt="Infopulse.png">
-                        </a>
-                    </li>
-                    <li class="aspect-video relative">
-                        <a href="#!" class="p-0 !block w-full">
-                            <img class="w-full !h-full object-cover rounded-lg" src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg" alt="Amazon">
-                        </a>
-                    </li>
-                    <li class="aspect-video relative">
-                        <a href="#!" class="p-0 !block w-full">
-                            <img class="w-full !h-full object-cover rounded-lg" src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg" alt="Wix">
-                        </a>
-                    </li>
-                </ul>
+                <div class="grid grid-cols-2 gap-4 pswp-gallery pswp-gallery--single-column lg:grid-cols-4"
+                     id="lightgallery">
+                    <a href="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                       {{--data-lg-size="1600-2400"--}}
+                       target="_blank"
+                       class="col-span-1 rounded-lg image"
+                    >
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                            alt=""/>
+                    </a><a href="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
+                           {{--data-lg-size="1600-2400"--}}
+                           target="_blank"
+                           class="col-span-1 rounded-lg image"
+                    >
+                        <img src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
+                             alt=""/>
+                    </a><a href="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
+                           {{--data-lg-size="1600-2400"--}}
+                           target="_blank"
+                           class="col-span-1 rounded-lg image"
+                    >
+                        <img src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
+                             alt=""/>
+                    </a><a href="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
+                           {{--data-lg-size="1600-2400"--}}
+                           target="_blank"
+                           class="col-span-1 rounded-lg image"
+                    >
+                        <img src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
+                             alt=""/>
+                    </a>
+                </div>
             </div>
         </section>
         <!-- Brands Section - End
@@ -911,20 +858,16 @@
 
         <!-- Intro Video Section - Start
         ================================================== -->
-        <section class="intro_video_section section_space_lg bg_light_2 overflow-hidden decoration_wrap">
+        <section class="overflow-hidden section_space_lg bg-alternative-lighter decoration_wrap">
             <div class="container position-relative">
-                <div class="section_heading text-center">
-                    <h2 class="heading_text mb-0">
+                <div class="text-center section_heading">
+                    <h2 class="mb-0 heading_text">
                         Lộ trình học
                     </h2>
                 </div>
                 <div class="intro_video">
                     <div class="video_wrap tilt">
-                        {{-- <img src="assets/images/video/video_poster_1.jpg" alt="Collab – Online Learning Platform"> --}}
-                        {{-- <a class="video_play_btn popup_video" href="https://www.youtube.com/watch?v=7e90gBu4pas"> --}}
-                        {{--     <span class="icon"><i class="fas fa-play"></i></span> --}}
-                        {{-- </a> --}}
-                        <lite-youtube class="mx-auto" videoid="ogfYd705cRs"
+                        <lite-youtube class="mx-auto" videoid="TKc90DXpmQc"
                                       playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
                     </div>
                 </div>
@@ -935,12 +878,13 @@
                                 <div class="item_icon">
                                     <i class="fas fa-signal-1"></i>
                                 </div>
-                                <h3 class="item_title mb-0">
+                                <h3 class="mb-0 item_title">
                                     <span class="d-block">Step 1</span>
                                 </h3>
                             </div>
                             <p class="mb-0">
-                                Adipiscing bibendum est ultricies integer. Magnis dis parturient montes nascetur ridiculus mus mauris
+                                Adipiscing bibendum est ultricies integer. Magnis dis parturient montes nascetur
+                                ridiculus mus mauris
                             </p>
                         </div>
                     </div>
@@ -950,12 +894,13 @@
                                 <div class="item_icon">
                                     <i class="fas fa-signal-2"></i>
                                 </div>
-                                <h3 class="item_title mb-0">
+                                <h3 class="mb-0 item_title">
                                     <span class="d-block">Step 2</span>
                                 </h3>
                             </div>
                             <p class="mb-0">
-                                Facilisi nullam vehicula ipsum a arcu cursus vitae. Interdum velit laoreet id donec ultrices tincidunt arcu
+                                Facilisi nullam vehicula ipsum a arcu cursus vitae. Interdum velit laoreet id donec
+                                ultrices tincidunt arcu
                             </p>
                         </div>
                     </div>
@@ -965,12 +910,13 @@
                                 <div class="item_icon">
                                     <i class="fas fa-signal-3"></i>
                                 </div>
-                                <h3 class="item_title mb-0">
+                                <h3 class="mb-0 item_title">
                                     <span class="d-block">Step 3</span>
                                 </h3>
                             </div>
                             <p class="mb-0">
-                                Lectus magna fringilla urna porttitor rhoncus dolor purus non. Orci dapibus ultrices in iaculis
+                                Lectus magna fringilla urna porttitor rhoncus dolor purus non. Orci dapibus ultrices in
+                                iaculis
                             </p>
                         </div>
                     </div>
@@ -980,12 +926,13 @@
                                 <div class="item_icon">
                                     <i class="fas fa-signal-4"></i>
                                 </div>
-                                <h3 class="item_title mb-0">
+                                <h3 class="mb-0 item_title">
                                     <span class="d-block">Step 4</span>
                                 </h3>
                             </div>
                             <p class="mb-0">
-                                Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Imperdiet proin fermentum leo vel orc
+                                Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Imperdiet
+                                proin fermentum leo vel orc
                             </p>
                         </div>
                     </div>
@@ -1005,4 +952,5 @@
         <!-- Intro Video Section - End
         ================================================== -->
     </main>
-@endsection
+    @endvolt
+</x-layouts.app>

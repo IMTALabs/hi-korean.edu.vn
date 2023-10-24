@@ -180,8 +180,8 @@
         slidesToShow: 1,
         pauseOnHover: true,
         autoplaySpeed: 5000,
-        prevArrow: ".cc1c_left_arrow",
-        nextArrow: ".cc1c_right_arrow"
+        // prevArrow: ".cc1c_left_arrow",
+        // nextArrow: ".cc1c_right_arrow"
     });
 
     $('.common_carousel_2col').slick({
@@ -194,8 +194,29 @@
         slidesToScroll: 2,
         pauseOnHover: true,
         autoplaySpeed: 5000,
-        prevArrow: ".cc2c_left_arrow",
-        nextArrow: ".cc2c_right_arrow",
+        // prevArrow: ".cc2c_left_arrow",
+        // nextArrow: ".cc2c_right_arrow",
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+
+    $('.common_carousel_3col').slick({
+        // dots: true,
+        speed: 1000,
+        arrows: true,
+        infinite: true,
+        autoplay: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        pauseOnHover: true,
+        autoplaySpeed: 5000,
         responsive: [
             {
                 breakpoint: 992,
