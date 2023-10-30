@@ -34,7 +34,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
 
         lightGallery(document.getElementById("lightgallery"), {
             plugins: [lgZoom, lgThumbnail],
-            speed: 500,
+            speed: 500
         });
     </script>
 @endpush
@@ -64,7 +64,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                             <div class="tab-content">
                                 <div class="relative tab-pane fade show active" id="teb_hr" role="tabpanel">
                                     <div
-                                        class="absolute top-0 right-0 h-full w-16 bg-[linear-gradient(270deg,_#F7F5EF_6%,_rgba(247,_245,_239,_0)_100%)] z-[99999]"></div>
+                                        class="absolute top-0 right-0 h-full w-20 bg-[linear-gradient(270deg,_#F7F5EF_22%,_rgba(247,_245,_239,_0)_100%)] z-[99999]"></div>
                                     <div class="flex flex-nowrap justify-center common_carousel_3col [&>button]:-top-8">
                                         <div class="pr-4">
                                             <img class="rounded border border-primary"
@@ -755,47 +755,68 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
             <div class="flex flex-nowrap items-center">
                 <div class="col col-lg-3 col-md-6">
                     <div class="counter_item border-0 p-4">
-                        <h3 class="counter_value">
-                            <span class="counter_value_text">500</span>
-                            <span>+</span>
+                        <div class="w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                      d="M5 22q-.825 0-1.413-.588T3 20V6q0-.825.588-1.413T5 4h1V3q0-.425.288-.713T7 2q.425 0 .713.288T8 3v1h8V3q0-.425.288-.713T17 2q.425 0 .713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.588 1.413T19 22H5Zm0-2h14V10H5v10ZM5 8h14V6H5v2Zm0 0V6v2Zm7 6q-.425 0-.713-.288T11 13q0-.425.288-.713T12 12q.425 0 .713.288T13 13q0 .425-.288.713T12 14Zm-4 0q-.425 0-.713-.288T7 13q0-.425.288-.713T8 12q.425 0 .713.288T9 13q0 .425-.288.713T8 14Zm8 0q-.425 0-.713-.288T15 13q0-.425.288-.713T16 12q.425 0 .713.288T17 13q0 .425-.288.713T16 14Zm-4 4q-.425 0-.713-.288T11 17q0-.425.288-.713T12 16q.425 0 .713.288T13 17q0 .425-.288.713T12 18Zm-4 0q-.425 0-.713-.288T7 17q0-.425.288-.713T8 16q.425 0 .713.288T9 17q0 .425-.288.713T8 18Zm8 0q-.425 0-.713-.288T15 17q0-.425.288-.713T16 16q.425 0 .713.288T17 17q0 .425-.288.713T16 18Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="counter_value whitespace-nowrap">
+                            <span class="counter_value_text text-4xl">5</span><span class="text-4xl">&nbsp;năm</span>
                         </h3>
-                        <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
-                            Giờ học đã diễn ra
+                        <p class="mb-0 line-clamp-2 min-h-[3rem]">
+                            Hoạt động & Phát triển
                         </p>
                     </div>
                 </div>
-                <div class="w-0.5 h-20 bg-primary"></div>
+                <div class="w-0.5 h-20 bg-gray-300"></div>
                 <div class="col col-lg-3 col-md-6">
                     <div class="counter_item border-0 p-4">
-                        <h3 class="counter_value">
-                            <span class="counter_value_text">1500</span>
-                            <span>+</span>
+                        <div class="w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                      d="M5.85 17.1q1.275-.975 2.85-1.538T12 15q1.725 0 3.3.563t2.85 1.537q.875-1.025 1.363-2.325T20 12q0-3.325-2.337-5.663T12 4Q8.675 4 6.337 6.337T4 12q0 1.475.488 2.775T5.85 17.1ZM12 13q-1.475 0-2.488-1.012T8.5 9.5q0-1.475 1.012-2.488T12 6q1.475 0 2.488 1.012T15.5 9.5q0 1.475-1.012 2.488T12 13Zm0 9q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q1.325 0 2.5-.388t2.15-1.112q-.975-.725-2.15-1.113T12 17q-1.325 0-2.5.388T7.35 18.5q.975.725 2.15 1.113T12 20Zm0-9q.65 0 1.075-.425T13.5 9.5q0-.65-.425-1.075T12 8q-.65 0-1.075.425T10.5 9.5q0 .65.425 1.075T12 11Zm0-1.5Zm0 9Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="counter_value whitespace-nowrap">
+                            <span class="counter_value_text text-4xl">125000</span><span class="text-4xl">+</span>
                         </h3>
-                        <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
-                            Học viên hoàn thành chương trình học và có việc làm
+                        <p class="mb-0 line-clamp-2 min-h-[3rem]">
+                            Học viên theo học
                         </p>
                     </div>
                 </div>
-                <div class="w-0.5 h-20 bg-primary"></div>
+                <div class="w-0.5 h-20 bg-gray-300"></div>
                 <div class="col col-lg-3 col-md-6">
                     <div class="counter_item border-0 p-4">
-                        <h3 class="counter_value">
-                            <span class="counter_value_text">10</span>
+                        <div class="w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                      d="M4 11.333L0 9l12-7l12 7v8.5h-2v-7.333l-2 1.166v6.678l-.223.275A9.983 9.983 0 0 1 12 22a9.983 9.983 0 0 1-7.777-3.714L4 18.011v-6.678ZM6 12.5v4.792A7.979 7.979 0 0 0 12 20a7.978 7.978 0 0 0 6-2.708V12.5L12 16l-6-3.5ZM3.97 9L12 13.685L20.03 9L12 4.315L3.97 9Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="counter_value whitespace-nowrap">
+                            <span class="counter_value_text text-4xl">88000</span>
                         </h3>
-                        <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
-                            Khóa học đang được vận hành
+                        <p class="mb-0 line-clamp-2 min-h-[3rem]">
+                            Học viên đỗ Topik trên 4.0
                         </p>
                     </div>
                 </div>
-                <div class="w-0.5 h-20 bg-primary"></div>
+                <div class="w-0.5 h-20 bg-gray-300"></div>
                 <div class="col col-lg-3 col-md-6">
                     <div class="counter_item border-0 p-4">
-                        <h3 class="counter_value">
-                            <span class="counter_value_text">40</span>
-                            <span>+</span>
+                        <div class="w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                      d="M12 20.325q-.35 0-.713-.125t-.637-.4l-1.725-1.575q-2.65-2.425-4.788-4.813T2 8.15Q2 5.8 3.575 4.225T7.5 2.65q1.325 0 2.5.562t2 1.538q.825-.975 2-1.538t2.5-.562q2.35 0 3.925 1.575T22 8.15q0 2.875-2.125 5.275T15.05 18.25l-1.7 1.55q-.275.275-.637.4t-.713.125ZM11.05 6.75q-.725-1.025-1.55-1.562t-2-.538q-1.5 0-2.5 1t-1 2.5q0 1.3.925 2.763t2.213 2.837q1.287 1.375 2.65 2.575T12 18.3q.85-.775 2.213-1.975t2.65-2.575q1.287-1.375 2.212-2.837T20 8.15q0-1.5-1-2.5t-2.5-1q-1.175 0-2 .537T12.95 6.75q-.175.25-.425.375T12 7.25q-.275 0-.525-.125t-.425-.375Zm.95 4.725Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="counter_value whitespace-nowrap">
+                            <span class="counter_value_text text-4xl">75</span><span class="text-4xl">%</span>
                         </h3>
-                        <p class="mb-0 line-clamp-3 min-h-[4.5rem]">
-                            Giảng viên với kinh nghiệm tiếng Hàn tối thiểu 2 năm giảng dạy tiếng Hàn
+                        <p class="mb-0 line-clamp-2 min-h-[3rem]">
+                            Học viên hài lòng
                         </p>
                     </div>
                 </div>

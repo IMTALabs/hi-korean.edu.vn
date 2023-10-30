@@ -39,73 +39,73 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-<!-- Body Wrap - Start -->
-<div class="page_wrapper flex flex-col min-h-screen">
+    <!-- Body Wrap - Start -->
+    <div class="page_wrapper flex flex-col min-h-screen">
 
-    <!-- Back To Top - Start -->
-    <div class="backtotop">
-        <a href="#" class="scroll">
-            <i class="far fa-arrow-up"></i>
-        </a>
+        <!-- Back To Top - Start -->
+        <div class="backtotop">
+            <a href="#" class="scroll">
+                <i class="far fa-arrow-up"></i>
+            </a>
+        </div>
+        <!-- Back To Top - End -->
+
+        <!-- Site Header - Start
+        ================================================== -->
+        <x-layouts.header/>
+        <!-- Site Header - End
+        ================================================== -->
+
+        <!-- Main Body - Start
+        ================================================== -->
+        {{ $slot }}
+        <!-- Main Body - End
+        ================================================== -->
+
+        <!-- Site Footer - Start
+        ================================================== -->
+        <x-layouts.footer/>
+        <!-- Site Footer - End
+        ================================================== -->
     </div>
-    <!-- Back To Top - End -->
+    <!-- Body Wrap - End -->
 
-    <!-- Site Header - Start
-    ================================================== -->
-    <x-layouts.header/>
-    <!-- Site Header - End
-    ================================================== -->
+    <!-- Framework - Jquery Include -->
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-dropdown-ml-hack.js') }}"></script>
 
-    <!-- Main Body - Start
-    ================================================== -->
-    {{ $slot }}
-    <!-- Main Body - End
-    ================================================== -->
+    <!-- animation - jquery include -->
+    {{--<script src="{{ asset('assets/js/cursor.js') }}"></script>--}}
+    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+    <script src="{{ asset('assets/js/tilt.min.js') }}"></script>
+    <script src="{{ asset('assets/js/parallax.min.js') }}"></script>
+    <script src="{{ asset('assets/js/parallax-scroll.js') }}"></script>
 
-    <!-- Site Footer - Start
-    ================================================== -->
-    <x-layouts.footer/>
-    <!-- Site Footer - End
-    ================================================== -->
-</div>
-<!-- Body Wrap - End -->
+    <!-- Carousel - Jquery Include -->
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
 
-<!-- Framework - Jquery Include -->
-<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/js/popper.min.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap-dropdown-ml-hack.js') }}"></script>
+    <!-- Video & Image Popup - Jquery Include -->
+    <script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>
 
-<!-- animation - jquery include -->
-{{--<script src="{{ asset('assets/js/cursor.js') }}"></script>--}}
-<script src="{{ asset('assets/js/wow.min.js') }}"></script>
-<script src="{{ asset('assets/js/tilt.min.js') }}"></script>
-<script src="{{ asset('assets/js/parallax.min.js') }}"></script>
-<script src="{{ asset('assets/js/parallax-scroll.js') }}"></script>
+    <!-- Counter Up - Jquery Include -->
+    <script src="{{ asset('assets/js/waypoint.js') }}"></script>
+    <script src="{{ asset('assets/js/counterup.min.js') }}"></script>
 
-<!-- Carousel - Jquery Include -->
-<script src="{{ asset('assets/js/slick.min.js') }}"></script>
+    <!-- Countdown Timer - jquery include -->
+    <script src="{{ asset('assets/js/countdown.js') }}"></script>
+    <script src="{{ asset('assets/js/yt-lite.js') }}"></script>
 
-<!-- Video & Image Popup - Jquery Include -->
-<script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>
+    <!-- Vanilla Calendar - Jquery Include -->
+    <script src="{{ asset('assets/js/vanilla-calendar.min.js') }}"></script>
 
-<!-- Counter Up - Jquery Include -->
-<script src="{{ asset('assets/js/waypoint.js') }}"></script>
-<script src="{{ asset('assets/js/counterup.min.js') }}"></script>
-
-<!-- Countdown Timer - jquery include -->
-<script src="{{ asset('assets/js/countdown.js') }}"></script>
-<script src="{{ asset('assets/js/yt-lite.js') }}"></script>
-
-<!-- Vanilla Calendar - Jquery Include -->
-<script src="{{ asset('assets/js/vanilla-calendar.min.js') }}"></script>
-
-<!-- Custom - Jquery Include -->
-<script
-    async
-    src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"
-></script>
-<script src="{{ asset('assets/js/main.js') }}"></script>
-@stack('scripts')
+    <!-- Custom - Jquery Include -->
+    <script
+        async
+        src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"
+    ></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>

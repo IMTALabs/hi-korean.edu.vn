@@ -1,299 +1,714 @@
 <?php
 
-\Laravel\Folio\name('courses.show')
+\Laravel\Folio\name('courses.show');
+
+$courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollection('khoa_hoc'));
 
 ?>
 
-@extends('layouts.app')
-
-@section('content')
-    <!-- Page Section - Start
-    ================================================== -->
-    <section class="page_banner mt-40">
-        <div class="container">
-            <div class="content_wrapper">
-                <div class="row align-items-center">
-                    <div class="col col-lg-7">
-                        <ul class="breadcrumb_nav unordered_list">
-                            <li><a href="{{ route('home') }}">Trang chủ</a></li>
-                            <li><a href="{{ route('courses') }}">Khóa học</a></li>
-                            <li>Khóa học offline</li>
-                        </ul>
-                        <h1 class="page_title">
-                            Khóa học offline
+<x-layouts.app>
+    @volt
+    <main class="page_content">
+        <div class="container mx-auto">
+            <div class="flex items-center py-10">
+                <a href="{{ route('home') }}" class="text-gray-500">Trang chủ</a>
+                <i class="mx-2 fas fa-chevron-right"></i>
+                <span>Học offline sơ cấp</span>
+            </div>
+            <div class="grid gap-x-16 lg:grid-cols-2">
+                <div class="lg:col-span-1">
+                    <div class="flex grow flex-col items-start justify-center">
+                        <span class="bg-alternative-darker text-[#3C1E1F] font-bold text-2xl px-6 py-1 rounded">
+                            Khóa học
+                        </span>
+                        <h1 class="mt-8 uppercase !text-5xl text-black !leading-[4.5rem]">
+                            Offline sơ cấp
                         </h1>
-                        <ul class="info_list unordered_list_block pb-0">
-                            <li>
-                                <i class="fas fa-check"></i>
-                                <span>
-                                    Fermentum iaculis eu non diam phasellus vestibulum. Porta non pulvinar neque laoreet
-                                    suspendisse. Justo nec ultrices dui sapien proin sed libero
-                                </span>
+                        <ol class="mt-8 marker:text-3xl marker:font-bold">
+                            <li class="pl-8">Khám phá bảng chữ cái tiếng Hàn và cách phát âm, biến âm, nối âm, ngữ điệu…
+                                cơ bản.
                             </li>
-                            <li>
-                                <i class="fas fa-check"></i>
-                                <span>
-                                    At consectetur lorem donec massa sapien. Pulvinar sapien et ligula ullamcorper
-                                    malesuada proin
-                                </span>
+                            <li class="pl-8">Làm quen với kỹ năng nghe – nói – đọc – viết bằng tiếng Hàn.</li>
+                            <li class="pl-8">Chinh phục kỹ năng giao tiếp tự nhiên, đúng văn phong về 18 chủ đề trong
+                                đời sống.
                             </li>
-                        </ul>
+                        </ol>
+
+                        <div
+                            class="mt-8 flex w-full items-center gap-8 rounded-lg border px-8 py-4 border-primary shadow-[-5px_5px_0px_0px_black] bg-alternative">
+                            <div class="grow">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-3xl font-bold">4.5</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                              d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm3.23 15.39L12 15.45l-3.22 1.94a.502.502 0 0 1-.75-.54l.85-3.66l-2.83-2.45a.505.505 0 0 1 .29-.88l3.74-.32l1.46-3.45c.17-.41.75-.41.92 0l1.46 3.44l3.74.32a.5.5 0 0 1 .28.88l-2.83 2.45l.85 3.67c.1.43-.36.77-.74.54z"/>
+                                    </svg>
+                                </div>
+                                <span>Đánh giá từ học viên</span>
+                            </div>
+                            <div class="h-16 w-px bg-primary"></div>
+                            <div class="grow">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-3xl font-bold">125000 +</span>
+                                </div>
+                                <span>Học viên theo học</span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="lg:col-span-1 max-lg:hidden">
+                    <img class="w-full" src="{{ asset('assets/images/course/Group 11770.png') }}" alt="">
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Page Section - End
-    ================================================== -->
 
-    <!-- Event Details Section - Start
-    ================================================== -->
-    <section class="details_section event_details_section">
-        <div class="container">
-            <div class="row">
-                <div class="col col-lg-8">
-                    <div class="section_space_lg pb-0">
-                        <div class="pe-lg-5">
-                            <div class="course_info_card d-lg-none">
-                                <div class="details_image">
-                                    <img src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b0f368c935-450x300.png"
-                                         alt="Collab – Online Learning Platform">
-                                </div>
-                                <div class="item_price">
-                                    <span class="sale_price">FREE</span>
-                                </div>
-                                <a href="pricing.html" class="btn btn_dark">
-                                    <span>
-                                        <small>Get Course</small>
-                                        <small>Get Course</small>
-                                    </span>
-                                </a>
-                                <ul class="course_info_list unordered_list_block">
-                                    <li>
-                                        <span><i class="fas fa-user"></i> Created</span>
-                                        <strong>Wendy Chandler</strong>
-                                    </li>
-                                    <li>
-                                        <span><i class="fas fa-chart-bar"></i> Level</span>
-                                        <strong>Beginner</strong>
-                                    </li>
-                                    <li>
-                                        <span><i class="fas fa-clock"></i> Duration</span>
-                                        <strong>120 Hours</strong>
-                                    </li>
-                                    <li>
-                                        <span><i class="fas fa-video"></i> Lessons</span>
-                                        <strong>3 Video</strong>
-                                    </li>
-                                    <li>
-                                        <span><i class="fas fa-users"></i> Webinar</span>
-                                        <strong>4 Hours</strong>
-                                    </li>
-                                </ul>
-                            </div>
+        <!-- Courses Section - Start
+        ================================================== -->
+        <section class="pt-8 courses_section section_space_lg">
+            <div class="container">
+                <div class="section_heading">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col col-lg-6">
+                            <h3 class="text-2xl !text-secondary">Tuyển Sinh</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                Lịch khai giảng
+                            </h2>
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="details_content">
-                                <h3 class="details_info_title">Event Description</h3>
-                                <p>
-                                    Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Sapien
-                                    pellentesque habitant morbi tristique senectus et netus. Gravida in fermentum et
-                                    sollicitudin ac orci phasellus egestas. Vulputate sapien nec sagittis aliquam
-                                    malesuada bibendum arcu vitae. Massa sed elementum tempus egestas sed. Sed id semper
-                                    risus in hendrerit gravida rutrum quisque
-                                </p>
-
-                                <h3 class="details_info_title">What you'll learn</h3>
-                                <div class="row mb-4">
-                                    <div class="col col-md-6 col-sm-6">
-                                        <ul class="info_list unordered_list_block">
-                                            <li>
-                                                <i class="fas fa-square"></i>
-                                                <span>
-                                                    Sagittis id consectetur purus
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-square"></i>
-                                                <span>
-                                                    Sapien pellentesque habitant
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-square"></i>
-                                                <span>
-                                                    Vulputate sapien nec sagittis
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-square"></i>
-                                                <span>
-                                                    Sed id semper risus in hendrerit
-                                                </span>
-                                            </li>
+                <div class="tabs_wrapper">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="teb_hr" role="tabpanel">
+                            <div class="flex-nowrap justify-center row common_carousel_3col">
+                                <div class="overflow-visible col col-lg-4 carousel_item">
+                                    <div class="overflow-visible course_card border-primary">
+                                        <div class="flex items-center gap-4">
+                                            <img alt="" class="w-10 h-10 rounded-full"
+                                                 src="{{ asset('assets/images/about/image 112.png') }}"/>
+                                            <div>
+                                                <h2 class="text-lg mb-0">Lớp HKSC-24</h2>
+                                                <span class="text-secondary font-medium">1.800.000 đ</span>
+                                            </div>
+                                        </div>
+                                        <ul class="mt-8 list-none pl-0 space-y-2">
+                                            <li>Giảng viên: Cô Thùy Dương</li>
+                                            <li>Lịch học: Thứ 3 & Thứ 5 (7h30' - 9h00)</li>
+                                            <li>Khai giảng: <strong>26.12.2022</strong></li>
                                         </ul>
+                                        <a wire:navigate class="border btn btn_primary border-primary w-full mt-8"
+                                           href="{{ route('about_us') }}">
+                                            <span>
+                                                <small class="py-3">Đăng ký ngay</small>
+                                                <small class="py-3">Đăng ký ngay</small>
+                                            </span>
+                                        </a>
+                                        <div class="w-full text-center text-sm mt-2">Còn 2 chỗ trống</div>
                                     </div>
-                                    <div class="col col-md-6 col-sm-6">
-                                        <ul class="info_list unordered_list_block">
-                                            <li>
-                                                <i class="fas fa-square"></i>
-                                                <span>
-                                                    Placerat duis ultricies
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-square"></i>
-                                                <span>
-                                                    Phasellus vestibulum lorem
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-square"></i>
-                                                <span>
-                                                    Ultrices tincidunt arcu sodales
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-square"></i>
-                                                <span>
-                                                    Non nisi est sit amet
-                                                </span>
-                                            </li>
+                                </div>
+                                <div class="overflow-visible col col-lg-4 carousel_item">
+                                    <div class="overflow-visible course_card border-primary">
+                                        <div class="flex items-center gap-4">
+                                            <img alt="" class="w-10 h-10 rounded-full"
+                                                 src="{{ asset('assets/images/about/image 112.png') }}"/>
+                                            <div>
+                                                <h2 class="text-lg mb-0">Lớp HKSC-24</h2>
+                                                <span class="text-secondary font-medium">1.800.000 đ</span>
+                                            </div>
+                                        </div>
+                                        <ul class="mt-8 list-none pl-0 space-y-2">
+                                            <li>Giảng viên: Cô Thùy Dương</li>
+                                            <li>Lịch học: Thứ 3 & Thứ 5 (7h30' - 9h00)</li>
+                                            <li>Khai giảng: <strong>26.12.2022</strong></li>
                                         </ul>
+                                        <a wire:navigate class="border btn btn_primary border-primary w-full mt-8"
+                                           href="{{ route('about_us') }}">
+                                            <span>
+                                                <small class="py-3">Đăng ký ngay</small>
+                                                <small class="py-3">Đăng ký ngay</small>
+                                            </span>
+                                        </a>
+                                        <div class="w-full text-center text-sm mt-2">Còn 2 chỗ trống</div>
+                                    </div>
+                                </div>
+                                <div class="overflow-visible col col-lg-4 carousel_item">
+                                    <div class="overflow-visible course_card border-primary">
+                                        <div class="flex items-center gap-4">
+                                            <img alt="" class="w-10 h-10 rounded-full"
+                                                 src="{{ asset('assets/images/about/image 112.png') }}"/>
+                                            <div>
+                                                <h2 class="text-lg mb-0">Lớp HKSC-24</h2>
+                                                <span class="text-secondary font-medium">1.800.000 đ</span>
+                                            </div>
+                                        </div>
+                                        <ul class="mt-8 list-none pl-0 space-y-2">
+                                            <li>Giảng viên: Cô Thùy Dương</li>
+                                            <li>Lịch học: Thứ 3 & Thứ 5 (7h30' - 9h00)</li>
+                                            <li>Khai giảng: <strong>26.12.2022</strong></li>
+                                        </ul>
+                                        <a wire:navigate class="border btn btn_primary border-primary w-full mt-8"
+                                           href="{{ route('about_us') }}">
+                                            <span>
+                                                <small class="py-3">Đăng ký ngay</small>
+                                                <small class="py-3">Đăng ký ngay</small>
+                                            </span>
+                                        </a>
+                                        <div class="w-full text-center text-sm mt-2">Còn 2 chỗ trống</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <!-- Courses Section - End
+        ================================================== -->
 
-                <div class="col col-lg-4">
-                    <aside class="sidebar d-none d-lg-block">
-                        <div class="course_info_card">
-                            <div class="details_image">
-                                <img src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b0f368c935-450x300.png"
-                                     alt="Collab – Online Learning Platform">
-                            </div>
-                            <div class="item_price">
-                                <span class="sale_price">FREE</span>
-                            </div>
-                            <a href="pricing.html" class="btn btn_dark">
-                                <span>
-                                    <small>Get Course</small>
-                                    <small>Get Course</small>
-                                </span>
-                            </a>
-                            <ul class="course_info_list unordered_list_block">
-                                <li>
-                                    <span><i class="fas fa-user"></i> Created</span>
-                                    <strong>Wendy Chandler</strong>
-                                </li>
-                                <li>
-                                    <span><i class="fas fa-chart-bar"></i> Level</span>
-                                    <strong>Beginner</strong>
-                                </li>
-                                <li>
-                                    <span><i class="fas fa-clock"></i> Duration</span>
-                                    <strong>120 Hours</strong>
-                                </li>
-                                <li>
-                                    <span><i class="fas fa-video"></i> Lessons</span>
-                                    <strong>3 Video</strong>
-                                </li>
-                                <li>
-                                    <span><i class="fas fa-users"></i> Webinar</span>
-                                    <strong>4 Hours</strong>
-                                </li>
-                            </ul>
+        <!-- Về chúng tôi - Start
+        ================================================== -->
+        <section class="expect_from_course section_space_lg py-16 bg-[#F8F2E6]">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-5">
+                        <div class="section_heading">
+                            <h3 class="text-2xl !text-secondary">Khóa Sơ Cấp</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                Giới thiệu khóa học
+                            </h2>
                         </div>
-                    </aside>
+                    </div>
+                    <div class="col col-lg-7">
+                        <div class="row">
+                            <div class="col">
+                                <div class="accordion space-y-8" id="faq_accordion_1">
+                                    <div class="accordion-item bg-white px-8 py-4 rounded-xl">
+                                        <div class="accordion-button text-lg" role="button" data-bs-toggle="collapse"
+                                             data-bs-target="#collapse_one" aria-expanded="true">
+                                            <div
+                                                class="px-4 py-1 bg-alternative text-primary font-bold rounded mr-4 -ml-12">
+                                                Giai đoạn 1 (9 buổi)
+                                            </div>
+                                            Nạp từ vựng.
+                                        </div>
+                                        <div id="collapse_one" class="accordion-collapse collapse show"
+                                             data-bs-parent="#faq_accordion_1">
+                                            <div class="accordion-body">
+                                                <ul class="space-y-4 pl-4">
+                                                    <li>Danh sách 1: (giáo trình 레시피 + hot Topik) - học theo kiểu
+                                                        short-term memory, thông qua các app từ vựng. + liên từ (부사- đầu
+                                                        câu), từ cảm xúc (lọc từ các đề), động từ hành động nói (lọc từ
+                                                        đề).
+                                                    </li>
+                                                    <li>Danh sách 2: (xây dựng dựa trên sơ đồ tư duy từ vựng) - Ngọc
+                                                        chuẩn bị - học theo kiểu long - term memory, áp dụng phương pháp
+                                                        Goldist method.
+                                                    </li>
+                                                    <li>Ngữ pháp: (ngữ pháp trung cấp) (3 tuần: 9 buổi, 7 ngữ pháp/ 1
+                                                        buổi)
+                                                    </li>
+                                                    <li>Giáo trình ngữ pháp trung cấp master topik (Việt hóa lại) (xem
+                                                        video trước)
+                                                    </li>
+                                                    <li>Phương thức giảng dạy: Đưa ra 3 điểm ngữ pháp thông qua 1 hội
+                                                        thoại → phân tích từng ngữ pháp. (bỏ qua nếu không có hội thoại)
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item bg-white px-8 py-4 rounded-xl">
+                                        <div class="accordion-button text-lg" role="button" data-bs-toggle="collapse"
+                                             data-bs-target="#collapse_two" aria-expanded="true">
+                                            <div
+                                                class="px-4 py-1 bg-alternative text-primary font-bold rounded mr-4 -ml-12">
+                                                Giai đoạn 2 (15 buổi)
+                                            </div>
+                                            Đọc và Nghe. Giới thiệu dạng bài thông qua bài...
+                                        </div>
+                                        <div id="collapse_two" class="accordion-collapse collapse"
+                                             data-bs-parent="#faq_accordion_1">
+                                            <div class="accordion-body">
+                                                <ul class="space-y-4 pl-4">
+                                                    <li>Danh sách 1: (giáo trình 레시피 + hot Topik) - học theo kiểu
+                                                        short-term memory, thông qua các app từ vựng. + liên từ (부사- đầu
+                                                        câu), từ cảm xúc (lọc từ các đề), động từ hành động nói (lọc từ
+                                                        đề).
+                                                    </li>
+                                                    <li>Danh sách 2: (xây dựng dựa trên sơ đồ tư duy từ vựng) - Ngọc
+                                                        chuẩn bị - học theo kiểu long - term memory, áp dụng phương pháp
+                                                        Goldist method.
+                                                    </li>
+                                                    <li>Ngữ pháp: (ngữ pháp trung cấp) (3 tuần: 9 buổi, 7 ngữ pháp/ 1
+                                                        buổi)
+                                                    </li>
+                                                    <li>Giáo trình ngữ pháp trung cấp master topik (Việt hóa lại) (xem
+                                                        video trước)
+                                                    </li>
+                                                    <li>Phương thức giảng dạy: Đưa ra 3 điểm ngữ pháp thông qua 1 hội
+                                                        thoại → phân tích từng ngữ pháp. (bỏ qua nếu không có hội thoại)
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item bg-white px-8 py-4 rounded-xl">
+                                        <div class="accordion-button text-lg" role="button" data-bs-toggle="collapse"
+                                             data-bs-target="#collapse_three" aria-expanded="true">
+                                            <div
+                                                class="px-4 py-1 bg-alternative text-primary font-bold rounded mr-4 -ml-12">
+                                                Giai đoạn 3 (11 buổi)
+                                            </div>
+                                            Nước rút
+                                        </div>
+                                        <div id="collapse_three" class="accordion-collapse collapse"
+                                             data-bs-parent="#faq_accordion_1">
+                                            <div class="accordion-body">
+                                                <ul class="space-y-4 pl-4">
+                                                    <li>Danh sách 1: (giáo trình 레시피 + hot Topik) - học theo kiểu
+                                                        short-term memory, thông qua các app từ vựng. + liên từ (부사- đầu
+                                                        câu), từ cảm xúc (lọc từ các đề), động từ hành động nói (lọc từ
+                                                        đề).
+                                                    </li>
+                                                    <li>Danh sách 2: (xây dựng dựa trên sơ đồ tư duy từ vựng) - Ngọc
+                                                        chuẩn bị - học theo kiểu long - term memory, áp dụng phương pháp
+                                                        Goldist method.
+                                                    </li>
+                                                    <li>Ngữ pháp: (ngữ pháp trung cấp) (3 tuần: 9 buổi, 7 ngữ pháp/ 1
+                                                        buổi)
+                                                    </li>
+                                                    <li>Giáo trình ngữ pháp trung cấp master topik (Việt hóa lại) (xem
+                                                        video trước)
+                                                    </li>
+                                                    <li>Phương thức giảng dạy: Đưa ra 3 điểm ngữ pháp thông qua 1 hội
+                                                        thoại → phân tích từng ngữ pháp. (bỏ qua nếu không có hội thoại)
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Event Details Section - End
-    ================================================== -->
+        </section>
+        <!-- Về chúng tôi - End
+        ================================================== -->
 
-    <!-- Policy Section - Start
-    ================================================== -->
-    <section class="policy_section section_space_lg">
-        <div class="container position-relative">
-            <div class="section_heading text-center">
-                <h2 class="heading_text mb-0">
-                    Flexibility in Planning and Teaching
-                </h2>
+        <!-- Giảng viên - Start
+        ================================================== -->
+        <section class="expect_from_course section_space_lg py-16">
+            <div class="container">
+                <div class="row">
+                    <div class="pr-8 col col-lg-4">
+                        <div class="section_heading">
+                            <h3 class="text-2xl !text-secondary">Đội ngũ</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                giáo viên
+                            </h2>
+                            <p class="mt-10 mb-0 heading_description">
+                                Chúng tôi tự hào là đơn vị đem lại một môi trường đào tạo tiếng Hàn chất lượng tốt nhất,
+                                quan tâm đến người học, đến những đam mê và ước mơ của học viên.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pl-8 col col-lg-8">
+                        <div class="mt-28 flex-nowrap justify-center row common_carousel_2col">
+                            <div class="overflow-visible col col-lg-4 carousel_item">
+                                <div
+                                    class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
+                                    <div class="item_image">
+                                        <a class="border !border-gray-300">
+                                            <img src="https://placehold.co/320x320"
+                                                 alt="Hi Korean">
+                                        </a>
+                                    </div>
+                                    <div class="item_content">
+                                        <h3 class="py-0 item_title">
+                                            <a class="flex items-baseline gap-2">
+                                                <div
+                                                    class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                <div class="truncate">Cô Thùy Dương</div>
+                                            </a>
+                                        </h3>
+                                        <ul class="mb-0 pt-4">
+                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
+                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overflow-visible col col-lg-4 carousel_item">
+                                <div
+                                    class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
+                                    <div class="item_image">
+                                        <a class="border !border-gray-300">
+                                            <img src="https://placehold.co/320x320"
+                                                 alt="Hi Korean">
+                                        </a>
+                                    </div>
+                                    <div class="item_content">
+                                        <h3 class="py-0 item_title">
+                                            <a class="flex items-baseline gap-2">
+                                                <div
+                                                    class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                <div class="truncate">Cô Thùy Dương</div>
+                                            </a>
+                                        </h3>
+                                        <ul class="mb-0 pt-4">
+                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
+                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overflow-visible col col-lg-4 carousel_item">
+                                <div
+                                    class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
+                                    <div class="item_image">
+                                        <a class="border !border-gray-300">
+                                            <img src="https://placehold.co/320x320"
+                                                 alt="Hi Korean">
+                                        </a>
+                                    </div>
+                                    <div class="item_content">
+                                        <h3 class="py-0 item_title">
+                                            <a class="flex items-baseline gap-2">
+                                                <div
+                                                    class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                <div class="truncate">Cô Thùy Dương</div>
+                                            </a>
+                                        </h3>
+                                        <ul class="mb-0 pt-4">
+                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
+                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overflow-visible col col-lg-4 carousel_item">
+                                <div
+                                    class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
+                                    <div class="item_image">
+                                        <a class="border !border-gray-300">
+                                            <img src="https://placehold.co/320x320"
+                                                 alt="Hi Korean">
+                                        </a>
+                                    </div>
+                                    <div class="item_content">
+                                        <h3 class="py-0 item_title">
+                                            <a class="flex items-baseline gap-2">
+                                                <div
+                                                    class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                <div class="truncate">Cô Thùy Dương</div>
+                                            </a>
+                                        </h3>
+                                        <ul class="mb-0 pt-4">
+                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
+                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <div class="col col-lg-3">
-                    <div class="iconbox_item">
-                        <div class="title_wrap">
-                            <div class="item_icon bg_dark">
-                                <i class="fas fa-book-open"></i>
-                            </div>
-                            <h3 class="item_title mb-0">
-                                <span class="d-block">Allocate the time </span>
-                                for study
-                            </h3>
+        </section>
+        <!-- Giảng viên - End
+        ================================================== -->
+
+        <!-- Về chúng tôi - Start
+        ================================================== -->
+        <section class="expect_from_course section_space_lg py-16 bg-[#F8F2E6]">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-5">
+                        <div class="section_heading">
+                            <h3 class="text-2xl !text-secondary">Khóa Sơ Cấp</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                Đề cương
+                            </h2>
                         </div>
-                        <p class="mb-0">
-                            Etiam sit amet nisl purus in mollis nunc sed. Viverra nibh cras pulvinar mattis nunc sed
-                            blandit libero volutpat
-                        </p>
                     </div>
-                </div>
-                <div class="col col-lg-3">
-                    <div class="iconbox_item">
-                        <div class="title_wrap">
-                            <div class="item_icon bg_dark">
-                                <i class="fas fa-code-branch"></i>
+                    <div class="col col-lg-7">
+                        <div class="row">
+                            <div class="col">
+                                <div class="accordion space-y-8" id="faq_accordion_1">
+                                    <div class="accordion-item bg-white px-8 py-4 rounded-xl">
+                                        <div class="accordion-button text-lg" role="button" data-bs-toggle="collapse"
+                                             data-bs-target="#collapse_one" aria-expanded="true">
+                                            Bài 01 - Bảng chữ cái tiếng Hàn
+                                            <span class="ml-4 bg-[#FEF2D0] text-secondary text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">1 buổi</span>
+                                        </div>
+                                        <div id="collapse_one" class="accordion-collapse collapse show"
+                                             data-bs-parent="#faq_accordion_1">
+                                            <div class="accordion-body">
+                                                <ul class="space-y-4 pl-4">
+                                                    <li>Danh sách 1: (giáo trình 레시피 + hot Topik) - học theo kiểu
+                                                        short-term memory, thông qua các app từ vựng. + liên từ (부사- đầu
+                                                        câu), từ cảm xúc (lọc từ các đề), động từ hành động nói (lọc từ
+                                                        đề).
+                                                    </li>
+                                                    <li>Danh sách 2: (xây dựng dựa trên sơ đồ tư duy từ vựng) - Ngọc
+                                                        chuẩn bị - học theo kiểu long - term memory, áp dụng phương pháp
+                                                        Goldist method.
+                                                    </li>
+                                                    <li>Ngữ pháp: (ngữ pháp trung cấp) (3 tuần: 9 buổi, 7 ngữ pháp/ 1
+                                                        buổi)
+                                                    </li>
+                                                    <li>Giáo trình ngữ pháp trung cấp master topik (Việt hóa lại) (xem
+                                                        video trước)
+                                                    </li>
+                                                    <li>Phương thức giảng dạy: Đưa ra 3 điểm ngữ pháp thông qua 1 hội
+                                                        thoại → phân tích từng ngữ pháp. (bỏ qua nếu không có hội thoại)
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item bg-white px-8 py-4 rounded-xl">
+                                        <div class="accordion-button text-lg" role="button" data-bs-toggle="collapse"
+                                             data-bs-target="#collapse_one" aria-expanded="true">
+                                            Bài 01 - Bảng chữ cái tiếng Hàn
+                                            <span class="ml-4 bg-[#FEF2D0] text-secondary text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">1 buổi</span>
+                                        </div>
+                                        <div id="collapse_one" class="accordion-collapse collapse"
+                                             data-bs-parent="#faq_accordion_1">
+                                            <div class="accordion-body">
+                                                <ul class="space-y-4 pl-4">
+                                                    <li>Danh sách 1: (giáo trình 레시피 + hot Topik) - học theo kiểu
+                                                        short-term memory, thông qua các app từ vựng. + liên từ (부사- đầu
+                                                        câu), từ cảm xúc (lọc từ các đề), động từ hành động nói (lọc từ
+                                                        đề).
+                                                    </li>
+                                                    <li>Danh sách 2: (xây dựng dựa trên sơ đồ tư duy từ vựng) - Ngọc
+                                                        chuẩn bị - học theo kiểu long - term memory, áp dụng phương pháp
+                                                        Goldist method.
+                                                    </li>
+                                                    <li>Ngữ pháp: (ngữ pháp trung cấp) (3 tuần: 9 buổi, 7 ngữ pháp/ 1
+                                                        buổi)
+                                                    </li>
+                                                    <li>Giáo trình ngữ pháp trung cấp master topik (Việt hóa lại) (xem
+                                                        video trước)
+                                                    </li>
+                                                    <li>Phương thức giảng dạy: Đưa ra 3 điểm ngữ pháp thông qua 1 hội
+                                                        thoại → phân tích từng ngữ pháp. (bỏ qua nếu không có hội thoại)
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="item_title mb-0">
-                                <span class="d-block">Alternative learning </span>
-                                formats
-                            </h3>
                         </div>
-                        <p class="mb-0">
-                            Posuere ac ut consequat semper viverra nam libero justo. Semper feugiat nibh sed pulvinar
-                            proin gravida hendrerit
-                        </p>
-                    </div>
-                </div>
-                <div class="col col-lg-3">
-                    <div class="iconbox_item">
-                        <div class="title_wrap">
-                            <div class="item_icon bg_dark">
-                                <i class="fas fa-comment-smile"></i>
-                            </div>
-                            <h3 class="item_title mb-0">
-                                <span class="d-block">Mentors with over 5 </span>
-                                years of experience
-                            </h3>
-                        </div>
-                        <p class="mb-0">
-                            Nunc sed velit dignissim sodales ut eu sem. Id faucibus nisl tincidunt eget. Nunc non
-                            blandit massa enim
-                        </p>
-                    </div>
-                </div>
-                <div class="col col-lg-3">
-                    <div class="iconbox_item">
-                        <div class="title_wrap">
-                            <div class="item_icon bg_dark">
-                                <i class="fas fa-user-graduate"></i>
-                            </div>
-                            <h3 class="item_title mb-0">
-                                <span class="d-block">Follow the Training </span>
-                                Program
-                            </h3>
-                        </div>
-                        <p class="mb-0">
-                            Tincidunt vitae semper quis lectus nulla at. Eget lorem dolor sed viverra ipsum nunc. Tellus
-                            at urna condimentum
-                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Policy Section - End
-    ================================================== -->
-@endsection
+        </section>
+        <!-- Về chúng tôi - End
+        ================================================== -->
+
+        <!-- Testimonial Section - Start
+        ================================================== -->
+        <section class="py-16 bg-[#FDD561] testimonial_section section_space_lg">
+            <div class="container">
+                <div class="section_heading">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col col-lg-6">
+                            <h3 class="text-2xl !text-secondary">Cảm Nhận</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                Học viên
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row testimonial_carousel">
+                    <div class="col common_carousel_3col flex flex-nowrap" data-cursor-text="Drag">
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
+                        </div>
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
+                        </div>
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
+                        </div>
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
+                        </div>
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
+                        </div>
+                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                            <div class="flex items-center gap-4">
+                                <img class="w-14 h-14 rounded-full"
+                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
+                                     alt="">
+                                <div>
+                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-justify">
+                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
+                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial Section - End
+        ================================================== -->
+
+        <!-- Courses Section - Start
+        ================================================== -->
+        <section class="pt-8 courses_section section_space_lg mt-8">
+            <div class="container">
+                <div class="section_heading">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col col-lg-6">
+                            <h2 class="mb-0 uppercase heading_text">
+                                các khóa học khác
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs_wrapper">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="teb_hr" role="tabpanel">
+                            <div class="flex-nowrap justify-center row common_carousel_3col">
+                                @foreach($this->courses as $course)
+                                    <div class="overflow-visible col col-lg-4 carousel_item">
+                                        <div class="overflow-visible course_card @if($loop->odd) mt-8 @endif">
+                                            <div class="item_image">
+                                                <a class="border !border-gray-300"
+                                                   href="{{ route('courses.show', ['id' => 'offline']) }}"
+                                                   data-cursor-text="View">
+                                                    <img
+                                                        src="{{ $course->hinh_anh[0]->url }}"
+                                                        alt="Hi Korean">
+                                                </a>
+                                            </div>
+                                            <div class="item_content">
+                                                <h3 class="py-0 item_title">
+                                                    <a href="{{ route('courses.show', ['id' => 'offline']) }}"
+                                                       class="flex items-baseline gap-2">
+                                                        <div class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                        <div class="truncate">{{ $course->title }}</div>
+                                                    </a>
+                                                </h3>
+                                                <p class="h-28 pt-2 line-clamp-4">
+                                                    {{ $course->mo_ta }}
+                                                </p>
+                                                <div class="flex items-center justify-between">
+                                                    <div class="flex items-start gap-1 font-bold text-gray-500">
+                                                        <svg class="h-5 w-5" viewBox="0 0 24 24">
+                                                            <path fill="currentColor"
+                                                                  d="m8.85 17.825l3.15-1.9l3.15 1.925l-.825-3.6l2.775-2.4l-3.65-.325l-1.45-3.4l-1.45 3.375l-3.65.325l2.775 2.425l-.825 3.575Zm3.15.45l-4.15 2.5q-.275.175-.575.15t-.525-.2q-.225-.175-.35-.438t-.05-.587l1.1-4.725L3.775 11.8q-.25-.225-.312-.513t.037-.562q.1-.275.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15q.275 0 .537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45q.1.275.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437q-.225.175-.525.2t-.575-.15l-4.15-2.5Zm0-5.025Z"/>
+                                                        </svg>
+                                                        {{ round($course->danh_gia / 10, 1) }}
+                                                        -
+                                                        {{ $course->so_buoi }} buổi
+                                                    </div>
+
+                                                    <a class="px-2 py-2 btn btn_primary"
+                                                       href="{{ route('courses.show', ['id' => 'offline']) }}">
+                                                        <span>
+                                                            <small class="py-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                                     height="32" viewBox="0 0 24 24">
+                                                                    <path fill="currentColor"
+                                                                          d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
+                                                                </svg>
+                                                            </small>
+                                                            <small class="py-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                                     height="32" viewBox="0 0 24 24">
+                                                                    <path fill="currentColor"
+                                                                          d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
+                                                                </svg>
+                                                            </small>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Courses Section - End
+        ================================================== -->
+    </main>
+    @endvolt
+</x-layouts.app>

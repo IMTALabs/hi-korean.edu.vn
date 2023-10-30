@@ -15,32 +15,46 @@
                         id="main_menu_dropdown">
                         <ul class="main_menu_list unordered_list_center">
                             <li @if(Route::currentRouteName() == 'about_us') class="active" @endif>
-                                <a class="nav-link !font-bold uppercase" href="{{ route('about_us') }}">Về chúng tôi</a>
+                                <a wire:navigate class="nav-link !font-bold uppercase" href="{{ route('about_us') }}">
+                                    Về chúng tôi</a>
                             </li>
-                            <li class="dropdown">
-                                <a class="nav-link !font-bold uppercase" href="{{ route('courses') }}" id="home_submenu" role="button"
+                            <li class="dropdown @if(Route::currentRouteName() == 'courses') active @endif">
+                                <a class="nav-link !font-bold uppercase" wire:navigate
+                                   href="{{ route('courses') }}" id="home_submenu" role="button"
                                    data-bs-toggle="dropdown" aria-expanded="false"
                                    onclick="window.location.href = '{{ route('courses') }}'">Khóa học</a>
                                 <ul class="dropdown-menu" aria-labelledby="home_submenu">
                                     {{-- <li class="active"><a href="#">Học trực tiếp</a></li> --}}
-                                    <li><a href="{{ route('courses.show', ['id' => 'offline']) }}">Học trực tiếp</a>
+                                    <li><a wire:navigate href="{{ route('courses.show', ['id' => 'offline']) }}">Học
+                                            trực tiếp</a>
                                     </li>
-                                    <li><a href="{{ route('courses.show', ['id' => 'e-learning']) }}">E-learning</a>
+                                    <li><a wire:navigate href="{{ route('courses.show', ['id' => 'e-learning']) }}">E-learning</a>
                                     </li>
-                                    <li><a href="{{ route('courses.show', ['id' => 'online']) }}">Online</a></li>
-                                    <li><a href="{{ route('courses.show', ['id' => 'individual']) }}">Theo đối tượng</a>
+                                    <li><a wire:navigate
+                                           href="{{ route('courses.show', ['id' => 'online']) }}">Online</a></li>
+                                    <li><a wire:navigate href="{{ route('courses.show', ['id' => 'individual']) }}">Theo
+                                            đối tượng</a>
                                     </li>
-                                    <li><a href="{{ route('courses.show', ['id' => 'test-preparation']) }}">Luyện
+                                    <li><a wire:navigate
+                                           href="{{ route('courses.show', ['id' => 'test-preparation']) }}">Luyện
                                             thi</a></li>
                                 </ul>
                             </li>
-                            <li><a class="nav-link !font-bold uppercase @if(Route::currentRouteName() == 'media') active @endif"
-                                   href="{{ route('media') }}">Kho ảnh</a></li>
-                            <li><a class="nav-link !font-bold uppercase @if(Route::currentRouteName() == 'sales') active @endif"
+                            <li class="@if(Route::currentRouteName() == 'media') active @endif"><a
+                                    wire:navigate
+                                    class="nav-link !font-bold uppercase"
+                                    href="{{ route('media') }}">Kho ảnh</a></li>
+                            <li class="@if(Route::currentRouteName() == 'sales') active @endif">
+                                <a class="nav-link !font-bold uppercase"
+                                   wire:navigate
                                    href="{{ route('sales') }}">Ưu đãi</a></li>
-                            <li><a class="nav-link !font-bold uppercase @if(Route::currentRouteName() == 'news') active @endif"
+                            <li class="@if(Route::currentRouteName() == 'news') active @endif">
+                                <a class="nav-link !font-bold uppercase"
+                                   wire:navigate
                                    href="{{ route('news') }}">Tin tức</a></li>
-                            <li><a class="nav-link !font-bold uppercase @if(Route::currentRouteName() == 'contact') active @endif"
+                            <li class="@if(Route::currentRouteName() == 'contact') active @endif">
+                                <a class="nav-link !font-bold uppercase"
+                                   wire:navigate
                                    href="{{ route('contact') }}">Liên hệ</a></li>
                         </ul>
                     </div>
