@@ -35,9 +35,9 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                         </ol>
 
                         <div
-                            class="mt-8 flex w-full items-center gap-8 rounded-lg border px-8 py-4 border-primary shadow-[-5px_5px_0px_0px_black] bg-alternative">
-                            <div class="grow">
-                                <div class="flex items-center gap-2">
+                            class="mt-8 whitespace-nowrap flex max-lg:flex-col w-full items-center gap-8 rounded-lg border px-8 py-4 border-primary shadow-[-5px_5px_0px_0px_black] bg-alternative">
+                            <div class="grow max-lg:text-center">
+                                <div class="flex items-center gap-2 max-lg:justify-center">
                                     <span class="text-3xl font-bold">4.5</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                                         <path fill="currentColor"
@@ -46,8 +46,8 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                 </div>
                                 <span>Đánh giá từ học viên</span>
                             </div>
-                            <div class="h-16 w-px bg-primary"></div>
-                            <div class="grow">
+                            <div class="h-16 w-px bg-primary max-lg:hidden"></div>
+                            <div class="grow max-lg:text-center">
                                 <div class="flex items-center gap-2">
                                     <span class="text-3xl font-bold">125000 +</span>
                                 </div>
@@ -77,7 +77,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                     </div>
                 </div>
 
-                <div class="tabs_wrapper">
+                <div class="tabs_wrapper max-lg:mt-24">
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="teb_hr" role="tabpanel">
                             <div class="flex-nowrap justify-center row common_carousel_3col">
@@ -183,10 +183,10 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                             <div class="col">
                                 <div class="accordion space-y-8" id="faq_accordion_1">
                                     <div class="accordion-item bg-white px-8 py-4 rounded-xl">
-                                        <div class="accordion-button text-lg" role="button" data-bs-toggle="collapse"
+                                        <div class="accordion-button text-lg relative" role="button" data-bs-toggle="collapse"
                                              data-bs-target="#collapse_one" aria-expanded="true">
                                             <div
-                                                class="px-4 py-1 bg-alternative text-primary font-bold rounded mr-4 -ml-12">
+                                                class="px-4 py-1 bg-alternative text-primary font-bold rounded lg:mr-4 lg:-ml-12 max-lg:absolute max-lg:-top-10">
                                                 Giai đoạn 1 (9 buổi)
                                             </div>
                                             Nạp từ vựng.
@@ -218,10 +218,10 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                         </div>
                                     </div>
                                     <div class="accordion-item bg-white px-8 py-4 rounded-xl">
-                                        <div class="accordion-button text-lg" role="button" data-bs-toggle="collapse"
+                                        <div class="accordion-button text-lg relative" role="button" data-bs-toggle="collapse"
                                              data-bs-target="#collapse_two" aria-expanded="true">
                                             <div
-                                                class="px-4 py-1 bg-alternative text-primary font-bold rounded mr-4 -ml-12">
+                                                class="px-4 py-1 bg-alternative text-primary font-bold rounded lg:mr-4 lg:-ml-12 max-lg:absolute max-lg:-top-10">
                                                 Giai đoạn 2 (15 buổi)
                                             </div>
                                             Đọc và Nghe. Giới thiệu dạng bài thông qua bài...
@@ -253,10 +253,10 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                         </div>
                                     </div>
                                     <div class="accordion-item bg-white px-8 py-4 rounded-xl">
-                                        <div class="accordion-button text-lg" role="button" data-bs-toggle="collapse"
+                                        <div class="accordion-button text-lg relative" role="button" data-bs-toggle="collapse"
                                              data-bs-target="#collapse_three" aria-expanded="true">
                                             <div
-                                                class="px-4 py-1 bg-alternative text-primary font-bold rounded mr-4 -ml-12">
+                                                class="px-4 py-1 bg-alternative text-primary font-bold rounded lg:mr-4 lg:-ml-12 max-lg:absolute max-lg:-top-10">
                                                 Giai đoạn 3 (11 buổi)
                                             </div>
                                             Nước rút
@@ -438,11 +438,12 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                             <div class="col">
                                 <div class="accordion space-y-8" id="faq_accordion_1">
                                     <div class="accordion-item bg-white px-8 py-4 rounded-xl">
-                                        <div class="accordion-button text-lg" role="button" data-bs-toggle="collapse"
+                                        <div class="accordion-button text-lg relative" role="button" data-bs-toggle="collapse"
                                              data-bs-target="#collapse_one" aria-expanded="true">
                                             Bài 01 - Bảng chữ cái tiếng Hàn
-                                            <span class="ml-4 bg-[#FEF2D0] text-secondary text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">1 buổi</span>
+                                            <span class="max-lg:hidden ml-4 bg-[#FEF2D0] text-secondary text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">1 buổi</span>
                                         </div>
+                                        <span class="lg:hidden bg-[#FEF2D0] text-secondary text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">1 buổi</span>
                                         <div id="collapse_one" class="accordion-collapse collapse show"
                                              data-bs-parent="#faq_accordion_1">
                                             <div class="accordion-body">
@@ -470,11 +471,12 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                         </div>
                                     </div>
                                     <div class="accordion-item bg-white px-8 py-4 rounded-xl">
-                                        <div class="accordion-button text-lg" role="button" data-bs-toggle="collapse"
+                                        <div class="accordion-button text-lg relative" role="button" data-bs-toggle="collapse"
                                              data-bs-target="#collapse_one" aria-expanded="true">
                                             Bài 01 - Bảng chữ cái tiếng Hàn
-                                            <span class="ml-4 bg-[#FEF2D0] text-secondary text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">1 buổi</span>
+                                            <<span class="max-lg:hidden ml-4 bg-[#FEF2D0] text-secondary text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">1 buổi</span>
                                         </div>
+                                        <span class="lg:hidden bg-[#FEF2D0] text-secondary text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">1 buổi</span>
                                         <div id="collapse_one" class="accordion-collapse collapse"
                                              data-bs-parent="#faq_accordion_1">
                                             <div class="accordion-body">
@@ -526,7 +528,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                     </div>
                 </div>
 
-                <div class="row testimonial_carousel">
+                <div class="row testimonial_carousel max-lg:mt-24">
                     <div class="col common_carousel_3col flex flex-nowrap" data-cursor-text="Drag">
                         <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
                             <div class="flex items-center gap-4">
@@ -639,7 +641,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                     </div>
                 </div>
 
-                <div class="tabs_wrapper">
+                <div class="tabs_wrapper max-lg:mt-24">
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="teb_hr" role="tabpanel">
                             <div class="flex-nowrap justify-center row common_carousel_3col">

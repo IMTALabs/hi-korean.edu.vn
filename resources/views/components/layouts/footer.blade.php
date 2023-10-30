@@ -58,7 +58,7 @@
                         <ul class="page_list unordered_list_block">
                             <li>
                                 <a class="font-bold" href="{{ route('about_us') }}" wire:navigate>
-                                    <span class="item_text">Programming</span>
+                                    <span class="item_text">Giới thiệu</span>
                                 </a>
                             </li>
                             <li>

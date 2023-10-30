@@ -19,10 +19,8 @@
                                     Về chúng tôi</a>
                             </li>
                             <li class="dropdown @if(Route::currentRouteName() == 'courses') active @endif">
-                                <a class="nav-link !font-bold uppercase" wire:navigate
-                                   href="{{ route('courses') }}" id="home_submenu" role="button"
-                                   data-bs-toggle="dropdown" aria-expanded="false"
-                                   onclick="window.location.href = '{{ route('courses') }}'">Khóa học</a>
+                                <a class="nav-link !font-bold uppercase" id="home_submenu" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">Khóa học</a>
                                 <ul class="dropdown-menu" aria-labelledby="home_submenu">
                                     {{-- <li class="active"><a href="#">Học trực tiếp</a></li> --}}
                                     <li><a wire:navigate href="{{ route('courses.show', ['id' => 'offline']) }}">Học
