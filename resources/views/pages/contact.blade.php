@@ -2,6 +2,20 @@
 
 \Laravel\Folio\name('contact');
 
+\Artesaos\SEOTools\Facades\SEOMeta::setTitle('Liên hệ');
+\Artesaos\SEOTools\Facades\SEOMeta::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
+\Artesaos\SEOTools\Facades\SEOMeta::setCanonical(url()->current());
+
+\Artesaos\SEOTools\Facades\OpenGraph::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
+\Artesaos\SEOTools\Facades\OpenGraph::setTitle('Liên hệ');
+\Artesaos\SEOTools\Facades\OpenGraph::setUrl(url()->current());
+\Artesaos\SEOTools\Facades\OpenGraph::addProperty('type', 'articles');
+\Artesaos\SEOTools\Facades\OpenGraph::addImage(asset('assets/images/banner/banner.png'));
+
+\Artesaos\SEOTools\Facades\JsonLd::setTitle('Liên hệ');
+\Artesaos\SEOTools\Facades\JsonLd::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
+\Artesaos\SEOTools\Facades\JsonLd::addImage(asset('assets/images/banner/banner.png'));
+
 ?>
 
 <x-layouts.app>
@@ -78,20 +92,28 @@
                                 Điền thông tin, chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất
                             </h3>
 
-                            <form action="#" class="mt-8 grid grid-cols-2 gap-4 relative">
+                            <form action="{{ route('contact.store') }}" method="post"
+                                  class="mt-8 grid grid-cols-2 gap-4 relative">
+                                @csrf
                                 <input type="text" class="col-span-1 border border-primary px-4 py-2 rounded-lg"
-                                       placeholder="Họ tên">
+                                       placeholder="Họ tên" name="name">
                                 <input type="text" class="col-span-1 border border-primary px-4 py-2 rounded-lg"
-                                       placeholder="Số điện thoại">
+                                       placeholder="Số điện thoại" name="phone_number">
                                 <input type="email" class="col-span-full border border-primary px-4 py-2 rounded-lg"
-                                       placeholder="Email">
+                                       placeholder="Email" name="email">
                                 <textarea class="col-span-full border border-primary px-4 py-2 rounded-lg"
-                                          placeholder="Lời nhắn"></textarea>
+                                          placeholder="Lời nhắn" name="message"></textarea>
                                 <button type="submit"
                                         class="uppercase px-10 py-2 bg-black text-alternative-darker rounded-lg font-bold absolute -bottom-14">
                                     Gửi form
                                 </button>
                             </form>
+
+                            @if(session()->has('message'))
+                                <script>
+                                    alert("{{ session()->get('message') }}")
+                                </script>
+                            @endif
                         </div>
                     </div>
                     <div class="hidden md:block md:w-7/12">

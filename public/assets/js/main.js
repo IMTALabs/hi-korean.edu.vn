@@ -227,6 +227,27 @@
             }
         ]
     });
+
+    $('.common_carousel_4col').slick({
+        // dots: true,
+        speed: 1000,
+        arrows: true,
+        infinite: true,
+        autoplay: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        pauseOnHover: true,
+        autoplaySpeed: 5000,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
     // Common Carousels - End
     // --------------------------------------------------
 

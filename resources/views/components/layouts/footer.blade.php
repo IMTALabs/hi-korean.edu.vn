@@ -140,13 +140,14 @@
                 <div class="col col-lg-3 col-md-6 col-sm-6">
                     <div class="footer_widget">
                         <h3 class="footer_widget_title uppercase">Liên hệ</h3>
-                        <form action="#" class="mt-8 grid gap-4 relative">
+                        <form action="{{ route('contact.store') }}" method="post" class="mt-8 grid gap-4 relative">
+                            @csrf
                             <input type="text" class="col-span-1 border border-primary px-4 py-2 rounded-lg"
-                                   placeholder="Họ tên">
+                                   placeholder="Họ tên" name="name">
                             <input type="text" class="col-span-1 border border-primary px-4 py-2 rounded-lg"
-                                   placeholder="Số điện thoại">
+                                   placeholder="Số điện thoại" name="phone_number">
                             <input type="email" class="col-span-1 border border-primary px-4 py-2 rounded-lg"
-                                   placeholder="Email">
+                                   placeholder="Email" name="email">
                             <button type="submit"
                                     class="uppercase px-10 py-2 bg-black text-alternative-darker rounded-lg font-bold whitespace-nowrap w-fit">
                                 Gửi form

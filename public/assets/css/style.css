@@ -5580,3 +5580,8 @@ Responsive For Mobile & Tablet Devices
 
 /* Media Screen 320px - End
 ================================================== */
+
+article a {
+    color: black !important;
+    text-decoration: underline !important;
+}

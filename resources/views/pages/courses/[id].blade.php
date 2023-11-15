@@ -2,7 +2,19 @@
 
 \Laravel\Folio\name('courses.show');
 
-$courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollection('khoa_hoc'));
+\Artesaos\SEOTools\Facades\SEOMeta::setTitle('Hoạt động');
+\Artesaos\SEOTools\Facades\SEOMeta::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
+\Artesaos\SEOTools\Facades\SEOMeta::setCanonical(url()->current());
+
+\Artesaos\SEOTools\Facades\OpenGraph::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
+\Artesaos\SEOTools\Facades\OpenGraph::setTitle('Hoạt động');
+\Artesaos\SEOTools\Facades\OpenGraph::setUrl(url()->current());
+\Artesaos\SEOTools\Facades\OpenGraph::addProperty('type', 'articles');
+\Artesaos\SEOTools\Facades\OpenGraph::addImage(asset('assets/images/banner/banner.png'));
+
+\Artesaos\SEOTools\Facades\JsonLd::setTitle('Hoạt động');
+\Artesaos\SEOTools\Facades\JsonLd::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
+\Artesaos\SEOTools\Facades\JsonLd::addImage(asset('assets/images/banner/banner.png'));
 
 ?>
 
@@ -189,7 +201,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                                 class="px-4 py-1 bg-alternative text-primary font-bold rounded lg:mr-4 lg:-ml-12 max-lg:absolute max-lg:-top-10">
                                                 Giai đoạn 1 (9 buổi)
                                             </div>
-                                            Nạp từ vựng.
+                                            Giới thiệu bản thân
                                         </div>
                                         <div id="collapse_one" class="accordion-collapse collapse show"
                                              data-bs-parent="#faq_accordion_1">
@@ -222,7 +234,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                              data-bs-target="#collapse_two" aria-expanded="true">
                                             <div
                                                 class="px-4 py-1 bg-alternative text-primary font-bold rounded lg:mr-4 lg:-ml-12 max-lg:absolute max-lg:-top-10">
-                                                Giai đoạn 2 (15 buổi)
+                                                Sinh hoạt hàng ngày
                                             </div>
                                             Đọc và Nghe. Giới thiệu dạng bài thông qua bài...
                                         </div>
@@ -645,64 +657,64 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="teb_hr" role="tabpanel">
                             <div class="flex-nowrap justify-center row common_carousel_3col">
-                                @foreach($this->courses as $course)
-                                    <div class="overflow-visible col col-lg-4 carousel_item">
-                                        <div class="overflow-visible course_card @if($loop->odd) mt-8 @endif">
-                                            <div class="item_image">
-                                                <a class="border !border-gray-300"
-                                                   href="{{ route('courses.show', ['id' => 'offline']) }}"
-                                                   data-cursor-text="View">
-                                                    <img
-                                                        src="{{ $course->hinh_anh[0]->url }}"
-                                                        alt="Hi Korean">
+                                <div class="overflow-visible col col-lg-4 carousel_item">
+                                    <div class="overflow-visible course_card">
+                                        <div class="item_image">
+                                            <a class="border !border-gray-300"
+                                               href="{{ route('courses.show', ['id' => 'offline']) }}"
+                                               data-cursor-text="View">
+                                                <img
+                                                    src="https://w.ladicdn.com/s900x650/62e3a03efac7530012145b9f/img_course_02-20221201133721-atuyu.jpg"
+                                                    alt="Hi Korean">
+                                            </a>
+                                        </div>
+                                        <div class="item_content">
+                                            <h3 class="py-0 item_title">
+                                                <a href="{{ route('courses.show', ['id' => 'offline']) }}"
+                                                   class="flex items-baseline gap-2">
+                                                    <div class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                    <div class="truncate">KHÓA LUYỆN THI TOPIK 3-4 ( 48 BUỔI)</div>
                                                 </a>
-                                            </div>
-                                            <div class="item_content">
-                                                <h3 class="py-0 item_title">
-                                                    <a href="{{ route('courses.show', ['id' => 'offline']) }}"
-                                                       class="flex items-baseline gap-2">
-                                                        <div class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
-                                                        <div class="truncate">{{ $course->title }}</div>
-                                                    </a>
-                                                </h3>
-                                                <p class="h-28 pt-2 line-clamp-4">
-                                                    {{ $course->mo_ta }}
-                                                </p>
-                                                <div class="flex items-center justify-between">
-                                                    <div class="flex items-start gap-1 font-bold text-gray-500">
-                                                        <svg class="h-5 w-5" viewBox="0 0 24 24">
-                                                            <path fill="currentColor"
-                                                                  d="m8.85 17.825l3.15-1.9l3.15 1.925l-.825-3.6l2.775-2.4l-3.65-.325l-1.45-3.4l-1.45 3.375l-3.65.325l2.775 2.425l-.825 3.575Zm3.15.45l-4.15 2.5q-.275.175-.575.15t-.525-.2q-.225-.175-.35-.438t-.05-.587l1.1-4.725L3.775 11.8q-.25-.225-.312-.513t.037-.562q.1-.275.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15q.275 0 .537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45q.1.275.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437q-.225.175-.525.2t-.575-.15l-4.15-2.5Zm0-5.025Z"/>
-                                                        </svg>
-                                                        {{ round($course->danh_gia / 10, 1) }}
-                                                        -
-                                                        {{ $course->so_buoi }} buổi
-                                                    </div>
-
-                                                    <a class="px-2 py-2 btn btn_primary"
-                                                       href="{{ route('courses.show', ['id' => 'offline']) }}">
-                                                        <span>
-                                                            <small class="py-0">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="32"
-                                                                     height="32" viewBox="0 0 24 24">
-                                                                    <path fill="currentColor"
-                                                                          d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
-                                                                </svg>
-                                                            </small>
-                                                            <small class="py-0">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="32"
-                                                                     height="32" viewBox="0 0 24 24">
-                                                                    <path fill="currentColor"
-                                                                          d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
-                                                                </svg>
-                                                            </small>
-                                                        </span>
-                                                    </a>
+                                            </h3>
+                                            <p class="h-28 pt-2 line-clamp-4">
+                                                - Hướng dẫn phương pháp giải đề với 3 kỹ năng Nghe – Đọc – Viết
+                                                - Ôn tập ngữ pháp, từ vựng
+                                                - Luyện và giải đề
+                                            </p>
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-start gap-1 font-bold text-gray-500">
+                                                    <svg class="h-5 w-5" viewBox="0 0 24 24">
+                                                        <path fill="currentColor"
+                                                              d="m8.85 17.825l3.15-1.9l3.15 1.925l-.825-3.6l2.775-2.4l-3.65-.325l-1.45-3.4l-1.45 3.375l-3.65.325l2.775 2.425l-.825 3.575Zm3.15.45l-4.15 2.5q-.275.175-.575.15t-.525-.2q-.225-.175-.35-.438t-.05-.587l1.1-4.725L3.775 11.8q-.25-.225-.312-.513t.037-.562q.1-.275.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15q.275 0 .537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45q.1.275.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437q-.225.175-.525.2t-.575-.15l-4.15-2.5Zm0-5.025Z"/>
+                                                    </svg>
+                                                    4.9
+                                                    -
+                                                    14 buổi
                                                 </div>
+
+                                                <a class="px-2 py-2 btn btn_primary"
+                                                   href="{{ route('courses.show', ['id' => 'offline']) }}">
+                                                    <span>
+                                                        <small class="py-0">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                                 height="32" viewBox="0 0 24 24">
+                                                                <path fill="currentColor"
+                                                                      d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
+                                                            </svg>
+                                                        </small>
+                                                        <small class="py-0">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                                 height="32" viewBox="0 0 24 24">
+                                                                <path fill="currentColor"
+                                                                      d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
+                                                            </svg>
+                                                        </small>
+                                                    </span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>

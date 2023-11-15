@@ -16,9 +16,7 @@
 \Artesaos\SEOTools\Facades\JsonLd::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
 \Artesaos\SEOTools\Facades\JsonLd::addImage(asset('assets/images/banner/banner.png'));
 
-$data    = \Livewire\Volt\computed(fn() => \Statamic\Facades\GlobalSet::findByHandle('home')?->inCurrentSite()?->data());
-$aboutUs = \Livewire\Volt\computed(fn() => \Statamic\Facades\GlobalSet::findByHandle('ve_chung_toi')?->inCurrentSite()?->data());
-$courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollection('khoa_hoc'));
+$news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 'desc')->paginate(4));
 
 ?>
 
@@ -186,64 +184,64 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="teb_hr" role="tabpanel">
                             <div class="flex-nowrap justify-center row common_carousel_3col">
-                                @foreach($this->courses as $course)
-                                    <div class="overflow-visible col col-lg-4 carousel_item">
-                                        <div class="overflow-visible course_card @if($loop->odd) mt-8 @endif">
-                                            <div class="item_image">
-                                                <a class="border !border-gray-300"
-                                                   href="{{ route('courses.show', ['id' => 'offline']) }}"
-                                                   data-cursor-text="View">
-                                                    <img
-                                                        src="{{ $course->hinh_anh[0]->url }}"
-                                                        alt="Hi Korean">
+                                <div class="overflow-visible col col-lg-4 carousel_item">
+                                    <div class="overflow-visible course_card">
+                                        <div class="item_image">
+                                            <a class="border !border-gray-300"
+                                               href="{{ route('courses.show', ['id' => 'offline']) }}"
+                                               data-cursor-text="View">
+                                                <img
+                                                    src="https://w.ladicdn.com/s900x650/62e3a03efac7530012145b9f/img_course_02-20221201133721-atuyu.jpg"
+                                                    alt="Hi Korean">
+                                            </a>
+                                        </div>
+                                        <div class="item_content">
+                                            <h3 class="py-0 item_title">
+                                                <a href="{{ route('courses.show', ['id' => 'offline']) }}"
+                                                   class="flex items-baseline gap-2">
+                                                    <div class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                    <div class="truncate">KHÓA LUYỆN THI TOPIK 3-4 ( 48 BUỔI)</div>
                                                 </a>
-                                            </div>
-                                            <div class="item_content">
-                                                <h3 class="py-0 item_title">
-                                                    <a href="{{ route('courses.show', ['id' => 'offline']) }}"
-                                                       class="flex items-baseline gap-2">
-                                                        <div class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
-                                                        <div class="truncate">{{ $course->title }}</div>
-                                                    </a>
-                                                </h3>
-                                                <p class="h-28 pt-2 line-clamp-4">
-                                                    {{ $course->mo_ta }}
-                                                </p>
-                                                <div class="flex items-center justify-between">
-                                                    <div class="flex items-start gap-1 font-bold text-gray-500">
-                                                        <svg class="h-5 w-5" viewBox="0 0 24 24">
-                                                            <path fill="currentColor"
-                                                                  d="m8.85 17.825l3.15-1.9l3.15 1.925l-.825-3.6l2.775-2.4l-3.65-.325l-1.45-3.4l-1.45 3.375l-3.65.325l2.775 2.425l-.825 3.575Zm3.15.45l-4.15 2.5q-.275.175-.575.15t-.525-.2q-.225-.175-.35-.438t-.05-.587l1.1-4.725L3.775 11.8q-.25-.225-.312-.513t.037-.562q.1-.275.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15q.275 0 .537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45q.1.275.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437q-.225.175-.525.2t-.575-.15l-4.15-2.5Zm0-5.025Z"/>
-                                                        </svg>
-                                                        {{ round($course->danh_gia / 10, 1) }}
-                                                        -
-                                                        {{ $course->so_buoi }} buổi
-                                                    </div>
-
-                                                    <a class="px-2 py-2 btn btn_primary"
-                                                       href="{{ route('courses.show', ['id' => 'offline']) }}">
-                                                        <span>
-                                                            <small class="py-0">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="32"
-                                                                     height="32" viewBox="0 0 24 24">
-                                                                    <path fill="currentColor"
-                                                                          d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
-                                                                </svg>
-                                                            </small>
-                                                            <small class="py-0">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="32"
-                                                                     height="32" viewBox="0 0 24 24">
-                                                                    <path fill="currentColor"
-                                                                          d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
-                                                                </svg>
-                                                            </small>
-                                                        </span>
-                                                    </a>
+                                            </h3>
+                                            <p class="h-28 pt-2 line-clamp-4">
+                                                - Hướng dẫn phương pháp giải đề với 3 kỹ năng Nghe – Đọc – Viết
+                                                - Ôn tập ngữ pháp, từ vựng
+                                                - Luyện và giải đề
+                                            </p>
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-start gap-1 font-bold text-gray-500">
+                                                    <svg class="h-5 w-5" viewBox="0 0 24 24">
+                                                        <path fill="currentColor"
+                                                              d="m8.85 17.825l3.15-1.9l3.15 1.925l-.825-3.6l2.775-2.4l-3.65-.325l-1.45-3.4l-1.45 3.375l-3.65.325l2.775 2.425l-.825 3.575Zm3.15.45l-4.15 2.5q-.275.175-.575.15t-.525-.2q-.225-.175-.35-.438t-.05-.587l1.1-4.725L3.775 11.8q-.25-.225-.312-.513t.037-.562q.1-.275.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15q.275 0 .537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45q.1.275.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437q-.225.175-.525.2t-.575-.15l-4.15-2.5Zm0-5.025Z"/>
+                                                    </svg>
+                                                    4.9
+                                                    -
+                                                    14 buổi
                                                 </div>
+
+                                                <a class="px-2 py-2 btn btn_primary"
+                                                   href="{{ route('courses.show', ['id' => 'offline']) }}">
+                                                    <span>
+                                                        <small class="py-0">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                                 height="32" viewBox="0 0 24 24">
+                                                                <path fill="currentColor"
+                                                                      d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
+                                                            </svg>
+                                                        </small>
+                                                        <small class="py-0">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                                 height="32" viewBox="0 0 24 24">
+                                                                <path fill="currentColor"
+                                                                      d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
+                                                            </svg>
+                                                        </small>
+                                                    </span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -266,7 +264,8 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                 về chúng tôi
                             </h2>
                             <p class="mt-10 mb-0 heading_description">
-                                {{ $this->aboutUs['gioi_thieu'] }}
+                                Tại Hi Korean, chúng tôi sẽ giúp bạn học tiếng Hàn với ý chí phấn đấu, tự tin để vững
+                                tiến vào tương lai và tự tin bước vào các công ty Hàn Quốc để làm việc.
                             </p>
                         </div>
 
@@ -358,15 +357,12 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                             </h2>
                             <h3 class="mt-8 text-4xl">Nguyễn Phương Thúy</h3>
                             <p class="mt-10 mb-0 heading_description">
-                            <ul class="">
-                                <li>Tốt nghiệp loại giỏi Đại học Ngoại ngữ - ĐHQG Hà Nội</li>
-                                <li>Tốt nghiệp loại giỏi Đại học Quốc gia Pusan, Hàn Quốc</li>
-                                <li>Giám sát viên ngân hàng Shinhan Việt Nam</li>
-                                <li>Giảng viên khoa tiếng Hàn, Đại học Hà Nội</li>
-                            </ul>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto at, commodi cum
-                            distinctio dolor dolores eligendi eveniet impedit in ipsam maiores maxime nemo officia
-                            tempora tempore ullam vero, voluptas, voluptatibus?
+                                <ul class="">
+                                    <li>Tốt nghiệp loại giỏi Đại học Ngoại ngữ - ĐHQG Hà Nội</li>
+                                    <li>Tốt nghiệp loại giỏi Đại học Quốc gia Pusan, Hàn Quốc</li>
+                                    <li>Giám sát viên ngân hàng Shinhan Việt Nam</li>
+                                    <li>Giảng viên khoa tiếng Hàn, Đại học Hà Nội</li>
+                                </ul>
                             </p>
                         </div>
                     </div>
@@ -397,7 +393,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                             </p>
                             <!-- Button will hide on Mobile Device -->
                             <a wire:navigate class="border btn btn_primary border-primary mt-8"
-                               href="{{ route('about_us') }}">
+                               href="{{ route('about_us') }}#lectures">
                                 <span>
                                     <small>Tìm hiểu thêm</small>
                                     <small>Tìm hiểu thêm</small>
@@ -412,7 +408,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                     class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
                                     <div class="item_image">
                                         <a class="border !border-gray-300">
-                                            <img src="https://placehold.co/320x320"
+                                            <img src="{{ asset('assets/images/img.png') }}"
                                                  alt="Hi Korean">
                                         </a>
                                     </div>
@@ -436,7 +432,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                     class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
                                     <div class="item_image">
                                         <a class="border !border-gray-300">
-                                            <img src="https://placehold.co/320x320"
+                                            <img src="{{ asset('assets/images/img.png') }}"
                                                  alt="Hi Korean">
                                         </a>
                                     </div>
@@ -460,7 +456,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                     class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
                                     <div class="item_image">
                                         <a class="border !border-gray-300">
-                                            <img src="https://placehold.co/320x320"
+                                            <img src="{{ asset('assets/images/img.png') }}"
                                                  alt="Hi Korean">
                                         </a>
                                     </div>
@@ -484,7 +480,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                     class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
                                     <div class="item_image">
                                         <a class="border !border-gray-300">
-                                            <img src="https://placehold.co/320x320"
+                                            <img src="{{ asset('assets/images/img.png') }}"
                                                  alt="Hi Korean">
                                         </a>
                                     </div>
@@ -621,20 +617,28 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                 Điền thông tin, chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất
                             </h3>
 
-                            <form action="#" class="relative mt-8 grid grid-cols-2 gap-4">
-                                <input type="text" class="col-span-1 rounded-lg border px-4 py-2 border-primary"
-                                       placeholder="Họ tên">
-                                <input type="text" class="col-span-1 rounded-lg border px-4 py-2 border-primary"
-                                       placeholder="Số điện thoại">
-                                <input type="email" class="col-span-full rounded-lg border px-4 py-2 border-primary"
-                                       placeholder="Email">
-                                <textarea class="col-span-full rounded-lg border px-4 py-2 border-primary"
-                                          placeholder="Lời nhắn"></textarea>
+                            <form action="{{ route('contact.store') }}" method="post"
+                                  class="mt-8 grid grid-cols-2 gap-4 relative">
+                                @csrf
+                                <input type="text" class="col-span-1 border border-primary px-4 py-2 rounded-lg"
+                                       placeholder="Họ tên" name="name">
+                                <input type="text" class="col-span-1 border border-primary px-4 py-2 rounded-lg"
+                                       placeholder="Số điện thoại" name="phone_number">
+                                <input type="email" class="col-span-full border border-primary px-4 py-2 rounded-lg"
+                                       placeholder="Email" name="email">
+                                <textarea class="col-span-full border border-primary px-4 py-2 rounded-lg"
+                                          placeholder="Lời nhắn" name="message"></textarea>
                                 <button type="submit"
-                                        class="absolute -bottom-14 rounded-lg bg-black px-10 py-2 font-bold uppercase text-alternative-darker">
+                                        class="uppercase px-10 py-2 bg-black text-alternative-darker rounded-lg font-bold absolute -bottom-14">
                                     Gửi form
                                 </button>
                             </form>
+
+                            @if(session()->has('message'))
+                                <script>
+                                    alert("{{ session()->get('message') }}")
+                                </script>
+                            @endif
                         </div>
                     </div>
                     <div class="hidden md:block md:w-7/12">
@@ -918,48 +922,28 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                     </div>
                 </div>
                 <div class="grid gap-16 lg:grid-cols-2">
-                    <div class="col-span-1 flex aspect-square items-end rounded-lg bg-cover bg-center bg-no-repeat p-4"
-                         style="background-image: url('{{ asset('assets/images/blog/Rectangle 73.png') }}')">
+                    <div class="col-span-1 flex aspect-square items-end rounded-lg bg-cover bg-center bg-no-repeat p-4 border"
+                         style="background-image: url('{{ Storage::url($this->news->first()->image) }}')">
                         <div class="bg-[#FDD561] p-4 rounded-lg">
                             <a class="text-xl font-bold text-primary">
-                                [2023] Lộ trình và Điều kiện du học Hàn Quốc thay đổi gì?
+                                {{ $this->news->first()->title }}
                             </a>
-                            <span>12.02.2022</span>
+                            <span>{{ $this->news->first()->created_at->format('d/m/Y') }}</span>
                         </div>
                     </div>
                     <div class="col-span-1 space-y-8">
-                        <div class="flex items-center gap-4 md:gap-8">
-                            <img class="w-1/3 rounded-lg" src="{{ asset('assets/images/blog/Rectangle 73.png') }}"
-                                 alt="">
-                            <div class="flex flex-col">
-                                <a class="md:text-xl font-bold line-clamp-2 md:line-clamp-3 text-primary">
-                                    [2023] Lộ trình và Điều kiện du học Hàn Quốc thay đổi gì?
-                                </a>
-                                <span>12.02.2022</span>
+                        @foreach($this->news->skip(1) as $new)
+                            <div class="flex items-center gap-4 md:gap-8">
+                                <img class="w-1/3 rounded-lg" src="{{ Storage::url($new->image) }}"
+                                     alt="">
+                                <div class="flex flex-col">
+                                    <a class="md:text-xl font-bold line-clamp-2 md:line-clamp-3 text-primary">
+                                        {{ $new->title }}
+                                    </a>
+                                    <span>{{ $new->created_at->format('d/m/Y') }}</span>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 md:gap-8">
-                            <img class="w-1/3 rounded-lg" src="{{ asset('assets/images/blog/Rectangle 73.png') }}"
-                                 alt="">
-                            <div class="flex flex-col">
-                                <a class="md:text-xl font-bold line-clamp-2 md:line-clamp-3 text-primary">
-                                    [2023] Lộ trình và Điều kiện du học Hàn Quốc thay đổi gì?
-                                </a>
-                                <span>12.02.2022</span>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 md:gap-8">
-                            <img class="w-1/3 rounded-lg" src="{{ asset('assets/images/blog/Rectangle 73.png') }}"
-                                 alt="">
-                            <div class="flex flex-col">
-                                <a class="md:text-xl font-bold line-clamp-2 md:line-clamp-3 text-primary">
-                                    [2023] Lộ trình và Điều kiện du học Hàn Quốc thay đổi gì?
-                                </a>
-                                <span>12.02.2022</span>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -1067,7 +1051,8 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                         <h3 class="card_heading text-lg md:text-2xl">Luyện thi TOPIK</h3>
                                         <div class="pricing_wrap">
                                             <span class="price_value text-sm md:text-2xl">1.500.000</span>
-                                            <small class="d-block text-decoration-line-through text-sm">3.000.000đ</small>
+                                            <small
+                                                class="d-block text-decoration-line-through text-sm">3.000.000đ</small>
                                         </div>
                                         <div class="btn_wrap pb-0">
                                             <a class="btn btn_primary" href="#!">
@@ -1097,7 +1082,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
         <script>
             document.addEventListener("DOMContentLoaded", () => {
                 const myModal = new HystModal({
-                    linkAttributeName: "data-hystmodal",
+                    linkAttributeName: "data-hystmodal"
                 });
                 myModal.open();
 

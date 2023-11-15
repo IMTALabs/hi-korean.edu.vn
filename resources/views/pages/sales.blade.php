@@ -1,6 +1,20 @@
 <?php
 
-\Laravel\Folio\name('sales')
+\Laravel\Folio\name('sales');
+
+\Artesaos\SEOTools\Facades\SEOMeta::setTitle('Ưu đãi');
+\Artesaos\SEOTools\Facades\SEOMeta::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
+\Artesaos\SEOTools\Facades\SEOMeta::setCanonical(url()->current());
+
+\Artesaos\SEOTools\Facades\OpenGraph::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
+\Artesaos\SEOTools\Facades\OpenGraph::setTitle('Ưu đãi');
+\Artesaos\SEOTools\Facades\OpenGraph::setUrl(url()->current());
+\Artesaos\SEOTools\Facades\OpenGraph::addProperty('type', 'articles');
+\Artesaos\SEOTools\Facades\OpenGraph::addImage(asset('assets/images/banner/banner.png'));
+
+\Artesaos\SEOTools\Facades\JsonLd::setTitle('Ưu đãi');
+\Artesaos\SEOTools\Facades\JsonLd::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
+\Artesaos\SEOTools\Facades\JsonLd::addImage(asset('assets/images/banner/banner.png'));
 
 ?>
 
@@ -26,7 +40,7 @@
                                 <small class="d-block text-decoration-line-through">3.000.000đ</small>
                             </div>
                             <div class="btn_wrap pb-0">
-                                <a class="btn border_dark" href="#!">
+                                <a class="btn border_dark" href="{{ route('contact') }}">
                                     <span>
                                         <small>Đăng ký ngay</small>
                                         <small>Đăng ký ngay</small>
@@ -44,7 +58,7 @@
                                 <small class="d-block text-decoration-line-through">3.000.000đ</small>
                             </div>
                             <div class="btn_wrap pb-0">
-                                <a class="btn btn_primary" href="#!">
+                                <a class="btn btn_primary" href="{{ route('contact') }}">
                                     <span>
                                         <small>Đăng ký ngay</small>
                                         <small>Đăng ký ngay</small>
@@ -61,7 +75,7 @@
                                 <small class="d-block text-decoration-line-through">3.000.000đ</small>
                             </div>
                             <div class="btn_wrap pb-0">
-                                <a class="btn border_dark" href="#!">
+                                <a class="btn border_dark" href="{{ route('contact') }}">
                                     <span>
                                         <small>Đăng ký ngay</small>
                                         <small>Đăng ký ngay</small>
