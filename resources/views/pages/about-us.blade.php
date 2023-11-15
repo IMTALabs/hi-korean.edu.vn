@@ -239,6 +239,13 @@
                                 Chúng tôi tự hào là đơn vị đem lại một môi trường đào tạo tiếng Hàn chất lượng tốt nhất,
                                 quan tâm đến người học, đến những đam mê và ước mơ của học viên.
                             </p>
+                            <!-- Button will hide on Mobile Device -->
+                            <a wire:navigate class="border btn btn_primary border-primary mt-8" href="{{ route('about_us') }}">
+                                <span>
+                                    <small>Tìm hiểu thêm</small>
+                                    <small>Tìm hiểu thêm</small>
+                                </span>
+                            </a>
                         </div>
                     </div>
                     <div class="lg:pl-8 col col-lg-8">

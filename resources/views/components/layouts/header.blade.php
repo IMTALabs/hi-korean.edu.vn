@@ -41,7 +41,7 @@
                             <li class="@if(Route::currentRouteName() == 'media') active @endif"><a
                                     wire:navigate
                                     class="nav-link !font-bold uppercase"
-                                    href="{{ route('media') }}">Kho ảnh</a></li>
+                                    href="{{ route('media') }}">Hoạt động</a></li>
                             <li class="@if(Route::currentRouteName() == 'sales') active @endif">
                                 <a class="nav-link !font-bold uppercase"
                                    wire:navigate

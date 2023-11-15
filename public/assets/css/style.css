@@ -2032,9 +2032,9 @@ blockquote p {
     margin-bottom: 59px;
 }
 
-.hero_banner.style_1 .container {
-    max-width: 1430px;
-}
+/*.hero_banner.style_1 .container {*/
+/*    max-width: 1430px;*/
+/*}*/
 
 .hero_banner.style_1 .content_wrap {
     padding: 100px;

@@ -8,7 +8,7 @@
     {!! SEOMeta::generate() !!}
     {!! OpenGraph::generate() !!}
     {!! JsonLd::generate() !!}
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/favourite_icon_1.svg') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/icon/logo.png') }}">
 
     <!-- Framework - CSS Include -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">

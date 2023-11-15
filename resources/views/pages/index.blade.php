@@ -24,9 +24,19 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
 
 @push('styles')
     <link rel="stylesheet" href="https://unpkg.com/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@glidejs/glide@3.2.3/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@glidejs/glide@3.2.3/dist/css/glide.theme.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/hystmodal@1.0.1/dist/hystmodal.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/hystmodal@1.0.1/dist/hystmodal.min.css" rel="stylesheet">
 @endpush
 
 @push('scripts')
+    <script src="https://unpkg.com/@glidejs/glide@3.6.0/dist/glide.min.js"></script>
+    <script>
+        new Glide(".glide").mount();
+    </script>
+
     <script type="module">
         import lightGallery from "https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/+esm";
         import lgThumbnail from "https://unpkg.com/lightgallery@2.7.2/plugins/zoom/lg-zoom.es5.js";
@@ -44,57 +54,116 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
     <main class="page_content">
         <!-- Banner Section - Start
         ================================================== -->
-        <section style="background-image: url('{{ asset('assets/images/banner/banner.png') }}')"
-                 class="hero_banner style_1">
-            <div class="container flex items-stretch">
-                <div class="flex w-full lg:w-1/2 flex-col text-left">
-                    <div class="flex grow flex-col items-start justify-center">
-                        <span class="bg-alternative-darker text-[#3C1E1F] font-bold text-2xl px-6 py-1 rounded">
-                            Trung Tâm Tiếng Hàn
-                        </span>
-                        <h1 class="mt-8 uppercase !text-5xl text-orange-950 !leading-[4.5rem]">
-                            Toàn diện cho<br> ngưới mới bắt đầu
-                        </h1>
-                    </div>
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <section style="background-image: url('{{ asset('assets/images/banner/banner.png') }}')"
+                                 class="hero_banner style_1">
+                            <div class="container flex items-stretch">
+                                <div class="flex w-full flex-col text-left lg:w-1/2">
+                                    <div class="flex grow flex-col items-start justify-center">
+                                        <span
+                                            class="bg-alternative-darker text-[#3C1E1F] font-bold text-2xl px-6 py-1 rounded">
+                                            Trung Tâm Tiếng Hàn
+                                        </span>
+                                        <h1 class="mt-8 uppercase md:!text-5xl text-orange-950 md:!leading-[4.5rem]">
+                                            Toàn diện cho<br> ngưới mới bắt đầu
+                                        </h1>
+                                    </div>
 
-                    <div class="mb-16 w-full lg:w-3/4">
-                        <h2 class="text-xl">Sự kiện mới</h2>
+                                    <div class="h-40"></div>
+                                </div>
+                                <img class="max-lg:hidden w-1/2"
+                                     src="{{ asset('assets/images/banner/hero_banner_img_2.png') }}" alt="">
+                            </div>
+                        </section>
+                    </li>
+                    <li class="glide__slide">
+                        <section style="background-image: url('{{ asset('assets/images/banner/banner.png') }}')"
+                                 class="hero_banner style_1">
+                            <div class="container flex items-stretch">
+                                <div class="flex w-full flex-col text-left lg:w-1/2">
+                                    <div class="flex grow flex-col items-start justify-center">
+                                        <span
+                                            class="bg-alternative-darker text-[#3C1E1F] font-bold text-2xl px-6 py-1 rounded">
+                                            Trung Tâm Tiếng Hàn
+                                        </span>
+                                        <h1 class="mt-8 uppercase md:!text-5xl text-orange-950 md:!leading-[4.5rem]">
+                                            Toàn diện cho<br> ngưới mới bắt đầu
+                                        </h1>
+                                    </div>
 
-                        <div class="pt-2 tabs_wrapper">
-                            <div class="tab-content">
-                                <div class="relative tab-pane fade show active" id="teb_hr" role="tabpanel">
-                                    <div
-                                        class="absolute top-0 right-0 h-full w-20 bg-[linear-gradient(270deg,_#F7F5EF_22%,_rgba(247,_245,_239,_0)_100%)] z-[99999]"></div>
-                                    <div class="flex flex-nowrap justify-center common_carousel_3col [&>button]:-top-8">
-                                        <div class="pr-4">
-                                            <img class="rounded border border-primary"
-                                                 src="https://placehold.co/160x110" alt="">
-                                        </div>
-                                        <div class="pr-4">
-                                            <img class="rounded border border-primary"
-                                                 src="https://placehold.co/160x110" alt="">
-                                        </div>
-                                        <div class="pr-4">
-                                            <img class="rounded border border-primary"
-                                                 src="https://placehold.co/160x110" alt="">
-                                        </div>
-                                        <div class="pr-4">
-                                            <img class="rounded border border-primary"
-                                                 src="https://placehold.co/160x110" alt="">
-                                        </div>
-                                        <div class="pr-4">
-                                            <img class="rounded border border-primary"
-                                                 src="https://placehold.co/160x110" alt="">
-                                        </div>
+                                    <div class="h-40"></div>
+                                </div>
+                                <img class="max-lg:hidden w-1/2"
+                                     src="{{ asset('assets/images/banner/hero_banner_img_2.png') }}" alt="">
+                            </div>
+                        </section>
+                    </li>
+                    <li class="glide__slide">
+                        <section style="background-image: url('{{ asset('assets/images/banner/banner.png') }}')"
+                                 class="hero_banner style_1">
+                            <div class="container flex items-stretch">
+                                <div class="flex w-full flex-col text-left lg:w-1/2">
+                                    <div class="flex grow flex-col items-start justify-center">
+                                        <span
+                                            class="bg-alternative-darker text-[#3C1E1F] font-bold text-2xl px-6 py-1 rounded">
+                                            Trung Tâm Tiếng Hàn
+                                        </span>
+                                        <h1 class="mt-8 uppercase md:!text-5xl text-orange-950 md:!leading-[4.5rem]">
+                                            Toàn diện cho<br> ngưới mới bắt đầu
+                                        </h1>
+                                    </div>
+
+                                    <div class="h-40"></div>
+                                </div>
+                                <img class="max-lg:hidden w-1/2"
+                                     src="{{ asset('assets/images/banner/hero_banner_img_2.png') }}" alt="">
+                            </div>
+                        </section>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mx-auto relative -mt-32 lg:-mt-64 max-md:pr-10">
+            <div class="max-w-2xl z-[99999999] relative">
+                <div class="mb-16 w-full lg:w-3/4">
+                    <h2 class="text-xl">Sự kiện mới</h2>
+
+                    <div class="pt-2 tabs_wrapper">
+                        <div class="tab-content">
+                            <div class="relative tab-pane fade show active" id="teb_hr"
+                                 role="tabpanel">
+                                <div
+                                    class="flex flex-nowrap justify-center common_carousel_3col [&>button]:-top-8">
+                                    <div class="pr-4">
+                                        <img class="rounded border border-primary"
+                                             src="https://placehold.co/160x110" alt="">
+                                    </div>
+                                    <div class="pr-4">
+                                        <img class="rounded border border-primary"
+                                             src="https://placehold.co/160x110" alt="">
+                                    </div>
+                                    <div class="pr-4">
+                                        <img class="rounded border border-primary"
+                                             src="https://placehold.co/160x110" alt="">
+                                    </div>
+                                    <div class="pr-4">
+                                        <img class="rounded border border-primary"
+                                             src="https://placehold.co/160x110" alt="">
+                                    </div>
+                                    <div class="pr-4">
+                                        <img class="rounded border border-primary"
+                                             src="https://placehold.co/160x110" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <img class="max-lg:hidden w-1/2" src="{{ asset('assets/images/banner/hero_banner_img_2.png') }}" alt="">
             </div>
-        </section>
+        </div>
         <!-- Banner Section - End
         ================================================== -->
 
@@ -113,7 +182,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                     </div>
                 </div>
 
-                <div class="tabs_wrapper max-lg:mt-24">
+                <div class="max-lg:mt-24 tabs_wrapper">
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="teb_hr" role="tabpanel">
                             <div class="flex-nowrap justify-center row common_carousel_3col">
@@ -301,7 +370,7 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                             </p>
                         </div>
                     </div>
-                    <div class="lg:pl-8 col col-lg-7">
+                    <div class="col col-lg-7 lg:pl-8">
                         <img class="aspect-square w-full rounded border object-cover border-primary"
                              src="http://hikorean.edu.vn/wp-content/uploads/2023/08/649543a7cc3b9.png" alt="">
                     </div>
@@ -326,9 +395,17 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                 Chúng tôi tự hào là đơn vị đem lại một môi trường đào tạo tiếng Hàn chất lượng tốt nhất,
                                 quan tâm đến người học, đến những đam mê và ước mơ của học viên.
                             </p>
+                            <!-- Button will hide on Mobile Device -->
+                            <a wire:navigate class="border btn btn_primary border-primary mt-8"
+                               href="{{ route('about_us') }}">
+                                <span>
+                                    <small>Tìm hiểu thêm</small>
+                                    <small>Tìm hiểu thêm</small>
+                                </span>
+                            </a>
                         </div>
                     </div>
-                    <div class="lg:pl-8 col col-lg-8">
+                    <div class="col col-lg-8 lg:pl-8">
                         <div class="mt-28 flex-nowrap justify-center row common_carousel_2col">
                             <div class="overflow-visible col col-lg-4 carousel_item">
                                 <div
@@ -537,24 +614,24 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                 <div class="row align-items-center">
                     <div class="w-full md:w-5/12">
                         <div class="section_heading">
-                            <h2 class="heading_text mb-0">
+                            <h2 class="mb-0 heading_text">
                                 Đăng ký tham gia
                             </h2>
-                            <h3 class="font-medium text-base">
+                            <h3 class="text-base font-medium">
                                 Điền thông tin, chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất
                             </h3>
 
-                            <form action="#" class="mt-8 grid grid-cols-2 gap-4 relative">
-                                <input type="text" class="col-span-1 border border-primary px-4 py-2 rounded-lg"
+                            <form action="#" class="relative mt-8 grid grid-cols-2 gap-4">
+                                <input type="text" class="col-span-1 rounded-lg border px-4 py-2 border-primary"
                                        placeholder="Họ tên">
-                                <input type="text" class="col-span-1 border border-primary px-4 py-2 rounded-lg"
+                                <input type="text" class="col-span-1 rounded-lg border px-4 py-2 border-primary"
                                        placeholder="Số điện thoại">
-                                <input type="email" class="col-span-full border border-primary px-4 py-2 rounded-lg"
+                                <input type="email" class="col-span-full rounded-lg border px-4 py-2 border-primary"
                                        placeholder="Email">
-                                <textarea class="col-span-full border border-primary px-4 py-2 rounded-lg"
+                                <textarea class="col-span-full rounded-lg border px-4 py-2 border-primary"
                                           placeholder="Lời nhắn"></textarea>
                                 <button type="submit"
-                                        class="uppercase px-10 py-2 bg-black text-alternative-darker rounded-lg font-bold absolute -bottom-14">
+                                        class="absolute -bottom-14 rounded-lg bg-black px-10 py-2 font-bold uppercase text-alternative-darker">
                                     Gửi form
                                 </button>
                             </form>
@@ -642,15 +719,15 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                     </div>
                 </div>
 
-                <div class="row testimonial_carousel max-lg:mt-24">
-                    <div class="col common_carousel_3col flex flex-nowrap" data-cursor-text="Drag">
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                <div class="max-lg:mt-24 row testimonial_carousel">
+                    <div class="flex flex-nowrap col common_carousel_3col" data-cursor-text="Drag">
+                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
                             <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
+                                <img class="h-14 w-14 rounded-full"
                                      src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
                                      alt="">
                                 <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
                                     <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
                                 </div>
                             </div>
@@ -659,13 +736,13 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                 và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
                             </p>
                         </div>
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
                             <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
+                                <img class="h-14 w-14 rounded-full"
                                      src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
                                      alt="">
                                 <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
                                     <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
                                 </div>
                             </div>
@@ -674,13 +751,13 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                 và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
                             </p>
                         </div>
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
                             <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
+                                <img class="h-14 w-14 rounded-full"
                                      src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
                                      alt="">
                                 <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
                                     <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
                                 </div>
                             </div>
@@ -689,13 +766,13 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                 và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
                             </p>
                         </div>
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
                             <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
+                                <img class="h-14 w-14 rounded-full"
                                      src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
                                      alt="">
                                 <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
                                     <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
                                 </div>
                             </div>
@@ -704,13 +781,13 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                 và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
                             </p>
                         </div>
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
                             <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
+                                <img class="h-14 w-14 rounded-full"
                                      src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
                                      alt="">
                                 <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
                                     <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
                                 </div>
                             </div>
@@ -719,13 +796,13 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                                 và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
                             </p>
                         </div>
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
+                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
                             <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
+                                <img class="h-14 w-14 rounded-full"
                                      src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
                                      alt="">
                                 <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
+                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
                                     <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
                                 </div>
                             </div>
@@ -735,6 +812,11 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                             </p>
                         </div>
                     </div>
+                </div>
+
+                <div class="mt-16 row">
+                    <lite-youtube class="mx-auto max-w-2xl rounded-2xl" videoid="TKc90DXpmQc"
+                                  playlabel="HiKorean"></lite-youtube>
                 </div>
             </div>
         </section>
@@ -743,69 +825,73 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
 
         <!-- Counter Section - Start
         ================================================== -->
-        <section class="container bg-white shadow-2xl rounded-2xl -mt-28">
+        <section class="container -mt-28 rounded-2xl bg-white shadow-2xl">
             <div class="flex max-lg:flex-col flex-nowrap items-center">
                 <div class="col col-lg-3 col-md-6">
-                    <div class="counter_item border-0 p-4">
-                        <div class="max-lg:mx-auto w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
+                    <div class="border-0 p-4 counter_item">
+                        <div
+                            class="max-lg:mx-auto w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                       d="M5 22q-.825 0-1.413-.588T3 20V6q0-.825.588-1.413T5 4h1V3q0-.425.288-.713T7 2q.425 0 .713.288T8 3v1h8V3q0-.425.288-.713T17 2q.425 0 .713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.588 1.413T19 22H5Zm0-2h14V10H5v10ZM5 8h14V6H5v2Zm0 0V6v2Zm7 6q-.425 0-.713-.288T11 13q0-.425.288-.713T12 12q.425 0 .713.288T13 13q0 .425-.288.713T12 14Zm-4 0q-.425 0-.713-.288T7 13q0-.425.288-.713T8 12q.425 0 .713.288T9 13q0 .425-.288.713T8 14Zm8 0q-.425 0-.713-.288T15 13q0-.425.288-.713T16 12q.425 0 .713.288T17 13q0 .425-.288.713T16 14Zm-4 4q-.425 0-.713-.288T11 17q0-.425.288-.713T12 16q.425 0 .713.288T13 17q0 .425-.288.713T12 18Zm-4 0q-.425 0-.713-.288T7 17q0-.425.288-.713T8 16q.425 0 .713.288T9 17q0 .425-.288.713T8 18Zm8 0q-.425 0-.713-.288T15 17q0-.425.288-.713T16 16q.425 0 .713.288T17 17q0 .425-.288.713T16 18Z"/>
                             </svg>
                         </div>
-                        <h3 class="counter_value whitespace-nowrap max-lg:text-center">
-                            <span class="counter_value_text text-4xl">5</span><span class="text-4xl">&nbsp;năm</span>
+                        <h3 class="whitespace-nowrap max-lg:text-center counter_value">
+                            <span class="text-4xl counter_value_text">5</span><span class="text-4xl">&nbsp;năm</span>
                         </h3>
                         <p class="mb-0 line-clamp-2 min-h-[3rem]">
                             Hoạt động & Phát triển
                         </p>
                     </div>
                 </div>
-                <div class="w-0.5 h-20 bg-gray-300 max-lg:hidden"></div>
+                <div class="max-lg:hidden h-20 bg-gray-300 w-0.5"></div>
                 <div class="col col-lg-3 col-md-6">
-                    <div class="counter_item border-0 p-4">
-                        <div class="max-lg:mx-auto w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
+                    <div class="border-0 p-4 counter_item">
+                        <div
+                            class="max-lg:mx-auto w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                       d="M5.85 17.1q1.275-.975 2.85-1.538T12 15q1.725 0 3.3.563t2.85 1.537q.875-1.025 1.363-2.325T20 12q0-3.325-2.337-5.663T12 4Q8.675 4 6.337 6.337T4 12q0 1.475.488 2.775T5.85 17.1ZM12 13q-1.475 0-2.488-1.012T8.5 9.5q0-1.475 1.012-2.488T12 6q1.475 0 2.488 1.012T15.5 9.5q0 1.475-1.012 2.488T12 13Zm0 9q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q1.325 0 2.5-.388t2.15-1.112q-.975-.725-2.15-1.113T12 17q-1.325 0-2.5.388T7.35 18.5q.975.725 2.15 1.113T12 20Zm0-9q.65 0 1.075-.425T13.5 9.5q0-.65-.425-1.075T12 8q-.65 0-1.075.425T10.5 9.5q0 .65.425 1.075T12 11Zm0-1.5Zm0 9Z"/>
                             </svg>
                         </div>
-                        <h3 class="counter_value whitespace-nowrap max-lg:text-center">
-                            <span class="counter_value_text text-4xl">125000</span><span class="text-4xl">+</span>
+                        <h3 class="whitespace-nowrap max-lg:text-center counter_value">
+                            <span class="text-4xl counter_value_text">125000</span><span class="text-4xl">+</span>
                         </h3>
                         <p class="mb-0 line-clamp-2 min-h-[3rem]">
                             Học viên theo học
                         </p>
                     </div>
                 </div>
-                <div class="w-0.5 h-20 bg-gray-300 max-lg:hidden"></div>
+                <div class="max-lg:hidden h-20 bg-gray-300 w-0.5"></div>
                 <div class="col col-lg-3 col-md-6">
-                    <div class="counter_item border-0 p-4">
-                        <div class="max-lg:mx-auto w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
+                    <div class="border-0 p-4 counter_item">
+                        <div
+                            class="max-lg:mx-auto w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                       d="M4 11.333L0 9l12-7l12 7v8.5h-2v-7.333l-2 1.166v6.678l-.223.275A9.983 9.983 0 0 1 12 22a9.983 9.983 0 0 1-7.777-3.714L4 18.011v-6.678ZM6 12.5v4.792A7.979 7.979 0 0 0 12 20a7.978 7.978 0 0 0 6-2.708V12.5L12 16l-6-3.5ZM3.97 9L12 13.685L20.03 9L12 4.315L3.97 9Z"/>
                             </svg>
                         </div>
-                        <h3 class="counter_value whitespace-nowrap max-lg:text-center">
-                            <span class="counter_value_text text-4xl">88000</span>
+                        <h3 class="whitespace-nowrap max-lg:text-center counter_value">
+                            <span class="text-4xl counter_value_text">88000</span>
                         </h3>
                         <p class="mb-0 line-clamp-2 min-h-[3rem]">
                             Học viên đỗ Topik trên 4.0
                         </p>
                     </div>
                 </div>
-                <div class="w-0.5 h-20 bg-gray-300 max-lg:hidden"></div>
+                <div class="max-lg:hidden h-20 bg-gray-300 w-0.5"></div>
                 <div class="col col-lg-3 col-md-6">
-                    <div class="counter_item border-0 p-4">
-                        <div class="max-lg:mx-auto w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
+                    <div class="border-0 p-4 counter_item">
+                        <div
+                            class="max-lg:mx-auto w-20 h-20 rounded-full bg-[#FDD561] flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                       d="M12 20.325q-.35 0-.713-.125t-.637-.4l-1.725-1.575q-2.65-2.425-4.788-4.813T2 8.15Q2 5.8 3.575 4.225T7.5 2.65q1.325 0 2.5.562t2 1.538q.825-.975 2-1.538t2.5-.562q2.35 0 3.925 1.575T22 8.15q0 2.875-2.125 5.275T15.05 18.25l-1.7 1.55q-.275.275-.637.4t-.713.125ZM11.05 6.75q-.725-1.025-1.55-1.562t-2-.538q-1.5 0-2.5 1t-1 2.5q0 1.3.925 2.763t2.213 2.837q1.287 1.375 2.65 2.575T12 18.3q.85-.775 2.213-1.975t2.65-2.575q1.287-1.375 2.212-2.837T20 8.15q0-1.5-1-2.5t-2.5-1q-1.175 0-2 .537T12.95 6.75q-.175.25-.425.375T12 7.25q-.275 0-.525-.125t-.425-.375Zm.95 4.725Z"/>
                             </svg>
                         </div>
-                        <h3 class="counter_value whitespace-nowrap max-lg:text-center">
-                            <span class="counter_value_text text-4xl">75</span><span class="text-4xl">%</span>
+                        <h3 class="whitespace-nowrap max-lg:text-center counter_value">
+                            <span class="text-4xl counter_value_text">75</span><span class="text-4xl">%</span>
                         </h3>
                         <p class="mb-0 line-clamp-2 min-h-[3rem]">
                             Học viên hài lòng
@@ -815,6 +901,93 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
             </div>
         </section>
         <!-- Counter Section - End
+        ================================================== -->
+
+        <!-- Blog Section - Start
+        ================================================== -->
+        <section class="py-20 brands_section section_space_lg">
+            <div class="container">
+                <div class="section_heading">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col col-lg-6">
+                            <h3 class="text-2xl !text-secondary">Blog</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                Tin tức nổi bật
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid gap-16 lg:grid-cols-2">
+                    <div class="col-span-1 flex aspect-square items-end rounded-lg bg-cover bg-center bg-no-repeat p-4"
+                         style="background-image: url('{{ asset('assets/images/blog/Rectangle 73.png') }}')">
+                        <div class="bg-[#FDD561] p-4 rounded-lg">
+                            <a class="text-xl font-bold text-primary">
+                                [2023] Lộ trình và Điều kiện du học Hàn Quốc thay đổi gì?
+                            </a>
+                            <span>12.02.2022</span>
+                        </div>
+                    </div>
+                    <div class="col-span-1 space-y-8">
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <img class="w-1/3 rounded-lg" src="{{ asset('assets/images/blog/Rectangle 73.png') }}"
+                                 alt="">
+                            <div class="flex flex-col">
+                                <a class="md:text-xl font-bold line-clamp-2 md:line-clamp-3 text-primary">
+                                    [2023] Lộ trình và Điều kiện du học Hàn Quốc thay đổi gì?
+                                </a>
+                                <span>12.02.2022</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <img class="w-1/3 rounded-lg" src="{{ asset('assets/images/blog/Rectangle 73.png') }}"
+                                 alt="">
+                            <div class="flex flex-col">
+                                <a class="md:text-xl font-bold line-clamp-2 md:line-clamp-3 text-primary">
+                                    [2023] Lộ trình và Điều kiện du học Hàn Quốc thay đổi gì?
+                                </a>
+                                <span>12.02.2022</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <img class="w-1/3 rounded-lg" src="{{ asset('assets/images/blog/Rectangle 73.png') }}"
+                                 alt="">
+                            <div class="flex flex-col">
+                                <a class="md:text-xl font-bold line-clamp-2 md:line-clamp-3 text-primary">
+                                    [2023] Lộ trình và Điều kiện du học Hàn Quốc thay đổi gì?
+                                </a>
+                                <span>12.02.2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog Section - End
+        ================================================== -->
+
+        <!-- Brands Section - Start
+        ================================================== -->
+        <section class="py-20 brands_section section_space_lg bg-right bg-cover"
+                 style="background-image: url('{{ asset('assets/images/banner/img.png') }}')">
+            <div class="container">
+                <div class="section_heading">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col col-lg-6">
+                            <h3 class="text-2xl !text-[#B67222]">Doanh Nghiệp</h3>
+                            <h2 class="mb-0 uppercase heading_text">
+                                HỢP TÁC ĐÀO TẠO
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white px-2 md:px-16 py-4 rounded-lg shadow-xl">
+                    <img src="{{ asset('assets/images/brands/img.png') }}" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- Brands Section - End
         ================================================== -->
 
         <!-- Brands Section - Start
@@ -841,27 +1014,33 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
                         <img
                             src="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
                             alt=""/>
-                    </a><a href="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
-                           {{--data-lg-size="1600-2400"--}}
-                           target="_blank"
-                           class="col-span-1 rounded-lg image"
+                    </a>
+                    <a href="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                       {{--data-lg-size="1600-2400"--}}
+                       target="_blank"
+                       class="col-span-1 rounded-lg image"
                     >
-                        <img src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
-                             alt=""/>
-                    </a><a href="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
-                           {{--data-lg-size="1600-2400"--}}
-                           target="_blank"
-                           class="col-span-1 rounded-lg image"
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                            alt=""/>
+                    </a>
+                    <a href="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                       {{--data-lg-size="1600-2400"--}}
+                       target="_blank"
+                       class="col-span-1 rounded-lg image"
                     >
-                        <img src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
-                             alt=""/>
-                    </a><a href="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
-                           {{--data-lg-size="1600-2400"--}}
-                           target="_blank"
-                           class="col-span-1 rounded-lg image"
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                            alt=""/>
+                    </a>
+                    <a href="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                       {{--data-lg-size="1600-2400"--}}
+                       target="_blank"
+                       class="col-span-1 rounded-lg image"
                     >
-                        <img src="https://hikorean.edu.vn/wp-content/uploads/2023/08/647b10d30ca2d-768x512.jpeg"
-                             alt=""/>
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                            alt=""/>
                     </a>
                 </div>
             </div>
@@ -869,101 +1048,72 @@ $courses = \Livewire\Volt\computed(fn() => \Statamic\Facades\Entry::whereCollect
         <!-- Brands Section - End
         ================================================== -->
 
-        <!-- Intro Video Section - Start
-        ================================================== -->
-        <section class="overflow-hidden section_space_lg bg-alternative-lighter decoration_wrap">
-            <div class="container position-relative">
-                <div class="text-center section_heading">
-                    <h2 class="mb-0 heading_text">
-                        Lộ trình học
-                    </h2>
-                </div>
-                <div class="intro_video">
-                    <div class="video_wrap tilt">
-                        <lite-youtube class="mx-auto" videoid="TKc90DXpmQc"
-                                      playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                        <div class="iconbox_item">
-                            <div class="title_wrap">
-                                <div class="item_icon">
-                                    <i class="fas fa-signal-1"></i>
-                                </div>
-                                <h3 class="mb-0 item_title">
-                                    <span class="d-block">Step 1</span>
-                                </h3>
+        <div class="hystmodal z-[9999999999999]" id="myModal" aria-hidden="true">
+            <div class="hystmodal__wrap">
+                <div class="hystmodal__window max-w-xs  lg:max-w-7xl rounded-lg" role="dialog" aria-modal="true">
+                    <button data-hystclose class="hystmodal__close">Закрыть</button>
+                    <section class="pricing_section p-8 scale-50">
+                        <div class="container decoration_wrap">
+                            <div class="section_heading text-center">
+                                <h1 class="heading_text mb-0 text-sm lg:text-2xl">
+                                    Ưu đãi nổi bật
+                                </h1>
                             </div>
-                            <p class="mb-0">
-                                Adipiscing bibendum est ultricies integer. Magnis dis parturient montes nascetur
-                                ridiculus mus mauris
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                        <div class="iconbox_item">
-                            <div class="title_wrap">
-                                <div class="item_icon">
-                                    <i class="fas fa-signal-2"></i>
-                                </div>
-                                <h3 class="mb-0 item_title">
-                                    <span class="d-block">Step 2</span>
-                                </h3>
-                            </div>
-                            <p class="mb-0">
-                                Facilisi nullam vehicula ipsum a arcu cursus vitae. Interdum velit laoreet id donec
-                                ultrices tincidunt arcu
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                        <div class="iconbox_item">
-                            <div class="title_wrap">
-                                <div class="item_icon">
-                                    <i class="fas fa-signal-3"></i>
-                                </div>
-                                <h3 class="mb-0 item_title">
-                                    <span class="d-block">Step 3</span>
-                                </h3>
-                            </div>
-                            <p class="mb-0">
-                                Lectus magna fringilla urna porttitor rhoncus dolor purus non. Orci dapibus ultrices in
-                                iaculis
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col col-lg-3 col-md-6 col-sm-6">
-                        <div class="iconbox_item">
-                            <div class="title_wrap">
-                                <div class="item_icon">
-                                    <i class="fas fa-signal-4"></i>
-                                </div>
-                                <h3 class="mb-0 item_title">
-                                    <span class="d-block">Step 4</span>
-                                </h3>
-                            </div>
-                            <p class="mb-0">
-                                Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Imperdiet
-                                proin fermentum leo vel orc
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="deco_item shape_img_1" data-parallax='{"y" : 130, "smoothness": 6}'>
-                    <img src="assets/images/shape/shape_img_7.png" alt="Collab – Online Learning Platform">
-                </div>
-                <div class="deco_item shape_img_2" data-parallax='{"y" : -130, "smoothness": 6}'>
-                    <img src="assets/images/shape/shape_img_7.png" alt="Collab – Online Learning Platform">
+                            <div class="pricing_cards_wrapper row align-items-center">
+                                <div class="col">
+                                    <div class="pricing_card text-center bg_dark tilt">
+                                        <div class="card_badge">recommended</div>
+                                        <h3 class="card_heading text-lg md:text-2xl">Luyện thi TOPIK</h3>
+                                        <div class="pricing_wrap">
+                                            <span class="price_value text-sm md:text-2xl">1.500.000</span>
+                                            <small class="d-block text-decoration-line-through text-sm">3.000.000đ</small>
+                                        </div>
+                                        <div class="btn_wrap pb-0">
+                                            <a class="btn btn_primary" href="#!">
+                                                <span>
+                                                    <small class="max-md:text-xs">Đăng ký ngay</small>
+                                                    <small class="max-md:text-xs">Đăng ký ngay</small>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="deco_item shape_img_1" data-parallax='{"y" : 130, "smoothness": 6}'>
+                                <img src="assets/images/shape/shape_img_4.png" alt="Collab – Online Learning Platform">
+                            </div>
+                            <div class="deco_item shape_img_2" data-parallax='{"y" : -130, "smoothness": 6}'>
+                                <img src="assets/images/shape/shape_img_5.png" alt="Collab – Online Learning Platform">
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-            <div class="deco_item shape_img_3" data-parallax='{"y" : -130, "smoothness": 6}'>
-                <img src="assets/images/shape/shape_img_7.png" alt="Collab – Online Learning Platform">
-            </div>
-        </section>
-        <!-- Intro Video Section - End
-        ================================================== -->
+        </div>
+
+        <div id="trigger-popup" data-hystmodal="#myModal"></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const myModal = new HystModal({
+                    linkAttributeName: "data-hystmodal",
+                });
+                myModal.open();
+
+                let isShow = false;
+                let firstPos = window.scrollY;
+                window.addEventListener("scroll", (e) => {
+                    const currentPos = window.scrollY;
+                    if (Math.abs(currentPos - firstPos) > 500) {
+                        if (!isShow) {
+                            isShow = true;
+                            document.querySelector("#trigger-popup").click();
+                        }
+                    }
+                });
+            });
+        </script>
     </main>
     @endvolt
 </x-layouts.app>
