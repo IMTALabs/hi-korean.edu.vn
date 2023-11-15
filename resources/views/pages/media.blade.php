@@ -2,20 +2,6 @@
 
 \Laravel\Folio\name('media');
 
-\Artesaos\SEOTools\Facades\SEOMeta::setTitle('Hoạt động');
-\Artesaos\SEOTools\Facades\SEOMeta::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
-\Artesaos\SEOTools\Facades\SEOMeta::setCanonical(url()->current());
-
-\Artesaos\SEOTools\Facades\OpenGraph::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
-\Artesaos\SEOTools\Facades\OpenGraph::setTitle('Hoạt động');
-\Artesaos\SEOTools\Facades\OpenGraph::setUrl(url()->current());
-\Artesaos\SEOTools\Facades\OpenGraph::addProperty('type', 'articles');
-\Artesaos\SEOTools\Facades\OpenGraph::addImage(asset('assets/images/banner/banner.png'));
-
-\Artesaos\SEOTools\Facades\JsonLd::setTitle('Hoạt động');
-\Artesaos\SEOTools\Facades\JsonLd::setDescription('TRUNG TÂM TIẾNG HÀN HI KOREAN');
-\Artesaos\SEOTools\Facades\JsonLd::addImage(asset('assets/images/banner/banner.png'));
-
 ?>
 
 @push('styles')
