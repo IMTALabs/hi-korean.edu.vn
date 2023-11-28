@@ -20,21 +20,21 @@
                             </li>
                             <li class="dropdown @if(Route::currentRouteName() == 'courses') active @endif">
                                 <a class="nav-link !font-bold uppercase" id="home_submenu" role="button"
+                                   onclick="window.location.href='{{ route('courses') }}'"
                                    data-bs-toggle="dropdown" aria-expanded="false">Khóa học</a>
                                 <ul class="dropdown-menu" aria-labelledby="home_submenu">
                                     {{-- <li class="active"><a href="#">Học trực tiếp</a></li> --}}
-                                    <li><a wire:navigate href="{{ route('courses.show', ['id' => 'offline']) }}">Học
-                                            trực tiếp</a>
+                                    <li><a wire:navigate href="/courses/so-cap-1">Sơ cấp</a>
                                     </li>
-                                    <li><a wire:navigate href="{{ route('courses.show', ['id' => 'e-learning']) }}">E-learning</a>
+                                    <li><a wire:navigate href="/courses/trung-cap-1">Trung cấp</a>
                                     </li>
                                     <li><a wire:navigate
-                                           href="{{ route('courses.show', ['id' => 'online']) }}">Online</a></li>
-                                    <li><a wire:navigate href="{{ route('courses.show', ['id' => 'individual']) }}">Theo
+                                           href="/courses/e-learning">Online</a></li>
+                                    <li><a wire:navigate href="/courses/bien-phien-dich">Theo
                                             đối tượng</a>
                                     </li>
                                     <li><a wire:navigate
-                                           href="{{ route('courses.show', ['id' => 'test-preparation']) }}">Luyện
+                                           href="/courses/topik-1-2">Luyện
                                             thi</a></li>
                                 </ul>
                             </li>

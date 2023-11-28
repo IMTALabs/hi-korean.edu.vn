@@ -20,10 +20,10 @@ class ContactController
             return redirect()->back();
         }
 
-        $contact = Contact::create($request->all());
+        $contact = Contact::create($data);
 
         if ($contact) {
-            session()->flash('message', 'Chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất!');
+            session()->flash('message', 'Thông tin liên hệ của bạn đang được xử lý. Chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất!');
         } else {
             session()->flash('message', 'Có lỗi xảy ra, vui lòng thử lại sau!');
         }

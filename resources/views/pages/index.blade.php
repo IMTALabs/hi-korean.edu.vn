@@ -110,7 +110,7 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                 </ul>
             </div>
         </div>
-        <div class="container mx-auto relative -mt-32 lg:-mt-64 max-md:pr-10">
+        <div class="container mx-auto relative -mt-32 lg:-mt-72 max-md:pr-10">
             <div class="max-w-2xl z-[99999999] relative">
                 <div class="mb-16 w-full lg:w-3/4">
                     <h2 class="text-xl">Sự kiện mới</h2>
@@ -123,23 +123,23 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                                     class="flex flex-nowrap justify-center common_carousel_3col [&>button]:-top-8">
                                     <div class="pr-4">
                                         <img class="rounded border border-primary"
-                                             src="https://placehold.co/160x110" alt="">
+                                             src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/368239551_615154604121982_3252719131205198815_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEncRXfQrGT8GbKTrxb5w9-wTkEwumdt9fBOQTC6Z23121Fiq8hUlir3eQJHQ0sda9R8KuXKQWbjKP1_1bjGRKC&_nc_ohc=Py0pxPyGQ2cAX_NW7SA&_nc_ht=scontent.fhan14-1.fna&oh=00_AfDxiBpmHB2TyWcCKD94VpivfoqlP28aI-QSW0RVF-FZCg&oe=65696B70" alt="">
                                     </div>
                                     <div class="pr-4">
                                         <img class="rounded border border-primary"
-                                             src="https://placehold.co/160x110" alt="">
+                                             src="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/367426873_616206084016834_5526045535344941440_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGxUlA8VBAgWopb6JZtExeX4aaXORuBTM3hppc5G4FMzQoAcMPEJkn59OQCzanH6F7DGmqCnv2E9l3cFwVNnWQk&_nc_ohc=U8-JNw-rUz0AX-lFJ8U&_nc_ht=scontent.fhan14-4.fna&oh=00_AfCDGghO4k40CODsDfAI30iFh6SFRY9bnU0Mg88ToU3LZQ&oe=656A7CBC" alt="">
                                     </div>
                                     <div class="pr-4">
                                         <img class="rounded border border-primary"
-                                             src="https://placehold.co/160x110" alt="">
+                                             src="https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/368212596_616206127350163_8417724170930565580_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeELZtLoucMhJQO2u9uo6FQ8dtwJJGhaNId23AkkaFo0h8KFR6Vb_jlF3-mfRYmSTnB4ok2F5lhGTWEBQIkoN20l&_nc_ohc=eBCdHg8X_lsAX_nEvIO&_nc_ht=scontent.fhan14-3.fna&oh=00_AfA1IKwodcaIAxSSxZJuZCxc3x1v4GqgyW5i3gu7kYyrrA&oe=656B4E22" alt="">
                                     </div>
                                     <div class="pr-4">
                                         <img class="rounded border border-primary"
-                                             src="https://placehold.co/160x110" alt="">
+                                             src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/368241235_616206157350160_5054740270367602422_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeG-XivYrcgcBKEAoYFqGP_Oc3WUiojj58RzdZSKiOPnxDRF_Xh_gltNnCjaWK6mellIndc2gYpyqmnqTImeRGvt&_nc_ohc=18apD1hw8j8AX-IKHSK&_nc_ht=scontent.fhan14-2.fna&oh=00_AfBsLssPMRcxXQPQwOEtrcpaGh83KV5imP9JAg0Ods0u5A&oe=656A9BCC" alt="">
                                     </div>
                                     <div class="pr-4">
                                         <img class="rounded border border-primary"
-                                             src="https://placehold.co/160x110" alt="">
+                                             src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/405277704_667893678848074_4168042183294063711_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGD1vt7RnRycZeDuzfMiGT_ltWnloGfpV2W1aeWgZ-lXXKfFlK0Au_K-mnoH8uCuj2GJY8V4qGEUph0r1yvddCr&_nc_ohc=5sUTLUKW9HUAX_tuteT&_nc_ht=scontent.fhan14-2.fna&oh=00_AfDux-IcxLUr0RAp_dVPKmXedQ1lFTEusBqdvTaODBz1_Q&oe=65697862" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                                     <div class="overflow-visible course_card">
                                         <div class="item_image">
                                             <a class="border !border-gray-300"
-                                               href="{{ route('courses.show', ['id' => 'offline']) }}"
+                                               href="/courses/so-cap-1"
                                                data-cursor-text="View">
                                                 <img
                                                     src="https://w.ladicdn.com/s900x650/62e3a03efac7530012145b9f/img_course_02-20221201133721-atuyu.jpg"
@@ -183,44 +183,187 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                                         </div>
                                         <div class="item_content">
                                             <h3 class="py-0 item_title">
-                                                <a href="{{ route('courses.show', ['id' => 'offline']) }}"
+                                                <a href="{{ route('courses') }}"
                                                    class="flex items-baseline gap-2">
                                                     <div class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
-                                                    <div class="truncate">KHÓA LUYỆN THI TOPIK 3-4 ( 48 BUỔI)</div>
+                                                    <div class="truncate">SƠ CẤP</div>
                                                 </a>
                                             </h3>
-                                            <p class="h-28 pt-2 line-clamp-4">
-                                                - Hướng dẫn phương pháp giải đề với 3 kỹ năng Nghe – Đọc – Viết
-                                                - Ôn tập ngữ pháp, từ vựng
-                                                - Luyện và giải đề
-                                            </p>
+                                            <ul class="h-28 pt-2 line-clamp-4">
+                                                <li>Sơ cấp 1</li>
+                                                <li>Sơ cấp 2</li>
+                                            </ul>
                                             <div class="flex items-center justify-between">
-                                                <div class="flex items-start gap-1 font-bold text-gray-500">
-                                                    <svg class="h-5 w-5" viewBox="0 0 24 24">
-                                                        <path fill="currentColor"
-                                                              d="m8.85 17.825l3.15-1.9l3.15 1.925l-.825-3.6l2.775-2.4l-3.65-.325l-1.45-3.4l-1.45 3.375l-3.65.325l2.775 2.425l-.825 3.575Zm3.15.45l-4.15 2.5q-.275.175-.575.15t-.525-.2q-.225-.175-.35-.438t-.05-.587l1.1-4.725L3.775 11.8q-.25-.225-.312-.513t.037-.562q.1-.275.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15q.275 0 .537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45q.1.275.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437q-.225.175-.525.2t-.575-.15l-4.15-2.5Zm0-5.025Z"/>
-                                                    </svg>
-                                                    4.9
-                                                    -
-                                                    14 buổi
-                                                </div>
 
                                                 <a class="px-2 py-2 btn btn_primary"
-                                                   href="{{ route('courses.show', ['id' => 'offline']) }}">
+                                                   href="{{ route('courses') }}">
                                                     <span>
                                                         <small class="py-0">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="32"
-                                                                 height="32" viewBox="0 0 24 24">
-                                                                <path fill="currentColor"
-                                                                      d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
-                                                            </svg>
+                                                            Xem thêm
                                                         </small>
                                                         <small class="py-0">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="32"
-                                                                 height="32" viewBox="0 0 24 24">
-                                                                <path fill="currentColor"
-                                                                      d="M16.15 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.313t.712.288L19.3 11.3q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7L16.15 13Z"/>
-                                                            </svg>
+                                                            Xem thêm
+                                                        </small>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overflow-visible col col-lg-4 carousel_item">
+                                    <div class="overflow-visible course_card">
+                                        <div class="item_image">
+                                            <a class="border !border-gray-300"
+                                               href="/courses/so-cap-1"
+                                               data-cursor-text="View">
+                                                <img
+                                                    src="https://w.ladicdn.com/s900x650/62e3a03efac7530012145b9f/img_course_02-20221201133721-atuyu.jpg"
+                                                    alt="Hi Korean">
+                                            </a>
+                                        </div>
+                                        <div class="item_content">
+                                            <h3 class="py-0 item_title">
+                                                <a href="{{ route('courses') }}"
+                                                   class="flex items-baseline gap-2">
+                                                    <div class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                    <div class="truncate">TRUNG CẤP</div>
+                                                </a>
+                                            </h3>
+                                            <ul class="h-28 pt-2 line-clamp-4">
+                                                <li>Trung cấp 1</li>
+                                                <li>Trung cấp 2</li>
+                                            </ul>
+                                            <div class="flex items-center justify-between">
+
+                                                <a class="px-2 py-2 btn btn_primary"
+                                                   href="{{ route('courses') }}">
+                                                    <span>
+                                                        <small class="py-0">
+                                                            Xem thêm
+                                                        </small>
+                                                        <small class="py-0">
+                                                            Xem thêm
+                                                        </small>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overflow-visible col col-lg-4 carousel_item">
+                                    <div class="overflow-visible course_card">
+                                        <div class="item_image">
+                                            <a class="border !border-gray-300"
+                                               href="/courses/so-cap-1"
+                                               data-cursor-text="View">
+                                                <img
+                                                    src="https://w.ladicdn.com/s900x650/62e3a03efac7530012145b9f/img_course_02-20221201133721-atuyu.jpg"
+                                                    alt="Hi Korean">
+                                            </a>
+                                        </div>
+                                        <div class="item_content">
+                                            <h3 class="py-0 item_title">
+                                                <a href="{{ route('courses') }}"
+                                                   class="flex items-baseline gap-2">
+                                                    <div class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                    <div class="truncate">LUYỆN THI TOPIK</div>
+                                                </a>
+                                            </h3>
+                                            <ul class="h-28 pt-2 line-clamp-4">
+                                                <li>Luyện thi TOPIK 1-2</li>
+                                                <li>Luyện thi TOPIK 3-4</li>
+                                                <li>Luyện thi TOPIK 5-6</li>
+                                            </ul>
+                                            <div class="flex items-center justify-between">
+
+                                                <a class="px-2 py-2 btn btn_primary"
+                                                   href="{{ route('courses') }}">
+                                                    <span>
+                                                        <small class="py-0">
+                                                            Xem thêm
+                                                        </small>
+                                                        <small class="py-0">
+                                                            Xem thêm
+                                                        </small>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overflow-visible col col-lg-4 carousel_item">
+                                    <div class="overflow-visible course_card">
+                                        <div class="item_image">
+                                            <a class="border !border-gray-300"
+                                               href="/courses/so-cap-1"
+                                               data-cursor-text="View">
+                                                <img
+                                                    src="https://w.ladicdn.com/s900x650/62e3a03efac7530012145b9f/img_course_02-20221201133721-atuyu.jpg"
+                                                    alt="Hi Korean">
+                                            </a>
+                                        </div>
+                                        <div class="item_content">
+                                            <h3 class="py-0 item_title">
+                                                <a href="{{ route('courses') }}"
+                                                   class="flex items-baseline gap-2">
+                                                    <div class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                    <div class="truncate">HỌC THUẬT</div>
+                                                </a>
+                                            </h3>
+                                            <ul class="h-28 pt-2 line-clamp-4">
+                                                <li>Biên phiên dịch</li>
+                                                <li>Du học</li>
+                                            </ul>
+                                            <div class="flex items-center justify-between">
+
+                                                <a class="px-2 py-2 btn btn_primary"
+                                                   href="{{ route('courses') }}">
+                                                    <span>
+                                                        <small class="py-0">
+                                                            Xem thêm
+                                                        </small>
+                                                        <small class="py-0">
+                                                            Xem thêm
+                                                        </small>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overflow-visible col col-lg-4 carousel_item">
+                                    <div class="overflow-visible course_card">
+                                        <div class="item_image">
+                                            <a class="border !border-gray-300"
+                                               href="/courses/so-cap-1"
+                                               data-cursor-text="View">
+                                                <img
+                                                    src="https://w.ladicdn.com/s900x650/62e3a03efac7530012145b9f/img_course_02-20221201133721-atuyu.jpg"
+                                                    alt="Hi Korean">
+                                            </a>
+                                        </div>
+                                        <div class="item_content">
+                                            <h3 class="py-0 item_title">
+                                                <a href="{{ route('courses') }}"
+                                                   class="flex items-baseline gap-2">
+                                                    <div class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                    <div class="truncate">ĐÀO TẠO</div>
+                                                </a>
+                                            </h3>
+                                            <ul class="h-28 pt-2 line-clamp-4">
+                                                <li>Đào tạo doanh nghiệp</li>
+                                                <li>Đào tạo trong trường học</li>
+                                            </ul>
+                                            <div class="flex items-center justify-between">
+
+                                                <a class="px-2 py-2 btn btn_primary"
+                                                   href="{{ route('courses') }}">
+                                                    <span>
+                                                        <small class="py-0">
+                                                            Xem thêm
+                                                        </small>
+                                                        <small class="py-0">
+                                                            Xem thêm
                                                         </small>
                                                     </span>
                                                 </a>
@@ -354,7 +497,7 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                     </div>
                     <div class="col col-lg-7 lg:pl-8">
                         <img class="aspect-square w-full rounded border object-cover border-primary"
-                             src="http://hikorean.edu.vn/wp-content/uploads/2023/08/649543a7cc3b9.png" alt="">
+                             src="https://media.licdn.com/dms/image/C5603AQGMMCRrFgFoGw/profile-displayphoto-shrink_800_800/0/1588748081403?e=1706745600&v=beta&t=e1yYjOKlIlm2kWZi6PgXb516zafV9z-DaN6s3bf85Q8" alt="">
                     </div>
                 </div>
             </div>
@@ -394,7 +537,7 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                                     class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
                                     <div class="item_image">
                                         <a class="border !border-gray-300">
-                                            <img src="{{ asset('assets/images/img.png') }}"
+                                            <img class="aspect-square object-cover bg-top" src="{{ asset('assets/images/mentor/mentor_image_1.jpg') }}"
                                                  alt="Hi Korean">
                                         </a>
                                     </div>
@@ -403,12 +546,16 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                                             <a class="flex items-baseline gap-2">
                                                 <div
                                                     class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
-                                                <div class="truncate">Cô Thùy Dương</div>
+                                                <div class="truncate">CEO NGUYỄN PHƯƠNG THÚY</div>
                                             </a>
                                         </h3>
                                         <ul class="mb-0 pt-4">
-                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
-                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Tốt nghiệp bằng Giỏi chuyên ngành Ngôn ngữ Hàn
+                                            trường Đại học Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Tốt nghiệp Thạc sĩ chuyên ngành Kinh doanh và Quản lý
+                                            tài chính trường Đại học Ngoại ngữ Busan</li>
+                                            <li>Giáo viên giảng dạy tại ngành Ngôn ngữ Hàn, Trường Đại
+                                            học Hà Nội.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -418,7 +565,7 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                                     class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
                                     <div class="item_image">
                                         <a class="border !border-gray-300">
-                                            <img src="{{ asset('assets/images/img.png') }}"
+                                            <img class="aspect-square object-cover bg-top" src="{{ asset('assets/images/mentor/mentor_image_3.jpg') }}"
                                                  alt="Hi Korean">
                                         </a>
                                     </div>
@@ -427,12 +574,14 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                                             <a class="flex items-baseline gap-2">
                                                 <div
                                                     class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
-                                                <div class="truncate">Cô Thùy Dương</div>
+                                                <div class="truncate">THẦY TRẦN QUANG ANH</div>
                                             </a>
                                         </h3>
                                         <ul class="mb-0 pt-4">
-                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
-                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Tốt nghiệp ngành Ngôn ngữ và văn học Hàn Quốc tại Đại học Chonnam</li>
+                                            <li>Tốt nghiệp Thạc sĩ ngành Hợp tác Quốc tế tại Đại học Yeungnam</li>
+                                            <li>Nghiên cứu sinh Tiến sĩ ngành Phát triển cộng đồng và chính sách xã hội tại Đại học Yeungnam</li>
+                                            <li>Giảng viên Khoa Tiếng Hàn, trường Đại học Phenikaa</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -442,7 +591,7 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                                     class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
                                     <div class="item_image">
                                         <a class="border !border-gray-300">
-                                            <img src="{{ asset('assets/images/img.png') }}"
+                                            <img class="aspect-square object-cover bg-top" src="{{ asset('assets/images/mentor/mentor_image_5.jpg') }}"
                                                  alt="Hi Korean">
                                         </a>
                                     </div>
@@ -451,36 +600,13 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                                             <a class="flex items-baseline gap-2">
                                                 <div
                                                     class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
-                                                <div class="truncate">Cô Thùy Dương</div>
+                                                <div class="truncate">THẦY YUN CHU SEOK</div>
                                             </a>
                                         </h3>
                                         <ul class="mb-0 pt-4">
-                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
-                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="overflow-visible col col-lg-4 carousel_item">
-                                <div
-                                    class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
-                                    <div class="item_image">
-                                        <a class="border !border-gray-300">
-                                            <img src="{{ asset('assets/images/img.png') }}"
-                                                 alt="Hi Korean">
-                                        </a>
-                                    </div>
-                                    <div class="item_content">
-                                        <h3 class="py-0 item_title">
-                                            <a class="flex items-baseline gap-2">
-                                                <div
-                                                    class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
-                                                <div class="truncate">Cô Thùy Dương</div>
-                                            </a>
-                                        </h3>
-                                        <ul class="mb-0 pt-4">
-                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
-                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Giảng viên khoa Hàn trường Đại học Đại Nam</li>
+                                            <li>Tốt nghiệp thạc sỹ khoa tiếng Hàn trường Đại học Kyunghee Hàn quốc.</li>
+                                            <li>Giáo viên dạy giao tiếp tại trung tâm tiếng Hàn Hi Korean.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -519,53 +645,73 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                             <ul class="unordered_list_block">
                                 <li>
                                     <div class="column">
-                                        <b class="day">26</b>
-                                        <span class="month">Tháng 12<br>2023</span>
+                                        <b class="day">29</b>
+                                        <span class="month">Tháng 11<br>2023</span>
                                     </div>
                                     <div class="column">
-                                        <h4 class="event_title">Lớp HKSC-24</h4>
+                                        <h4 class="event_title">Lớp GT1K137ON</h4>
                                         <span class="event_name">
-                                            <strong>Giảng viên:</strong> <small>Cô Thùy Dương</small>
-                                            <strong class="block text-sm">Thứ 3 & Thứ 5 (7h30’-9h00)</strong>
+                                            <strong>Giảng viên:</strong> <small>Cô Minh Trang</small>
                                         </span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="column">
-                                        <b class="day">26</b>
-                                        <span class="month">Tháng 12<br>2023</span>
+                                        <b class="day">29</b>
+                                        <span class="month">Tháng 11<br>2023</span>
                                     </div>
                                     <div class="column">
-                                        <h4 class="event_title">Lớp HKSC-24</h4>
+                                        <h4 class="event_title">Lớp GT1K123OFF</h4>
                                         <span class="event_name">
-                                            <strong>Giảng viên:</strong> <small>Cô Thùy Dương</small>
-                                            <strong class="block text-sm">Thứ 3 & Thứ 5 (7h30’-9h00)</strong>
+                                            <strong>Giảng viên:</strong> <small>Cô Thùy Linh</small>
                                         </span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="column">
-                                        <b class="day">26</b>
-                                        <span class="month">Tháng 12<br>2023</span>
+                                        <b class="day">27</b>
+                                        <span class="month">Tháng 11<br>2023</span>
                                     </div>
                                     <div class="column">
-                                        <h4 class="event_title">Lớp HKSC-24</h4>
+                                        <h4 class="event_title">Lớp GT2K86ON</h4>
                                         <span class="event_name">
-                                            <strong>Giảng viên:</strong> <small>Cô Thùy Dương</small>
-                                            <strong class="block text-sm">Thứ 3 & Thứ 5 (7h30’-9h00)</strong>
+                                            <strong>Giảng viên:</strong> <small>Cô Hoàng Anh</small>
                                         </span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="column">
-                                        <b class="day">26</b>
-                                        <span class="month">Tháng 12<br>2023</span>
+                                        <b class="day">27</b>
+                                        <span class="month">Tháng 11<br>2023</span>
                                     </div>
                                     <div class="column">
-                                        <h4 class="event_title">Lớp HKSC-24</h4>
+                                        <h4 class="event_title">Lớp GT3K12ON</h4>
                                         <span class="event_name">
-                                            <strong>Giảng viên:</strong> <small>Cô Thùy Dương</small>
-                                            <strong class="block text-sm">Thứ 3 & Thứ 5 (7h30’-9h00)</strong>
+                                            <strong>Giảng viên:</strong> <small>Cô Hàn Lâm Anh</small>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="column">
+                                        <b class="day">30</b>
+                                        <span class="month">Tháng 11<br>2023</span>
+                                    </div>
+                                    <div class="column">
+                                        <h4 class="event_title">Lớp GT3K04OFF</h4>
+                                        <span class="event_name">
+                                            <strong>Giảng viên:</strong> <small>Cô Minh Trang</small>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="column">
+                                        <b class="day">28</b>
+                                        <span class="month">Tháng 11<br>2023</span>
+                                    </div>
+                                    <div class="column">
+                                        <h4 class="event_title">Lớp TOPIK34K93ON</h4>
+                                        <span class="event_name">
+                                            <strong>Giảng viên:</strong> <small>Cô Hoàng Anh</small>
                                         </span>
                                     </div>
                                 </li>
@@ -712,94 +858,16 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                 <div class="max-lg:mt-24 row testimonial_carousel">
                     <div class="flex flex-nowrap col common_carousel_3col" data-cursor-text="Drag">
                         <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
-                            <div class="flex items-center gap-4">
-                                <img class="h-14 w-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
+                            <img src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/400389959_659294459707996_8034000912485917994_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFKM-jO9qpa6Yx1ZvN4h3FLbDJtLqeUa0NsMm0up5RrQwQUxLFfOJ_qk9VqA0f9EKssW7QqTDOZyXagPrvnXeG5&_nc_ohc=HFmp5BFC1c0AX9OjlRe&_nc_ht=scontent.fhan14-2.fna&oh=00_AfBzwp5eORRDrr2FnINu4hphFxRwzDm8ap8y1mIrYK22Nw&oe=6569D81A" alt="">
                         </div>
                         <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
-                            <div class="flex items-center gap-4">
-                                <img class="h-14 w-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
+                            <img src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/399929648_659294466374662_3511432874369090873_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFjz8MTY9UjHEBdWAbTL1sOyAJpHj7Im8PIAmkePsibw9rp03MSypBlCe_ZrD-al0DT9pTmAlzl0XszjVLC715d&_nc_ohc=yxMzbuLlm6wAX9CJPz3&_nc_ht=scontent.fhan14-2.fna&oh=00_AfAKUncaPWgluiz4vCm_0hZv3W5uVV-PSLNMOUfmOngoDA&oe=656972C6" alt="">
                         </div>
                         <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
-                            <div class="flex items-center gap-4">
-                                <img class="h-14 w-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
+                            <img src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/399907733_659294436374665_3331235845276078063_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFOGX2lniHYmkKoTJ27LNbAtAzjKjJYcta0DOMqMlhy1uXi0E_sWaTIP8utyYkGCG9M-tdFI9Ke1klGIAAe3qIy&_nc_ohc=rEyvImUWjbYAX8IQ5bS&_nc_oc=AQnYdZFb_ehIqxfXLTdwl7fQ4AhdMsgQFpF0CAtr0RPONvzzlaryWCUTJacDkt8i8r0&_nc_ht=scontent.fhan14-1.fna&oh=00_AfDZYOUb5LSdJVEBV7r-scY5mcv32lke4LgmiMZU89AJ0A&oe=656A88DD" alt="">
                         </div>
                         <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
-                            <div class="flex items-center gap-4">
-                                <img class="h-14 w-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
-                        </div>
-                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
-                            <div class="flex items-center gap-4">
-                                <img class="h-14 w-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
-                        </div>
-                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
-                            <div class="flex items-center gap-4">
-                                <img class="h-14 w-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="mb-0 text-lg">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
+                            <img src="https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/400334248_659294463041329_1064569239083497676_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFF5P2QBaGBpn3gIVjXL6IM7BoIz1Rum3jsGgjPVG6beDAGARVYN6WF8RP834hrVYawM54Y6pKPIq35IF9fIJs1&_nc_ohc=Hban43rmBVoAX9xo68f&_nc_ht=scontent.fhan14-3.fna&oh=00_AfCv7ADZC1pVqZSO6muHNmIA9Q1p8UFxKXLjpIag9P9bEA&oe=656AF847" alt="">
                         </div>
                     </div>
                 </div>
@@ -911,7 +979,7 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                     <div class="col-span-1 flex aspect-square items-end rounded-lg bg-cover bg-center bg-no-repeat p-4 border"
                          style="background-image: url('{{ Storage::url($this->news->first()->image) }}')">
                         <div class="bg-[#FDD561] p-4 rounded-lg">
-                            <a class="text-xl font-bold text-primary">
+                            <a class="text-xl font-bold text-primary" href="{{ route('news.show', ['id' => $this->news->first()->id]) }}">
                                 {{ $this->news->first()->title }}
                             </a>
                             <span>{{ $this->news->first()->created_at->format('d/m/Y') }}</span>
@@ -976,40 +1044,67 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                 </div>
                 <div class="grid grid-cols-2 gap-4 pswp-gallery pswp-gallery--single-column lg:grid-cols-4"
                      id="lightgallery">
-                    <a href="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                    <a href="{{ asset('assets/images/CSVC/3f360c6a3808737270157d827656df078830a572.jpg') }}"
                        {{--data-lg-size="1600-2400"--}}
                        target="_blank"
                        class="col-span-1 rounded-lg image"
                     >
                         <img
-                            src="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                            src="{{ asset('assets/images/CSVC/3f360c6a3808737270157d827656df078830a572.jpg') }}"
                             alt=""/>
                     </a>
-                    <a href="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                    <a href="{{ asset('assets/images/CSVC/446c3bf83d159ebd4934d35af52125fec1210dc0.jpg') }}"
                        {{--data-lg-size="1600-2400"--}}
                        target="_blank"
                        class="col-span-1 rounded-lg image"
                     >
                         <img
-                            src="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                            src="{{ asset('assets/images/CSVC/446c3bf83d159ebd4934d35af52125fec1210dc0.jpg') }}"
                             alt=""/>
                     </a>
-                    <a href="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                    <a href="{{ asset('assets/images/CSVC/40888eca2804b32856ddc91ce8d6452f5206942c.jpg') }}"
                        {{--data-lg-size="1600-2400"--}}
                        target="_blank"
                        class="col-span-1 rounded-lg image"
                     >
                         <img
-                            src="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                            src="{{ asset('assets/images/CSVC/40888eca2804b32856ddc91ce8d6452f5206942c.jpg') }}"
                             alt=""/>
                     </a>
-                    <a href="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                    <a href="{{ asset('assets/images/CSVC/đẹp.jpg') }}"
                        {{--data-lg-size="1600-2400"--}}
                        target="_blank"
                        class="col-span-1 rounded-lg image"
                     >
                         <img
-                            src="https://plus.unsplash.com/premium_photo-1696879454010-6aed21c32fc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                            src="{{ asset('assets/images/CSVC/đẹp.jpg') }}"
+                            alt=""/>
+                    </a>
+                    <a href="{{ asset('assets/images/CSVC/80ca7cb658a81bc6ff6e06643bd639cbd7cf7d09.jpg') }}"
+                       {{--data-lg-size="1600-2400"--}}
+                       target="_blank"
+                       class="col-span-1 rounded-lg image"
+                    >
+                        <img
+                            src="{{ asset('assets/images/CSVC/80ca7cb658a81bc6ff6e06643bd639cbd7cf7d09.jpg') }}"
+                            alt=""/>
+                    </a>
+                    <a href="{{ asset('assets/images/CSVC/473eb183aa75916deabff3f12798dc649a919825.jpg') }}"
+                       {{--data-lg-size="1600-2400"--}}
+                       target="_blank"
+                       class="col-span-1 rounded-lg image"
+                    >
+                        <img
+                            src="{{ asset('assets/images/CSVC/473eb183aa75916deabff3f12798dc649a919825.jpg') }}"
+                            alt=""/>
+                    </a>
+                    <a href="{{ asset('assets/images/CSVC/2023-06-22 14.55.37.jpg') }}"
+                       {{--data-lg-size="1600-2400"--}}
+                       target="_blank"
+                       class="col-span-1 rounded-lg image"
+                    >
+                        <img
+                            src="{{ asset('assets/images/CSVC/2023-06-22 14.55.37.jpg') }}"
                             alt=""/>
                     </a>
                 </div>
@@ -1033,15 +1128,13 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                             <div class="pricing_cards_wrapper row align-items-center">
                                 <div class="col">
                                     <div class="pricing_card text-center bg_dark tilt">
-                                        <div class="card_badge">recommended</div>
-                                        <h3 class="card_heading text-lg md:text-2xl">Luyện thi TOPIK</h3>
+                                        <div class="card_badge">Nổi bật</div>
+                                        <h3 class="card_heading text-lg md:text-2xl">Đăng ký 4 khóa học</h3>
                                         <div class="pricing_wrap">
-                                            <span class="price_value text-sm md:text-2xl">1.500.000</span>
-                                            <small
-                                                class="d-block text-decoration-line-through text-sm">3.000.000đ</small>
+                                            <span class="price_value text-sm md:text-2xl">Tặng 2.000.000</span>
                                         </div>
                                         <div class="btn_wrap pb-0">
-                                            <a class="btn btn_primary" href="#!">
+                                            <a class="btn btn_primary" href="{{ route('sales') }}">
                                                 <span>
                                                     <small class="max-md:text-xs">Đăng ký ngay</small>
                                                     <small class="max-md:text-xs">Đăng ký ngay</small>

@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/courses/{id}', function ($id) {
+    return view('pages.courses.' . $id);
+})->name('courses.detail');

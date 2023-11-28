@@ -161,4 +161,10 @@
             </div>
         </div>
     </div>
+
+    @if(session()->has('message'))
+        <script>
+            alert("{{ session()->get('message') }}");
+        </script>
+    @endif
 </footer>

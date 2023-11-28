@@ -94,12 +94,6 @@
                                     Gửi form
                                 </button>
                             </form>
-
-                            @if(session()->has('message'))
-                                <script>
-                                    alert("{{ session()->get('message') }}")
-                                </script>
-                            @endif
                         </div>
                     </div>
                     <div class="hidden md:block md:w-7/12">

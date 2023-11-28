@@ -230,7 +230,7 @@
                                     class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
                                     <div class="item_image">
                                         <a class="border !border-gray-300">
-                                            <img src="{{ asset('assets/images/img.png') }}"
+                                            <img class="aspect-square object-cover bg-top" src="{{ asset('assets/images/mentor/mentor_image_1.jpg') }}"
                                                  alt="Hi Korean">
                                         </a>
                                     </div>
@@ -239,12 +239,16 @@
                                             <a class="flex items-baseline gap-2">
                                                 <div
                                                     class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
-                                                <div class="truncate">Cô Thùy Dương</div>
+                                                <div class="">CEO NGUYỄN PHƯƠNG THÚY</div>
                                             </a>
                                         </h3>
                                         <ul class="mb-0 pt-4">
-                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
-                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Tốt nghiệp bằng Giỏi chuyên ngành Ngôn ngữ Hàn
+                                                trường Đại học Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Tốt nghiệp Thạc sĩ chuyên ngành Kinh doanh và Quản lý
+                                                tài chính trường Đại học Ngoại ngữ Busan</li>
+                                            <li>Giáo viên giảng dạy tại ngành Ngôn ngữ Hàn, Trường Đại
+                                                học Hà Nội.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -254,7 +258,7 @@
                                     class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
                                     <div class="item_image">
                                         <a class="border !border-gray-300">
-                                            <img src="{{ asset('assets/images/img.png') }}"
+                                            <img class="aspect-square object-cover bg-top" src="{{ asset('assets/images/mentor/mentor_image_3.jpg') }}"
                                                  alt="Hi Korean">
                                         </a>
                                     </div>
@@ -263,12 +267,14 @@
                                             <a class="flex items-baseline gap-2">
                                                 <div
                                                     class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
-                                                <div class="truncate">Cô Thùy Dương</div>
+                                                <div class="">THẦY TRẦN QUANG ANH</div>
                                             </a>
                                         </h3>
                                         <ul class="mb-0 pt-4">
-                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
-                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Tốt nghiệp ngành Ngôn ngữ và văn học Hàn Quốc tại Đại học Chonnam</li>
+                                            <li>Tốt nghiệp Thạc sĩ ngành Hợp tác Quốc tế tại Đại học Yeungnam</li>
+                                            <li>Nghiên cứu sinh Tiến sĩ ngành Phát triển cộng đồng và chính sách xã hội tại Đại học Yeungnam</li>
+                                            <li>Giảng viên Khoa Tiếng Hàn, trường Đại học Phenikaa</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -278,7 +284,7 @@
                                     class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
                                     <div class="item_image">
                                         <a class="border !border-gray-300">
-                                            <img src="{{ asset('assets/images/img.png') }}"
+                                            <img class="aspect-square object-cover bg-top" src="{{ asset('assets/images/mentor/mentor_image_5.jpg') }}"
                                                  alt="Hi Korean">
                                         </a>
                                     </div>
@@ -287,12 +293,13 @@
                                             <a class="flex items-baseline gap-2">
                                                 <div
                                                     class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
-                                                <div class="truncate">Cô Thùy Dương</div>
+                                                <div class="">THẦY YUN CHU SEOK</div>
                                             </a>
                                         </h3>
                                         <ul class="mb-0 pt-4">
-                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
-                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Giảng viên khoa Hàn trường Đại học Đại Nam</li>
+                                            <li>Tốt nghiệp thạc sỹ khoa tiếng Hàn trường Đại học Kyunghee Hàn quốc.</li>
+                                            <li>Giáo viên dạy giao tiếp tại trung tâm tiếng Hàn Hi Korean.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -302,7 +309,7 @@
                                     class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
                                     <div class="item_image">
                                         <a class="border !border-gray-300">
-                                            <img src="{{ asset('assets/images/img.png') }}"
+                                            <img class="aspect-square object-cover bg-top" src="{{ asset('assets/images/mentor/mentor_image_2.jpg') }}"
                                                  alt="Hi Korean">
                                         </a>
                                     </div>
@@ -311,12 +318,70 @@
                                             <a class="flex items-baseline gap-2">
                                                 <div
                                                     class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
-                                                <div class="truncate">Cô Thùy Dương</div>
+                                                <div class="truncate">CÔ ĐẶNG NGUYỄN THÙY DƯƠNG</div>
                                             </a>
                                         </h3>
                                         <ul class="mb-0 pt-4">
-                                            <li>Thạc sĩ giỏi Đại học Nữ sinh Ewha</li>
-                                            <li>Tốt nghiệp loại giỏi ĐH Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Tốt nghiệp trường Đại học Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Tốt nghiệp Thạc sĩ tại trường Đại học Nữ Ewha</li>
+                                            <li>Giảng viên Đại học Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Trưởng Khoa của Khoa NN&VH Hàn Quốc, Trường Cao đẳng Công nghệ Bách khoa HN</li>
+                                            <li>Tốt nghiệp thạc sỹ khoa tiếng Hàn trường Đại học Kyunghee Hàn quốc.</li>
+                                            <li>Là tác giả của nhiều cuốn sách Tiếng Hàn chuyên ngành, đặc biệt cuốn Topik (TOPIK FROM ZERO TO HERO) của Hi Korean</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overflow-visible col col-lg-4 carousel_item">
+                                <div
+                                    class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
+                                    <div class="item_image">
+                                        <a class="border !border-gray-300">
+                                            <img class="aspect-square object-cover bg-top" src="{{ asset('assets/images/mentor/mentor_image_4.jpg') }}"
+                                                 alt="Hi Korean">
+                                        </a>
+                                    </div>
+                                    <div class="item_content">
+                                        <h3 class="py-0 item_title">
+                                            <a class="flex items-baseline gap-2">
+                                                <div
+                                                    class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                <div class="truncate">CÔ BÙI HUYỀN</div>
+                                            </a>
+                                        </h3>
+                                        <ul class="mb-0 pt-4">
+                                            <li>Cử nhân Khoa Ngôn ngữ và văn hoá Hàn Quốc Đại học ngoại ngữ - ĐHQGHN</li>
+                                            <li>Thạc sĩ tại Trường đại học SoongSil - Khoa ngôn ngữ và văn học Hàn Quốc</li>
+                                            <li>Giảng viên Khoa tiếng Hàn, Đại học Đại Nam</li>
+                                            <li>Phiên dịch viên tại Công ty điện tử Samsung</li>
+                                            <li>Nhiều năm kinh nghiệm trong ngành Biên – phiên dịch tiếng Hàn tại các công ty, hội thảo, cuộc họp,…</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overflow-visible col col-lg-4 carousel_item">
+                                <div
+                                    class="rounded-lg rounded-br-3xl border course_card border-primary hover:bg-alternative-darker hover:shadow-none">
+                                    <div class="item_image">
+                                        <a class="border !border-gray-300">
+                                            <img class="aspect-square object-cover bg-top" src="{{ asset('assets/images/mentor/mentor_image_6.jpg') }}"
+                                                 alt="Hi Korean">
+                                        </a>
+                                    </div>
+                                    <div class="item_content">
+                                        <h3 class="py-0 item_title">
+                                            <a class="flex items-baseline gap-2">
+                                                <div
+                                                    class="w-3 h-3 rounded-full !bg-secondary shrink-0"></div>
+                                                <div class="truncate">CÔ KIM MYUNG JU</div>
+                                            </a>
+                                        </h3>
+                                        <ul class="mb-0 pt-4">
+                                            <li>Tốt nghiệp trường Đại học Ngoại ngữ - ĐHQGHN</li>
+                                            <li>Hỗ trợ dự án nghiên cứu 학술연구재단 của Đại học
+                                                Kyung Hee</li>
+                                            <li>Thành viên đội chuẩn bị giáo án của đài truyền hình EBS</li>
+                                            <li>Giáo viên phụ trách lớp của trung tâm tiếng Hàn Hi Korean</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -346,95 +411,17 @@
 
                 <div class="row testimonial_carousel mt-24">
                     <div class="col common_carousel_3col flex flex-nowrap" data-cursor-text="Drag">
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
-                            <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
+                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
+                            <img src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/400389959_659294459707996_8034000912485917994_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFKM-jO9qpa6Yx1ZvN4h3FLbDJtLqeUa0NsMm0up5RrQwQUxLFfOJ_qk9VqA0f9EKssW7QqTDOZyXagPrvnXeG5&_nc_ohc=HFmp5BFC1c0AX9OjlRe&_nc_ht=scontent.fhan14-2.fna&oh=00_AfBzwp5eORRDrr2FnINu4hphFxRwzDm8ap8y1mIrYK22Nw&oe=6569D81A" alt="">
                         </div>
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
-                            <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
+                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
+                            <img src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/399929648_659294466374662_3511432874369090873_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFjz8MTY9UjHEBdWAbTL1sOyAJpHj7Im8PIAmkePsibw9rp03MSypBlCe_ZrD-al0DT9pTmAlzl0XszjVLC715d&_nc_ohc=yxMzbuLlm6wAX9CJPz3&_nc_ht=scontent.fhan14-2.fna&oh=00_AfAKUncaPWgluiz4vCm_0hZv3W5uVV-PSLNMOUfmOngoDA&oe=656972C6" alt="">
                         </div>
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
-                            <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
+                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
+                            <img src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/399907733_659294436374665_3331235845276078063_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFOGX2lniHYmkKoTJ27LNbAtAzjKjJYcta0DOMqMlhy1uXi0E_sWaTIP8utyYkGCG9M-tdFI9Ke1klGIAAe3qIy&_nc_ohc=rEyvImUWjbYAX8IQ5bS&_nc_oc=AQnYdZFb_ehIqxfXLTdwl7fQ4AhdMsgQFpF0CAtr0RPONvzzlaryWCUTJacDkt8i8r0&_nc_ht=scontent.fhan14-1.fna&oh=00_AfDZYOUb5LSdJVEBV7r-scY5mcv32lke4LgmiMZU89AJ0A&oe=656A88DD" alt="">
                         </div>
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
-                            <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
-                        </div>
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
-                            <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
-                        </div>
-                        <div class="mr-4 carousel_item border border-primary bg-white rounded-lg p-4">
-                            <div class="flex items-center gap-4">
-                                <img class="w-14 h-14 rounded-full"
-                                     src="https://www.gravatar.com/avatar/467aa3e023c15104d8dd3b5063d7f2ea?s=64&d=identicon&r=PG"
-                                     alt="">
-                                <div>
-                                    <h3 class="text-lg mb-0">Nguyen Thi Mai</h3>
-                                    <span class="text-sm text-secondary">Khóa sơ cấp K12</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-justify">
-                                Mình được luyện phản xạ mỗi buổi học, nên đối với mình chương trình học thật sự phù hợp
-                                và mình tự tin giao tiếp dù chưa giỏi. Mình học lớp thầy Tuấn.
-                            </p>
+                        <div class="mr-4 rounded-lg border bg-white p-4 carousel_item border-primary">
+                            <img src="https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/400334248_659294463041329_1064569239083497676_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFF5P2QBaGBpn3gIVjXL6IM7BoIz1Rum3jsGgjPVG6beDAGARVYN6WF8RP834hrVYawM54Y6pKPIq35IF9fIJs1&_nc_ohc=Hban43rmBVoAX9xo68f&_nc_ht=scontent.fhan14-3.fna&oh=00_AfCv7ADZC1pVqZSO6muHNmIA9Q1p8UFxKXLjpIag9P9bEA&oe=656AF847" alt="">
                         </div>
                     </div>
                 </div>
