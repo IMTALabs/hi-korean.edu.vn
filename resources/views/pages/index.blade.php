@@ -1080,33 +1080,7 @@ $news = \Livewire\Volt\computed(fn() => \App\Models\Post::orderBy('updated_at', 
                             src="{{ asset('assets/images/CSVC/đẹp.jpg') }}"
                             alt=""/>
                     </a>
-                    <a href="{{ asset('assets/images/CSVC/80ca7cb658a81bc6ff6e06643bd639cbd7cf7d09.jpg') }}"
-                       {{--data-lg-size="1600-2400"--}}
-                       target="_blank"
-                       class="col-span-1 rounded-lg image"
-                    >
-                        <img
-                            src="{{ asset('assets/images/CSVC/80ca7cb658a81bc6ff6e06643bd639cbd7cf7d09.jpg') }}"
-                            alt=""/>
-                    </a>
-                    <a href="{{ asset('assets/images/CSVC/473eb183aa75916deabff3f12798dc649a919825.jpg') }}"
-                       {{--data-lg-size="1600-2400"--}}
-                       target="_blank"
-                       class="col-span-1 rounded-lg image"
-                    >
-                        <img
-                            src="{{ asset('assets/images/CSVC/473eb183aa75916deabff3f12798dc649a919825.jpg') }}"
-                            alt=""/>
-                    </a>
-                    <a href="{{ asset('assets/images/CSVC/2023-06-22 14.55.37.jpg') }}"
-                       {{--data-lg-size="1600-2400"--}}
-                       target="_blank"
-                       class="col-span-1 rounded-lg image"
-                    >
-                        <img
-                            src="{{ asset('assets/images/CSVC/2023-06-22 14.55.37.jpg') }}"
-                            alt=""/>
-                    </a>
+                    
                 </div>
             </div>
         </section>
