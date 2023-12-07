@@ -105,7 +105,7 @@
 
                             <li>
                                 <span class="text-muted text-sm">Số điện thoại</span>
-                                <a class="block truncate font-bold">0394.589.291</a>
+                                <a class="block truncate font-bold">0911.196.632</a>
                             </li>
                         </ul>
                     </div>
